@@ -988,34 +988,38 @@ function drawMapa(){
 }
 drawMapa();
 
-// Tooltip
-canvas.addEventListener('mousemove',e=>{
-  const rect=canvas.getBoundingClientRect();
-  const mx=e.clientX-rect.left,my=e.clientY-rect.top;
-  let found=null;
-  nos.forEach(n=>{if(Math.hypot(n.px-mx,n.py-my)<12)found=n;});
-  if(found){
-    tooltip.style.opacity='1';
-    tooltip.style.left=(e.clientX-rect.left+16)+'px';
-    tooltip.style.top=(e.clientY-rect.top-10)+'px';
-    const status=found.type==='anom'?'⚠ ANOMALIA':found.type==='inactive'?'INATIVO':'SINCRONIZADO';
-    tooltip.innerHTML=`<span style="color:${found.type==='anom'?'#FF5500':found.type==='inactive'?'#5A6A6A':'#00B8B8'}">${found.name}</span><br>${status}`;
-  } else {tooltip.style.opacity='0';}
+<script>
+<script>
+// Tooltip (Español)
+canvas.addEventListener('mousemove', e => {
+  const rect = canvas.getBoundingClientRect();
+  const mx = e.clientX - rect.left, my = e.clientY - rect.top;
+  let found = null;
+  nos.forEach(n => { if (Math.hypot(n.px - mx, n.py - my) < 12) found = n; });
+  if (found) {
+    tooltip.style.opacity = '1';
+    tooltip.style.left = (e.clientX - rect.left + 16) + 'px';
+    tooltip.style.top = (e.clientY - rect.top - 10) + 'px';
+    const status = found.type === 'anom' ? '⚠ ANOMALÍA' : found.type === 'inactive' ? 'INACTIVO' : 'SINCRONIZADO';
+    tooltip.innerHTML = `<span style="color:${found.type === 'anom' ? '#FF5500' : found.type === 'inactive' ? '#5A6A6A' : '#00B8B8'}">${found.name}</span><br>${status}`;
+  } else {
+    tooltip.style.opacity = '0';
+  }
 });
 
-canvas.addEventListener('click',e=>{
-  const rect=canvas.getBoundingClientRect();
-  const mx=e.clientX-rect.left,my=e.clientY-rect.top;
-  nos.forEach(n=>{
-    if(Math.hypot(n.px-mx,n.py-my)<12&&n.type!=='inactive'){
-      addAnomAlert(`Nó ${n.name} verificado — ${n.type==='anom'?'ANOMALIA ATIVA':'sincronizado'}.`,n.type==='anom'?3:1);
+canvas.addEventListener('click', e => {
+  const rect = canvas.getBoundingClientRect();
+  const mx = e.clientX - rect.left, my = e.clientY - rect.top;
+  nos.forEach(n => {
+    if (Math.hypot(n.px - mx, n.py - my) < 12 && n.type !== 'inactive') {
+      addAnomAlert(`Nodo ${n.name} verificado — ${n.type === 'anom' ? 'ANOMALÍA ACTIVA' : 'sincronizado'}.`, n.type === 'anom' ? 3 : 1);
     }
   });
 });
-  
+
 try {
-  document.documentElement.lang='es';
-  document.title='Chronos Corp — Tu vida, optimizada.';
+  document.documentElement.lang = 'es';
+  document.title = 'Chronos Corp — Tu vida, optimizada.';
 
   const mEs = {
     "Missão": "Misión",
@@ -1032,10 +1036,7 @@ try {
     "ARQUIVO KUMANI": "ARCHIVO KUMANI",
     "SOB CONTROLE": "BAJO CONTROL",
     "MODELOS DISPONÍVEIS": "MODELOS DISPONIBLES",
-    "SUA VIDA, OTIMIZADA.": "TU VIDA, OPTIMIZADA."
-  };
-
-  Object.assign(mEs, {
+    "SUA VIDA, OTIMIZADA.": "TU VIDA, OPTIMIZADA.",
     "TRANSMISSÕES PIRATAS": "TRANSMISIONES PIRATAS",
     "Sistema Ativo": "Sistema Activo",
     "A biologia": "La biología",
@@ -1052,10 +1053,7 @@ try {
     "Conectividade": "Conectividad",
     "Modelos": "Modelos",
     "Sincronizados": "Sincronizados",
-    "Loop Ativo": "Loop Activo"
-  });
-
-  Object.assign(mEs, {
+    "Loop Ativo": "Loop Activo",
     "Nossa Missão": "Nuestra Misión",
     "Você vive no": "Vives en el",
     "passado.": "pasado.",
@@ -1072,10 +1070,7 @@ try {
     "Qual sincronização": "¿Qué sincronización",
     "você escolhe?": "eliges?",
     "LINHA GLOBAL": "LÍNEA GLOBAL",
-    "LINHA EXCLUSIVA": "LÍNEA EXCLUSIVA"
-  });
-
-  Object.assign(mEs, {
+    "LINHA EXCLUSIVA": "LÍNEA EXCLUSIVA",
     "Terminal de Acesso": "Terminal de Acceso",
     "Teste de Sincronização": "Prueba de Sincronización",
     "Descubra seu": "Descubre tu",
@@ -1093,31 +1088,71 @@ try {
     "Contato Corporativo": "Contacto Corporativo",
     "Sincronize": "Sincroniza",
     "conosco.": "con nosotros.",
-    "Todos os direitos reservados.": "Todos los derechos reservados."
-  });
+    "Todos os direitos reservados.": "Todos los derechos reservados.",
+    "ALERTA DE SISTEMA": "ALERTA DE SISTEMA",
+    "MONITORAMENTO EM TEMPO REAL": "MONITOREO EN TIEMPO REAL",
 
-  function runEs(){
-    const w=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);
+    // Quiz Perguntas e Opções
+    "Como você descreveria sua relação com o tempo?": "¿Cómo describirías tu relación con el tiempo?",
+    "Nunca tenho o suficiente": "Nunca tengo suficiente",
+    "Preciso de controle total": "Necesito control total",
+    "Quero entender meus ciclos naturais": "Quiero entender mis ciclos naturales",
+    "Prefiro operar sem ser percebido": "Prefiero operar sin ser percibido",
+    "Qual é a sua prioridade?": "¿Cuál es tu prioridad?",
+    "Performance física e foco": "Rendimiento físico y enfoque",
+    "Presença global e cognição executiva": "Presencia global y cognición ejecutiva",
+    "Inteligência emocional e relações": "Inteligencia emocional y relaciones",
+    "Resistência em ambientes extremos": "Resistencia en entornos extremos",
+    "O que você faria com mais tempo percebido?": "¿Qué harías con más tiempo percibido?",
+    "Otimizar cada segundo do dia": "Optimizar cada segundo del día",
+    "Dominar múltiplos contextos simultâneos": "Dominar múltiples contextos simultáneos",
+    "Explorar territórios inacessíveis": "Explorar territorios inaccesibles",
+    "Conectar-me com algo maior": "Conectarme con algo más grande",
+    "Qual é a sua maior vulnerabilidade?": "¿Cuál es tu mayor vulnerabilidad?",
+    "Perder o controle da atenção": "Perder el control de la atención",
+    "Ser rastreado ou monitorado": "Ser rastreado o monitoreado",
+    "Não conseguir ler os outros": "No poder leer a los demás",
+    "Ficar para trás no ritmo global": "Quedarme atrás en el ritmo global",
+
+    // Quiz Descrições dos Modelos
+    "O modelo de massa. Sua relação com o tempo é pragmática — você quer otimização contínua, sem fricção. O Simulador Primal trabalha por você nas sombras.": "El modelo masivo. Tu relación con el tiempo es pragmática — quieres optimización continua, sin fricción. El Simulador Primal trabaja para ti en las sombras.",
+    "Acesso total. Você não quer otimizar o tempo — quer controlá-lo. O Omega é o único modelo com protocolo completo de fluxo temporal. O modelo que Luc Vangersson usa.": "Acceso total. No quieres optimizar el tiempo — quieres controlarlo. El Omega es el único modelo con protocolo completo de flujo temporal. El modelo que usa Luc Vangersson.",
+    "Memória ancestral. Você busca algo que a tecnologia normalmente ignora: conexão com ciclos maiores do que a produtividade. O Orbital-X sincroniza com o que nunca para.": "Memoria ancestral. Buscas algo que la tecnología normalmente ignora: conexión con ciclos más grandes que la productividad. El Orbital-X se sincroniza con lo que nunca se detiene.",
+    "Percepção oculta. Você opera melhor quando ninguém sabe que você está operando. Protocolo não rastreável. Acesso restrito — e é assim que prefere.": "Percepción oculta. Operas mejor cuando nadie sabe que estás operando. Protocolo no rastreable. Acceso restringido — y así es como lo prefieres.",
+    "Habilidades físicas. Seu presente é o corpo em movimento. O Pulse-V recalibra a percepção de esforço para que você sempre tenha mais do que pensava.": "Habilidades físicas. Tu presente es el cuerpo en movimiento. El Pulse-V recalibra la percepción del esfuerzo para que siempre tengas más de lo que pensabas.",
+    "Fluxo temporal executivo. Sua mente processa múltiplos contextos simultaneamente. O Nexus Time torna isso uma vantagem — não um peso.": "Flujo temporal ejecutivo. Tu mente procesa múltiples contextos simultáneamente. El Nexus Time convierte esto en una ventaja — no en un peso.",
+    "Cognição social. Você lê ambientes antes que os outros percebam o que está acontecendo. O Spectra G4 amplifica esse protocolo.": "Cognición social. Lees entornos antes de que los demás noten lo que está pasando. El Spectra G4 amplifica este protocolo.",
+    "Resistência e precisão. Você opera em condições que eliminam os outros. O Alpha é tático, robusto, e nunca pede permissão.": "Resistencia y precisión. Operas en condiciones que eliminan a los demás. El Alpha es táctico, robusto, y nunca pide permiso.",
+    "Percepção espacial. Você pensa em altitude — literal ou metaforicamente. O Aero expande o perímetro do que você consegue perceber.": "Percepción espacial. Piensas en altitud — literal o metafóricamente. El Aero expande el perímetro de lo que puedes percibir."
+  };
+
+  const sortedEntries = Object.entries(mEs).sort((a, b) => b[0].length - a[0].length);
+
+  function runEs() {
+    const w = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
     let n;
-    while(n=w.nextNode()){
-      let v=n.nodeValue;
-      for(const [pt, es] of Object.entries(mEs)){
-        if(v.includes(pt)) v=v.split(pt).join(es);
+    while (n = w.nextNode()) {
+      let v = n.nodeValue;
+      for (const [pt, es] of sortedEntries) {
+        if (v.includes(pt)) v = v.split(pt).join(es);
       }
-      if(v!==n.nodeValue) n.nodeValue=v;
+      if (v !== n.nodeValue) n.nodeValue = v;
     }
   }
-  runEs();setInterval(runEs,300);
-} catch(e){}
-
+  runEs();
+  setInterval(runEs, 300);
+} catch (e) {}
 </script>
-      
- <!-- SELETOR TRILÍNGUE DIRETO (PT | ES | EN) -->
+
+<!-- SELETOR TRILÍNGUE DIRETO (PT | ES | EN) -->
 <div style="position:fixed;top:68px;right:24px;z-index:9998;display:flex;gap:6px;background:rgba(2,5,8,0.92);padding:6px 10px;border:1px solid #007878;backdrop-filter:blur(8px)">
-  <a href="index.html" style="text-decoration:none;border:1px solid #00B8B8;color:#00B8B8;font-family:'Syne Mono',monospace;font-size:11px;padding:3px 8px">PT</a>
-  <a href="es.html" style="text-decoration:none;border:1px solid #007878;color:#F0F4F4;font-family:'Syne Mono',monospace;font-size:11px;padding:3px 8px">ES</a>
+  <a href="index.html" style="text-decoration:none;border:1px solid #007878;color:#F0F4F4;font-family:'Syne Mono',monospace;font-size:11px;padding:3px 8px">PT</a>
+  <a href="es.html" style="text-decoration:none;border:1px solid #00B8B8;color:#00B8B8;font-family:'Syne Mono',monospace;font-size:11px;padding:3px 8px">ES</a>
   <a href="en.html" style="text-decoration:none;border:1px solid #007878;color:#F0F4F4;font-family:'Syne Mono',monospace;font-size:11px;padding:3px 8px">EN</a>
 </div>
+
+</body>
+</html>
 
 
 
