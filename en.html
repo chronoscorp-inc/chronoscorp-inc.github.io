@@ -1019,6 +1019,31 @@ canvas.addEventListener('click',e=>{
     }
   });
 });
+  const dEn = {
+  "Missão": "Mission",
+  "Produtos": "Products",
+  "Terminal": "Terminal",
+  "Sincronizar": "Sync",
+  "Arquivo": "Archive",
+  "Rede Global": "Global Network",
+  "Contato": "Contact",
+  "SIMULADOR: ONLINE": "SIMULATOR: ONLINE",
+  "A biologia entrega a realidade com minutos de atraso.": "Biology delivers reality minutes late.",
+  "Você não está vivendo o presente.": "You are not living the present.",
+  "Nossa Missão": "Our Mission",
+  "Teste de Sincronização": "Sync Test",
+  "Arquivo Kumani": "Kumani Archive"
+};
+const wEn = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+let nEn;
+while (nEn = wEn.nextNode()) {
+  let v = nEn.nodeValue;
+  for (let k in dEn) {
+    if (v.includes(k)) v = v.replace(k, dEn[k]);
+  }
+  nEn.nodeValue = v;
+}
+
 </script>
 
 <!-- SELETOR TRILÍNGUE DIRETO (PT | ES | EN) -->
