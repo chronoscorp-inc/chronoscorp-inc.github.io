@@ -1020,29 +1020,55 @@ canvas.addEventListener('click',e=>{
   });
 });
   const dEn = {
-  "Missão": "Mission",
-  "Produtos": "Products",
-  "Terminal": "Terminal",
-  "Sincronizar": "Sync",
-  "Arquivo": "Archive",
-  "Rede Global": "Global Network",
-  "Contato": "Contact",
+  const dict = {
+  "Missão": "Mission", "Produtos": "Products", "Terminal": "Terminal", "Sincronizar": "Sync", "Arquivo": "Archive", "Rede Global": "Global Network", "Contato": "Contact",
   "SIMULADOR: ONLINE": "SIMULATOR: ONLINE",
-  "A biologia entrega a realidade com minutos de atraso.": "Biology delivers reality minutes late.",
-  "Você não está vivendo o presente.": "You are not living the present.",
-  "Nossa Missão": "Our Mission",
-  "Teste de Sincronização": "Sync Test",
-  "Arquivo Kumani": "Kumani Archive"
+  "CHRONOS CORP // SISTEMA ATIVO": "CHRONOS CORP // ACTIVE SYSTEM",
+  "A biologia": "Biology", "entrega a realidade": "delivers reality", "com": "with", "minutos": "minutes", "de atraso.": "of delay.",
+  "Você não está vivendo o presente. Você está assistindo a uma gravação processada pelo seu córtex sensorial.": "You are not living the present. You are watching a recording processed by your sensory cortex.",
+  "INICIAR SINCRONIZAÇÃO": "START SYNCHRONIZATION", "EXPLORAR CATÁLOGO": "EXPLORE CATALOG",
+  "Você vive no": "You live in the", "passado.": "past.", "Nós mudamos isso.": "We change that.",
+  "SINCRONIZAÇÃO NEURAL": "NEURAL SYNCHRONIZATION", "USUÁRIOS ATIVOS": "ACTIVE USERS", "LATÊNCIA BIOLÓGICA": "BIOLOGICAL LATENCY"
 };
-const wEn = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
-let nEn;
-while (nEn = wEn.nextNode()) {
-  let v = nEn.nodeValue;
-  for (let k in dEn) {
-    if (v.includes(k)) v = v.replace(k, dEn[k]);
+Object.assign(dict, {
+  "Qual sincronização": "Which synchronization", "você": "do you", "escolhe?": "choose?",
+  "Acesse o": "Access the", "sistema.": "system.",
+  "Bem-vindo ao sistema Chronos Corp.": "Welcome to the Chronos Corp system.",
+  "Digite HELP para listar os comandos disponíveis.": "Type HELP to list available commands.",
+  "Descubra seu": "Discover your", "modelo ideal.": "ideal model.",
+  "PERGUNTA 1 DE 4 // SIMULADOR PRIMAL": "QUESTION 1 OF 4 // PRIMAL SIMULATOR",
+  "PERGUNTA 2 DE 4 // SIMULADOR PRIMAL": "QUESTION 2 OF 4 // PRIMAL SIMULATOR",
+  "PERGUNTA 3 DE 4 // SIMULADOR PRIMAL": "QUESTION 3 OF 4 // PRIMAL SIMULATOR",
+  "PERGUNTA 4 DE 4 // SIMULADOR PRIMAL": "QUESTION 4 OF 4 // PRIMAL SIMULATOR",
+  "Como você descreveria sua relação com o tempo?": "How would you describe your relationship with time?",
+  "Nunca tenho o suficiente": "I never have enough", "Preciso de controle total": "I need total control",
+  "Quero entender meus ciclos naturais": "I want to understand my natural cycles", "Prefiro operar sem ser percebido": "I prefer to operate unnoticed",
+  "O que acontece quando você fecha os olhos?": "What happens when you close your eyes?",
+  "Vejo memórias que não são minhas": "I see memories that are not mine", "O tempo parece acelerar": "Time seems to accelerate",
+  "Ouço um ruído de frequência baixa": "I hear a low-frequency noise", "Nada — apenas silêncio absoluto": "Nothing — just absolute silence"
+});
+Object.assign(dict, {
+  "Qual é sua maior prioridade agora?": "What is your highest priority right now?",
+  "Recuperar o que foi perdido": "Recover what was lost", "Antecipar o futuro": "Antecipate the future",
+  "Quebrar o ciclo": "Break the cycle", "Manter o sistema estável": "Keep the system stable",
+  "Se pudesse apagar uma memória, o que faria?": "If you could erase one memory, what would you do?",
+  "Apagaria sem hesitar": "I would erase it without hesitation", "Guardaria em um arquivo oculto": "I would store it in a hidden archive",
+  "A memória é o que nos define": "Memory is what defines us", "Já tentei — ela sempre volta": "I already tried — it always comes back",
+  "Acesso": "Access", "classificado.": "classified.",
+  "ARQUIVO KUMANI // NÍVEL 5": "KUMANI ARCHIVE // LEVEL 5",
+  "Acesso restrito. Insira o código de autorização:": "Restricted access. Enter authorization code:",
+  "Conectividade": "Connectivity", "global.": "global.",
+  "Os arquivos": "The files", "que importam.": "that matter."
+});
+setInterval(() => {
+  const w = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+  let n;
+  while (n = w.nextNode()) {
+    const raw = n.nodeValue;
+    const clean = raw.trim().replace(/\s+/g, ' ');
+    if (dict[clean]) n.nodeValue = raw.replace(raw.trim(), dict[clean]);
   }
-  nEn.nodeValue = v;
-}
+}, 300);
 
 </script>
 
