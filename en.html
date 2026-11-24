@@ -1012,12 +1012,28 @@ canvas.addEventListener('click',e=>{
       addAnomAlert(`Nó ${n.name} verificado — ${n.type==='anom'?'ANOMALIA ATIVA':'sincronizado'}.`,n.type==='anom'?3:1);
     }
   });
-});
- 
-try {
-  document.documentElement.lang='en';
-  document.title='Chronos Corp — Your life, optimized.';
- 
+<script>
+(function() {
+  document.documentElement.lang = 'en';
+  document.title = 'Chronos Corp — Your life, optimized.';
+
+  // 1. Correção direta nos blocos do Hero (elimina qualquer quebra de tag/linha)
+  function fixHeroEn() {
+    const h1 = document.querySelector('h1');
+    if (h1 && (h1.textContent.includes('atraso') || h1.textContent.includes('biologia'))) {
+      h1.innerHTML = 'Biology<br>delivers reality<br><em>minutes late.</em>';
+    }
+    document.querySelectorAll('p, div, span, em, strong').forEach(el => {
+      if (el.children.length === 0 || el.tagName === 'P') {
+        const txt = el.textContent.replace(/\s+/g, ' ').trim();
+        if (txt.includes('Nossa missão:') || txt.includes('em otimização')) {
+          el.innerHTML = 'Our mission: turn this biological flaw <em>into optimization.</em>';
+        }
+      }
+    });
+  }
+
+  // 2. Dicionário completo de tradução
   const mEn = {
     "Missão": "Mission",
     "Produtos": "Products",
@@ -1026,39 +1042,40 @@ try {
     "Rede Global": "Global Network",
     "Contato": "Contact",
     "SIMULADOR: ONLINE": "SIMULATOR: ONLINE",
+    "SIMULADOR PRIMAL": "PRIMAL SIMULATOR",
     "SISTEMA ATIVO": "SYSTEM ACTIVE",
     "ANOMALIA": "ANOMALY",
     "DETECTADO": "DETECTED",
     "CONECTIVIDADE": "CONNECTIVITY",
     "ARQUIVO KUMANI": "KUMANI ARCHIVE",
     "SOB CONTROLE": "UNDER CONTROL",
-    "MODELOS DISPONÍVEIS": "MODELS AVAILABLE",
-    "SUA VIDA, OTIMIZADA.": "YOUR LIFE, OPTIMIZED."
-  };
-
-  Object.assign(mEn, {
+    "MODELOS DISPONÍVEIS": "AVAILABLE MODELS",
+    "SUA VIDA, OTIMIZADA.": "YOUR LIFE, OPTIMIZED.",
     "TRANSMISSÕES PIRATAS": "PIRATE BROADCASTS",
     "Sistema Ativo": "System Active",
     "A biologia": "Biology",
     "entrega a realidade": "delivers reality",
     "com minutos": "minutes",
     "de atraso.": "late.",
+    "de atraso": "late",
+    "com atraso": "late",
+    "atraso.": "late.",
+    "atraso": "late",
+    "minutos": "minutes",
     "Você não está vivendo o presente.": "You are not living in the present.",
     "Você está vivendo": "You are living",
     "uma reprise.": "a rerun.",
-    "Nossa missão: transformar essa falha biológica": "Our mission: transform this biological flaw",
+    "Nossa missão: transformar essa falha biológica": "Our mission: turn this biological flaw",
     "em otimização.": "into optimization.",
-    "Testar Sincronização": "Test Synchronization",
+    "em otimização": "into optimization",
+    "otimização.": "optimization.",
+    "otimização": "optimization",
+    "Testar Sincronização": "Test Sync",
     "Acessar Terminal": "Access Terminal",
     "Conectividade": "Connectivity",
     "Modelos": "Models",
     "Sincronizados": "Synchronized",
-    "Loop Ativo": "Active Loop"
-  });
-
-  // Bloco 3: Dicionário complementar contendo traduções para textos institucionais, status do sistema e linhas de produtos da Chronos Corp.
-
-    Object.assign(mEn, {
+    "Loop Ativo": "Active Loop",
     "Nossa Missão": "Our Mission",
     "Você vive no": "You live in the",
     "passado.": "past.",
@@ -1075,15 +1092,13 @@ try {
     "Qual sincronização": "Which synchronization",
     "você escolhe?": "do you choose?",
     "LINHA GLOBAL": "GLOBAL LINE",
-    "LINHA EXCLUSIVA": "EXCLUSIVE LINE"
-  });
-
-  Object.assign(mEn, {
+    "LINHA EXCLUSIVA": "EXCLUSIVE LINE",
     "Terminal de Acesso": "Access Terminal",
     "Teste de Sincronização": "Synchronization Test",
     "Descubra seu": "Discover your",
     "modelo ideal.": "ideal model.",
     "PERGUNTA": "QUESTION",
+    " DE ": " OF ",
     "SEU MODELO V-CHRONOS": "YOUR V-CHRONOS MODEL",
     "REFAZER TESTE": "RETAKE TEST",
     "VER MODELOS NO INSTAGRAM": "VIEW MODELS ON INSTAGRAM",
@@ -1096,166 +1111,241 @@ try {
     "Contato Corporativo": "Corporate Contact",
     "Sincronize": "Synchronize",
     "conosco.": "with us.",
-    "Todos os direitos reservados.": "All rights reserved."
-  });
+    "Todos os direitos reservados.": "All rights reserved.",
+    "ALERTA DE SISTEMA": "SYSTEM ALERT",
+    "MONITORAMENTO EM TEMPO REAL": "REAL-TIME MONITORING",
 
+    // Quiz
+    "Como você descreveria sua relação com o tempo?": "How would you describe your relationship with time?",
+    "Nunca tenho o suficiente": "I never have enough",
+    "Preciso de controle total": "I need total control",
+    "Quero entender meus ciclos naturais": "I want to understand my natural cycles",
+    "Prefiro operar sem ser percebido": "I prefer to operate unnoticed",
+    "Qual é a sua prioridade?": "What is your priority?",
+    "Performance física e foco": "Physical performance and focus",
+    "Presença global e cognição executiva": "Global presence and executive cognition",
+    "Inteligência emocional e relações": "Emotional intelligence and relationships",
+    "Resistência em ambientes extremos": "Endurance in extreme environments",
+    "O que você faria com mais tempo percebido?": "What would you do with more perceived time?",
+    "Otimizar cada segundo do dia": "Optimize every second of the day",
+    "Dominar múltiplos contextos simultâneos": "Master multiple simultaneous contexts",
+    "Explorar territórios inacessíveis": "Explore inaccessible territories",
+    "Conectar-me com algo maior": "Connect with something greater",
+    "Qual é a sua maior vulnerabilidade?": "What is your greatest vulnerability?",
+    "Perder o controle da atenção": "Losing control of my attention",
+    "Ser rastreado ou monitorado": "Being tracked or monitored",
+    "Não conseguir ler os outros": "Not being able to read others",
+    "Ficar para trás no ritmo global": "Falling behind the global pace",
 
-   function runEn(){
-    const w=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);
-    let n;
-    while(n=w.nextNode()){
-      let v=n.nodeValue;
-      for(const [pt, en] of Object.entries(mEn)){
-        if(v.includes(pt)) v=v.split(pt).join(en);
-      }
-      if(v!==n.nodeValue) n.nodeValue=v;
-    }
-  }
-  runEn();setInterval(runEn,300);
-} catch(e){}
-
-</script>
-      
-<script>
-(function() {
-  document.documentElement.lang = 'es';
-  document.title = 'Chronos Corp — Tu vida, optimizada.';
-
-  const mEs = {
-    "Missão": "Misión",
-    "Produtos": "Productos",
-    "Sincronizar": "Sincronizar",
-    "Arquivo": "Archivo",
-    "Rede Global": "Red Global",
-    "Contato": "Contacto",
-    "SIMULADOR: ONLINE": "SIMULADOR: EN LÍNEA",
-    "SIMULADOR PRIMAL": "SIMULADOR PRIMAL",
-    "SISTEMA ATIVO": "SISTEMA ACTIVO",
-    "ANOMALIA": "ANOMALÍA",
-    "DETECTADO": "DETECTADO",
-    "CONECTIVIDADE": "CONECTIVIDAD",
-    "ARQUIVO KUMANI": "ARCHIVO KUMANI",
-    "SOB CONTROLE": "BAJO CONTROL",
-    "MODELOS DISPONÍVEIS": "MODELOS DISPONIBLES",
-    "SUA VIDA, OTIMIZADA.": "TU VIDA, OPTIMIZADA.",
-    "TRANSMISSÕES PIRATAS": "TRANSMISIONES PIRATAS",
-    "Sistema Ativo": "Sistema Activo",
-    "A biologia": "La biología",
-    "entrega a realidade": "entrega la realidad",
-    "com minutos": "con minutos",
-    "de atraso.": "de retraso.",
-    "de atraso": "de retraso",
-    "atraso.": "retraso.",
-    "atraso": "retraso",
-    "minutos": "minutos",
-    "Você não está vivendo o presente.": "No estás viviendo el presente.",
-    "Você está vivendo": "Estás viviendo",
-    "uma reprise.": "una repetición.",
-    "Nossa missão: transformar essa falha biológica": "Nuestra misión: transformar esta falla biológica",
-    "em otimização.": "en optimización.",
-    "em otimização": "en optimización",
-    "otimização.": "optimización.",
-    "otimização": "optimización",
-    "Testar Sincronização": "Probar Sincronización",
-    "Acessar Terminal": "Acceder al Terminal",
-    "Conectividade": "Conectividad",
-    "Modelos": "Modelos",
-    "Sincronizados": "Sincronizados",
-    "Loop Ativo": "Loop Activo",
-    "Nossa Missão": "Nuestra Misión",
-    "Você vive no": "Vives en el",
-    "passado.": "pasado.",
-    "Nós mudamos isso.": "Nosotros cambiamos eso.",
-    "Status do Sistema": "Estado del Sistema",
-    "Simulador Primal": "Simulador Primal",
-    "Conectividade Global": "Conectividad Global",
-    "Usuários Sincronizados": "Usuarios Sincronizados",
-    "Anomalia Detectada": "Anomalía Detectada",
-    "Origem da Anomalia": "Origen de la Anomalía",
-    "Em Análise": "En Análisis",
-    "Transmissões Piratas": "Transmisiones Piratas",
-    "Protocolo de Contenção": "Protocolo de Contención",
-    "Qual sincronização": "¿Qué sincronización",
-    "você escolhe?": "eliges?",
-    "LINHA GLOBAL": "LÍNEA GLOBAL",
-    "LINHA EXCLUSIVA": "LÍNEA EXCLUSIVA",
-    "Terminal de Acesso": "Terminal de Acceso",
-    "Teste de Sincronização": "Prueba de Sincronización",
-    "Descubra seu": "Descubre tu",
-    "modelo ideal.": "modelo ideal.",
-    "PERGUNTA": "PREGUNTA",
-    "SEU MODELO V-CHRONOS": "TU MODELO V-CHRONOS",
-    "REFAZER TESTE": "REHACER PRUEBA",
-    "VER MODELOS NO INSTAGRAM": "VER MODELOS EN INSTAGRAM",
-    "Perfil Corporativo": "Perfil Corporativo",
-    "Liderança &": "Liderazgo e",
-    "Pesquisa.": "Investigación.",
-    "AMOSTRA 0 // V-CHRONOS": "MUESTRA 0 // V-CHRONOS",
-    "Neurocientista e Engenheira de Terminal Metacognitivo.": "Neurocientífica e Ingeniera de Terminal Metacognitivo.",
-    "FUNDADOR & DIRETOR EXECUTIVO // CEO // CHRONOS CORP": "FUNDADOR Y DIRECTOR EJECUTIVO // CEO // CHRONOS CORP",
-    "Contato Corporativo": "Contacto Corporativo",
-    "Sincronize": "Sincroniza",
-    "conosco.": "con nosotros.",
-    "Todos os direitos reservados.": "Todos los derechos reservados.",
-    "ALERTA DE SISTEMA": "ALERTA DE SISTEMA",
-    "MONITORAMENTO EM TEMPO REAL": "MONITOREO EN TIEMPO REAL",
-    "Como você descreveria sua relação com o tempo?": "¿Cómo describirías tu relación con el tiempo?",
-    "Nunca tenho o suficiente": "Nunca tengo suficiente",
-    "Preciso de controle total": "Necesito control total",
-    "Quero entender meus ciclos naturais": "Quiero entender mis ciclos naturales",
-    "Prefiro operar sem ser percebido": "Prefiero operar sin ser percibido",
-    "Qual é a sua prioridade?": "¿Cuál es tu prioridad?",
-    "Performance física e foco": "Rendimiento físico y enfoque",
-    "Presença global e cognição executiva": "Presencia global y cognición ejecutiva",
-    "Inteligência emocional e relações": "Inteligencia emocional y relaciones",
-    "Resistência em ambientes extremos": "Resistencia en entornos extremos",
-    "O que você faria com mais tempo percebido?": "¿Qué harías con más tiempo percibido?",
-    "Otimizar cada segundo do dia": "Optimizar cada segundo del día",
-    "Dominar múltiplos contextos simultâneos": "Dominar múltiples contextos simultáneos",
-    "Explorar territórios inacessíveis": "Explorar territorios inaccesibles",
-    "Conectar-me com algo maior": "Conectarme con algo más grande",
-    "Qual é a sua maior vulnerabilidade?": "¿Cuál es tu mayor vulnerabilidad?",
-    "Perder o controle da atenção": "Perder el control de la atención",
-    "Ser rastreado ou monitorado": "Ser rastreado o monitoreado",
-    "Não conseguir ler os outros": "No poder leer a los demás",
-    "Ficar para trás no ritmo global": "Quedarme atrás en el ritmo global",
-    "O modelo de massa. Sua relação com o tempo é pragmática — você quer otimização contínua, sem fricção. O Simulador Primal trabalha por você nas sombras.": "El modelo masivo. Tu relación con el tiempo es pragmática — quieres optimización continua, sin fricción. El Simulador Primal trabaja para ti en las sombras.",
-    "Acesso total. Você não quer otimizar o tempo — quer controlá-lo. O Omega é o único modelo com protocolo completo de fluxo temporal. O modelo que Luc Vangersson usa.": "Acceso total. No quieres optimizar el tiempo — quieres controlarlo. El Omega es el único modelo con protocolo completo de flujo temporal. El modelo que usa Luc Vangersson.",
-    "Memória ancestral. Você busca algo que a tecnologia normalmente ignora: conexão com ciclos maiores do que a produtividade. O Orbital-X sincroniza com o que nunca para.": "Memoria ancestral. Buscas algo que la tecnología normalmente ignora: conexión con ciclos más grandes que la productividad. El Orbital-X se sincroniza con lo que nunca se detiene.",
-    "Percepção oculta. Você opera melhor quando ninguém sabe que você está operando. Protocolo não rastreável. Acesso restrito — e é assim que prefere.": "Percepción oculta. Operas mejor cuando nadie sabe que estás operando. Protocolo no rastreable. Acceso restringido — y así es como lo prefieres.",
-    "Habilidades físicas. Seu presente é o corpo em movimento. O Pulse-V recalibra a percepção de esforço para que você sempre tenha mais do que pensava.": "Habilidades físicas. Tu presente es el cuerpo en movimiento. El Pulse-V recalibra la percepción del esfuerzo para que siempre tengas más de lo que pensabas.",
-    "Fluxo temporal executivo. Sua mente processa múltiplos contextos simultaneamente. O Nexus Time torna isso uma vantagem — não um peso.": "Flujo temporal ejecutivo. Tu mente procesa múltiples contextos simultáneamente. El Nexus Time convierte esto en una ventaja — no en un peso.",
-    "Cognição social. Você lê ambientes antes que os outros percebam o que está acontecendo. O Spectra G4 amplifica esse protocolo.": "Cognición social. Lees entornos antes de que los demás noten lo que está pasando. El Spectra G4 amplifica este protocolo.",
-    "Resistência e precisão. Você opera em condições que eliminam os outros. O Alpha é tático, robusto, e nunca pede permissão.": "Resistencia y precisión. Operas en condiciones que eliminan a los demás. El Alpha es táctico, robusto, y nunca pide permiso.",
-    "Percepção espacial. Você pensa em altitude — literal ou metaforicamente. O Aero expande o perímetro do que você consegue perceber.": "Percepción espacial. Piensas en altitud — literal o metafóricamente. El Aero expande el perímetro de lo que puedes percibir."
+    // Model Descriptions
+    "O modelo de massa. Sua relação com o tempo é pragmática — você quer otimização contínua, sem fricção. O Simulador Primal trabalha por você nas sombras.": "The mass-market model. Your relationship with time is pragmatic — you want continuous, frictionless optimization. The Primal Simulator works for you in the shadows.",
+    "Acesso total. Você não quer otimizar o tempo — quer controlá-lo. O Omega é o único modelo com protocolo completo de fluxo temporal. O modelo que Luc Vangersson usa.": "Total access. You don't want to optimize time — you want to control it. Omega is the only model with a full temporal flow protocol. The model Luc Vangersson wears.",
+    "Memória ancestral. Você busca algo que a tecnologia normalmente ignora: conexão com ciclos maiores do que a produtividade. O Orbital-X sincroniza com o que nunca para.": "Ancestral memory. You seek what technology usually ignores: connection to cycles greater than productivity. Orbital-X syncs with what never stops.",
+    "Percepção oculta. Você opera melhor quando ninguém sabe que você está operando. Protocolo não rastreável. Acesso restrito — e é assim que prefere.": "Hidden perception. You operate best when no one knows you are operating. Untraceable protocol. Restricted access — and that's how you prefer it.",
+    "Habilidades físicas. Seu presente é o corpo em movimento. O Pulse-V recalibra a percepção de esforço para que você sempre tenha mais do que pensava.": "Physical capabilities. Your present is the body in motion. Pulse-V recalibrates effort perception so you always have more left than you thought.",
+    "Fluxo temporal executivo. Sua mente processa múltiplos contextos simultaneamente. O Nexus Time torna isso uma vantagem — não um peso.": "Executive temporal flow. Your mind processes multiple contexts simultaneously. Nexus Time turns that into an advantage — not a burden.",
+    "Cognição social. Você lê ambientes antes que os outros percebam o que está acontecendo. O Spectra G4 amplifica esse protocolo.": "Social cognition. You read rooms before others realize what is happening. Spectra G4 amplifies this protocol.",
+    "Resistência e precisão. Você opera em condições que eliminam os outros. O Alpha é tático, robusto, e nunca pede permissão.": "Endurance and precision. You operate in conditions that eliminate others. Alpha is tactical, rugged, and never asks permission.",
+    "Percepção espacial. Você pensa em altitude — literal ou metaforicamente. O Aero expande o perímetro do que você consegue perceber.": "Spatial perception. You think at altitude — literally or metaphorically. Aero expands the perimeter of what you can perceive."
   };
 
-  const sortedEntries = Object.entries(mEs).sort((a, b) => b[0].length - a[0].length);
+  const sortedEntries = Object.entries(mEn).sort((a, b) => b[0].length - a[0].length);
 
-  function runEs() {
+  function runEn() {
+    fixHeroEn();
     const w = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
     let n;
     while ((n = w.nextNode())) {
       if (!n.nodeValue || !n.nodeValue.trim()) continue;
       let v = n.nodeValue.replace(/\s+/g, ' ');
-      for (const [pt, es] of sortedEntries) {
-        if (v.includes(pt)) v = v.split(pt).join(es);
+      for (const [pt, en] of sortedEntries) {
+        if (v.includes(pt)) v = v.split(pt).join(en);
       }
-      v = v.replace(/\bcom\s*$/i, '');
       if (v !== n.nodeValue) n.nodeValue = v;
     }
   }
 
-  runEs();
-  setInterval(runEs, 300);
+  runEn();
+  setInterval(runEn, 300);
+})();
+  runEn();
+  setInterval(runEn, 300);
+})();
+  
+</script>
+
+<!-- SELETOR TRILÍNGUE DIRETO (PT | ES | EN) -->
+<div style="position:fixed;top:68px;right:24px;z-index:9998;display:flex;gap:6px;background:rgba(2,5,8,0.92);padding:6px 10px;border:1px solid #007878;backdrop-filter:blur(8px)">
+  <a href="index.html" style="text-decoration:none;border:1px solid #007878;color:#F0F4F4;font-family:'Syne Mono',monospace;font-size:11px;padding:3px 8px">PT</a>
+  <a href="es.html" style="text-decoration:none;border:1px solid #007878;color:#F0F4F4;font-family:'Syne Mono',monospace;font-size:11px;padding:3px 8px">ES</a>
+  <a href="en.html" style="text-decoration:none;border:1px solid #00B8B8;color:#00B8B8;font-family:'Syne Mono',monospace;font-size:11px;padding:3px 8px">EN</a>
+</div>
+
+</body>
+</html>
+      addAnomAlert(`Nó ${n.name} verificado — ${n.type==='anom'?'ANOMALIA ATIVA':'sincronizado'}.`,n.type==='anom'?3:1);
+    }
+  });
+});
+</script>
+
+<script>
+(function() {
+  document.documentElement.lang = 'en';
+  document.title = 'Chronos Corp — Your life, optimized.';
+
+  function fixHeroEn() {
+    const h1 = document.querySelector('h1');
+    if (h1 && (h1.textContent.includes('atraso') || h1.textContent.includes('biologia') || h1.textContent.includes('Biology'))) {
+      h1.innerHTML = 'Biology<br>delivers reality<br><em>minutes late.</em>';
+    }
+    document.querySelectorAll('p, div, span, em, strong').forEach(el => {
+      if (el.children.length === 0 || el.tagName === 'P') {
+        const txt = el.textContent.replace(/\s+/g, ' ').trim();
+        if (txt.includes('Nossa missão:') || txt.includes('em otimização')) {
+          el.innerHTML = 'Our mission: turn this biological flaw <em>into optimization.</em>';
+        }
+      }
+    });
+  }
+
+  const mEn = {
+    "Missão": "Mission",
+    "Produtos": "Products",
+    "Sincronizar": "Sync",
+    "Arquivo": "Archive",
+    "Rede Global": "Global Network",
+    "Contato": "Contact",
+    "SIMULADOR: ONLINE": "SIMULATOR: ONLINE",
+    "SIMULADOR PRIMAL": "PRIMAL SIMULATOR",
+    "SISTEMA ATIVO": "SYSTEM ACTIVE",
+    "ANOMALIA": "ANOMALY",
+    "DETECTADO": "DETECTED",
+    "CONECTIVIDADE": "CONNECTIVITY",
+    "ARQUIVO KUMANI": "KUMANI ARCHIVE",
+    "SOB CONTROLE": "UNDER CONTROL",
+    "MODELOS DISPONÍVEIS": "AVAILABLE MODELS",
+    "SUA VIDA, OTIMIZADA.": "YOUR LIFE, OPTIMIZED.",
+    "TRANSMISSÕES PIRATAS": "PIRATE BROADCASTS",
+    "Sistema Ativo": "System Active",
+    "A biologia": "Biology",
+    "entrega a realidade": "delivers reality",
+    "com minutos": "minutes",
+    "de atraso.": "late.",
+    "de atraso": "late",
+    "com atraso": "late",
+    "atraso.": "late.",
+    "atraso": "late",
+    "minutos": "minutes",
+    "Você não está vivendo o presente.": "You are not living in the present.",
+    "Você está vivendo": "You are living",
+    "uma reprise.": "a rerun.",
+    "Nossa missão: transformar essa falha biológica": "Our mission: turn this biological flaw",
+    "em otimização.": "into optimization.",
+    "em otimização": "into optimization",
+    "otimização.": "optimization.",
+    "otimização": "optimization",
+    "Testar Sincronização": "Test Sync",
+    "Acessar Terminal": "Access Terminal",
+    "Conectividade": "Connectivity",
+    "Modelos": "Models",
+    "Sincronizados": "Synchronized",
+    "Loop Ativo": "Active Loop",
+    "Nossa Missão": "Our Mission",
+    "Você vive no": "You live in the",
+    "passado.": "past.",
+    "Nós mudamos isso.": "We change that.",
+    "Status do Sistema": "System Status",
+    "Simulador Primal": "Primal Simulator",
+    "Conectividade Global": "Global Connectivity",
+    "Usuários Sincronizados": "Synchronized Users",
+    "Anomalia Detectada": "Anomaly Detected",
+    "Origem da Anomalia": "Anomaly Origin",
+    "Em Análise": "Under Analysis",
+    "Transmissões Piratas": "Pirate Broadcasts",
+    "Protocolo de Contenção": "Containment Protocol",
+    "Qual sincronização": "Which synchronization",
+    "você escolhe?": "do you choose?",
+    "LINHA GLOBAL": "GLOBAL LINE",
+    "LINHA EXCLUSIVA": "EXCLUSIVE LINE",
+    "Terminal de Acesso": "Access Terminal",
+    "Teste de Sincronização": "Synchronization Test",
+    "Descubra seu": "Discover your",
+    "modelo ideal.": "ideal model.",
+    "PERGUNTA": "QUESTION",
+    " DE ": " OF ",
+    "SEU MODELO V-CHRONOS": "YOUR V-CHRONOS MODEL",
+    "REFAZER TESTE": "RETAKE TEST",
+    "VER MODELOS NO INSTAGRAM": "VIEW MODELS ON INSTAGRAM",
+    "Perfil Corporativo": "Corporate Profile",
+    "Liderança &": "Leadership &",
+    "Pesquisa.": "Research.",
+    "AMOSTRA 0 // V-CHRONOS": "SAMPLE 0 // V-CHRONOS",
+    "Neurocientista e Engenheira de Terminal Metacognitivo.": "Neuroscientist and Metacognitive Terminal Engineer.",
+    "FUNDADOR & DIRETOR EXECUTIVO // CEO // CHRONOS CORP": "FOUNDER & CHIEF EXECUTIVE OFFICER // CEO // CHRONOS CORP",
+    "Contato Corporativo": "Corporate Contact",
+    "Sincronize": "Synchronize",
+    "conosco.": "with us.",
+    "Todos os direitos reservados.": "All rights reserved.",
+    "ALERTA DE SISTEMA": "SYSTEM ALERT",
+    "MONITORAMENTO EM TEMPO REAL": "REAL-TIME MONITORING",
+    "Como você descreveria sua relação com o tempo?": "How would you describe your relationship with time?",
+    "Nunca tenho o suficiente": "I never have enough",
+    "Preciso de controle total": "I need total control",
+    "Quero entender meus ciclos naturais": "I want to understand my natural cycles",
+    "Prefiro operar sem ser percebido": "I prefer to operate unnoticed",
+    "Qual é a sua prioridade?": "What is your priority?",
+    "Performance física e foco": "Physical performance and focus",
+    "Presença global e cognição executiva": "Global presence and executive cognition",
+    "Inteligência emocional e relações": "Emotional intelligence and relationships",
+    "Resistência em ambientes extremos": "Endurance in extreme environments",
+    "O que você faria com mais tempo percebido?": "What would you do with more perceived time?",
+    "Otimizar cada segundo do dia": "Optimize every second of the day",
+    "Dominar múltiplos contextos simultâneos": "Master multiple simultaneous contexts",
+    "Explorar territórios inacessíveis": "Explore inaccessible territories",
+    "Conectar-me com algo maior": "Connect with something greater",
+    "Qual é a sua maior vulnerabilidade?": "What is your greatest vulnerability?",
+    "Perder o controle da atenção": "Losing control of my attention",
+    "Ser rastreado ou monitorado": "Being tracked or monitored",
+    "Não conseguir ler os outros": "Not being able to read others",
+    "Ficar para trás no ritmo global": "Falling behind the global pace",
+    "O modelo de massa. Sua relação com o tempo é pragmática — você quer otimização contínua, sem fricção. O Simulador Primal trabalha por você nas sombras.": "The mass-market model. Your relationship with time is pragmatic — you want continuous, frictionless optimization. The Primal Simulator works for you in the shadows.",
+    "Acesso total. Você não quer otimizar o tempo — quer controlá-lo. O Omega é o único modelo com protocolo completo de fluxo temporal. O modelo que Luc Vangersson usa.": "Total access. You don't want to optimize time — you want to control it. Omega is the only model with a full temporal flow protocol. The model Luc Vangersson wears.",
+    "Memória ancestral. Você busca algo que a tecnologia normalmente ignora: conexão com ciclos maiores do que a produtividade. O Orbital-X sincroniza com o que nunca para.": "Ancestral memory. You seek what technology usually ignores: connection to cycles greater than productivity. Orbital-X syncs with what never stops.",
+    "Percepção oculta. Você opera melhor quando ninguém sabe que você está operando. Protocolo não rastreável. Acesso restrito — e é assim que prefere.": "Hidden perception. You operate best when no one knows you are operating. Untraceable protocol. Restricted access — and that's how you prefer it.",
+    "Habilidades físicas. Seu presente é o corpo em movimento. O Pulse-V recalibra a percepção de esforço para que você sempre tenha mais do que pensava.": "Physical capabilities. Your present is the body in motion. Pulse-V recalibrates effort perception so you always have more left than you thought.",
+    "Fluxo temporal executivo. Sua mente processa múltiplos contextos simultaneamente. O Nexus Time torna isso uma vantagem — não um peso.": "Executive temporal flow. Your mind processes multiple contexts simultaneously. Nexus Time turns that into an advantage — not a burden.",
+    "Cognição social. Você lê ambientes antes que os outros percebam o que está acontecendo. O Spectra G4 amplifica esse protocolo.": "Social cognition. You read rooms before others realize what is happening. Spectra G4 amplifies this protocol.",
+    "Resistência e precisão. Você opera em condições que eliminam os outros. O Alpha é tático, robusto, e nunca pede permissão.": "Endurance and precision. You operate in conditions that eliminate others. Alpha is tactical, rugged, and never asks permission.",
+    "Percepção espacial. Você pensa em altitude — literal ou metaforicamente. O Aero expande o perímetro do que você consegue perceber.": "Spatial perception. You think at altitude — literally or metaphorically. Aero expands the perimeter of what you can perceive."
+  };
+
+  const sortedEntries = Object.entries(mEn).sort((a, b) => b.length - a.length);
+
+  function runEn() {
+    fixHeroEn();
+    const w = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+    let n;
+    while ((n = w.nextNode())) {
+      if (!n.nodeValue || !n.nodeValue.trim()) continue;
+      let v = n.nodeValue.replace(/\s+/g, ' ');
+      for (const [pt, en] of sortedEntries) {
+        if (v.includes(pt)) v = v.split(pt).join(en);
+      }
+      if (v !== n.nodeValue) n.nodeValue = v;
+    }
+  }
+
+  runEn();
+  setInterval(runEn, 300);
 })();
 </script>
 
 <!-- SELETOR TRILÍNGUE DIRETO (PT | ES | EN) -->
 <div style="position:fixed;top:68px;right:24px;z-index:9998;display:flex;gap:6px;background:rgba(2,5,8,0.92);padding:6px 10px;border:1px solid #007878;backdrop-filter:blur(8px)">
   <a href="index.html" style="text-decoration:none;border:1px solid #007878;color:#F0F4F4;font-family:'Syne Mono',monospace;font-size:11px;padding:3px 8px">PT</a>
-  <a href="es.html" style="text-decoration:none;border:1px solid #00B8B8;color:#00B8B8;font-family:'Syne Mono',monospace;font-size:11px;padding:3px 8px">ES</a>
-  <a href="en.html" style="text-decoration:none;border:1px solid #007878;color:#F0F4F4;font-family:'Syne Mono',monospace;font-size:11px;padding:3px 8px">EN</a>
+  <a href="es.html" style="text-decoration:none;border:1px solid #007878;color:#F0F4F4;font-family:'Syne Mono',monospace;font-size:11px;padding:3px 8px">ES</a>
+  <a href="en.html" style="text-decoration:none;border:1px solid #00B8B8;color:#00B8B8;font-family:'Syne Mono',monospace;font-size:11px;padding:3px 8px">EN</a>
 </div>
 
 </body>
