@@ -1017,21 +1017,48 @@ canvas.addEventListener('click',e=>{
 document.documentElement.lang='en';
 document.title='Chronos Corp — Your life, optimized.';
 const mEn=[
+const mEn=[
   ['Missão','Mission'],['Produtos','Products'],['Sincronizar','Sync'],['Arquivo','Archive'],['Rede Global','Global Network'],['Contato','Contact'],
   ['SIMULADOR: ONLINE','SIMULATOR: ONLINE'],['SISTEMA ATIVO','SYSTEM ACTIVE'],['ANOMALIA','ANOMALY'],['DETECTADO','DETECTED'],
   ['CONECTIVIDADE','CONNECTIVITY'],['ARQUIVO KUMANI','KUMANI ARCHIVE'],['SOB CONTROLE','UNDER CONTROL'],['MODELOS DISPONÍVEIS','MODELS AVAILABLE'],
   ['TRANSMISSÕES PIRATAS','PIRATE BROADCASTS'],['IGNORE','IGNORE'],['SUA VIDA, OTIMIZADA.','YOUR LIFE, OPTIMIZED.'],
-  ['Sistema Ativo','System Active'],['A biologia','Biology'],['entrega a realidade','delivers reality'],['com','with'],['minutos','minutes'],['de atraso.','late.'],
+  ['Sistema Ativo','System Active'],['A biologia','Biology'],['entrega a realidade','delivers reality'],['com minutos','minutes'],['de atraso.','late.'],
   ['Você não está vivendo o presente.','You are not living in the present.'],['Você está vivendo','You are living'],['uma reprise.','a rerun.'],
-  ['Nossa missão: transformar essa falha biológica','Our mission: transform this biological flaw'],['em','into'],['otimização.','optimization.'],
+  ['Nossa missão: transformar essa falha biológica','Our mission: transform this biological flaw'],['em otimização.','into optimization.'],
   ['Testar Sincronização','Test Synchronization'],['Acessar Terminal','Access Terminal'],['Conectividade','Connectivity'],['Modelos','Models'],
   ['Sincronizados','Synchronized'],['Loop Ativo','Active Loop'],['Nossa Missão','Our Mission'],['Você vive no','You live in the'],
-  ['passado.','past.'],['Nós mudamos isso.','We change that.'],['Qual sincronização','Which synchronization'],['você','do you'],['escolhe?','choose?']
+  ['passado.','past.'],['Nós mudamos isso.','We change that.'],
+  ['O cérebro humano processa o presente com milissegundos de atraso.','The human brain processes the present with milliseconds of delay.'],
+  ['Todos nós habitamos uma reprise constante da realidade.','We all inhabit a constant rerun of reality.'],
+  ['Desde o surgimento da espécie, essa latência biológica foi aceita como inevitável.','Since the dawn of the species, this biological latency was accepted as inevitable.'],
+  ['A Chronos Corp discorda. Através do','Chronos Corp disagrees. Through the'],['e do','and the'],
+  ['desenvolvemos a primeira tecnologia capaz de colonizar o gap entre percepção e consciência.','we developed the first technology capable of colonizing the gap between perception and consciousness.'],
+  ['Ou é o que acreditamos.','Or so we believe.'],
+  ['Status do Sistema','System Status'],['Simulador Primal','Primal Simulator'],['Conectividade Global','Global Connectivity'],
+  ['Usuários Sincronizados','Synchronized Users'],['Anomalia Detectada','Anomaly Detected'],['Origem da Anomalia','Anomaly Origin'],
+  ['Em Análise','Under Analysis'],['Transmissões Piratas','Pirate Broadcasts'],['DETECTADAS','DETECTED'],
+  ['Protocolo de Contenção','Containment Protocol'],['ATIVO','ACTIVE']
 ];
 mEn.push(
+  ['Qual sincronização','Which synchronization'],['você escolhe?','do you choose?'],
+  ['LINHA GLOBAL','GLOBAL LINE'],['Acesso em Massa','Mass Access'],['Disponível — Padrão Global','Available — Global Standard'],
+  ['LINHA STANDARD','STANDARD LINE'],['Base + Tático','Base + Tactical'],['Disponível','Available'],
+  ['LINHA PERFORMANCE','PERFORMANCE LINE'],['Habilidades + Foco','Skills + Focus'],
+  ['LINHA ALTITUDE','ALTITUDE LINE'],['Navegação + Mobilidade','Navigation + Mobility'],
+  ['LINHA SOCIAL','SOCIAL LINE'],['Cognição Social','Social Cognition'],['Edição Especial','Special Edition'],
+  ['LINHA OPERACIONAL','OPERATIONAL LINE'],['Tático // Restrito','Tactical // Restricted'],['Acesso Restrito','Restricted Access'],
+  ['LINHA EXECUTIVA','EXECUTIVE LINE'],['Fluxo Temporal','Temporal Flow'],['Edição Executiva','Executive Edition'],
+  ['LINHA CELESTIAL','CELESTIAL LINE'],['Memória Ancestral','Ancestral Memory'],['Edição Limitada','Limited Edition'],
+  ['LINHA EXCLUSIVA','EXCLUSIVE LINE'],['Acesso Total // Elite','Total Access // Elite'],['Sob Solicitação','Upon Request'],
+  ['Terminal de Acesso','Access Terminal'],['Acesse o','Access the'],['sistema.','system.'],
+  ['Inicializando módulos do Simulador Primal...','Initializing Primal Simulator modules...'],
+  ['Conectando ao Arquivo Kumani...','Connecting to Kumani Archive...'],['Pronto.','Ready.'],
+  ['Bem-vindo ao sistema Chronos Corp.','Welcome to the Chronos Corp system.'],
+  ['Digite "help" para listar os comandos disponíveis.','Type "help" to list available commands.'],
   ['Teste de Sincronização','Synchronization Test'],['Descubra seu','Discover your'],['modelo ideal.','ideal model.'],
   ['PERGUNTA','QUESTION'],['DE 4 // SIMULADOR PRIMAL','OF 4 // PRIMAL SIMULATOR'],['SEU MODELO V-CHRONOS','YOUR V-CHRONOS MODEL'],
   ['REFAZER TESTE','RETAKE TEST'],['VER MODELOS NO INSTAGRAM','VIEW MODELS ON INSTAGRAM'],
+  ['Acesse o Instagram oficial para visualizar os modelos e especificações técnicas da linha V-Chronos.','Access our official Instagram to view the models and technical specifications of the V-Chronos line.'],
   ['Como você descreveria sua relação com o tempo?','How would you describe your relationship with time?'],
   ['Nunca tenho o suficiente','I never have enough'],['Preciso de controle total','I need total control'],
   ['Quero entender meus ciclos naturais','I want to understand my natural cycles'],['Prefiro operar sem ser percebido','I prefer to operate unnoticed'],
@@ -1045,9 +1072,19 @@ mEn.push(
   ['Ficar para trás no ritmo global','Falling behind the global pace'],
   ['Perfil Corporativo','Corporate Profile'],['Liderança &','Leadership &'],['Pesquisa.','Research.'],
   ['AMOSTRA 0 // V-CHRONOS','SAMPLE 0 // V-CHRONOS'],['Neurocientista e Engenheira de Terminal Metacognitivo.','Neuroscientist and Metacognitive Terminal Engineer.'],
+    ['FUNDADOR & DIRETOR EXECUTIVO // CEO // CHRONOS CORP','FOUNDER & CHIEF EXECUTIVE OFFICER // CEO // CHRONOS CORP'],
+  ['Arquiteto estratégico da Chronos Corp. Lidera a expansão global do ecossistema V-Chronos e a implantação do Simulador Primal em escala planetária.','Strategic architect of Chronos Corp. Leads the global expansion of the V-Chronos ecosystem and planetary deployment of the Primal Simulator.'],
+  ['Cargo','Role'],['Função','Role'],['Divisão','Division'],['Registro','Record'],['Operacional','Operational'],
+
   ['Contato Corporativo','Corporate Contact'],['Sincronize','Synchronize'],['conosco.','with us.'],
+  ['INSTAGRAM OFICIAL','OFFICIAL INSTAGRAM'],['WHATSAPP CORPORATIVO','CORPORATE WHATSAPP'],['CANAL SEGURO','SECURE CHANNEL'],['PORTAL CORPORATIVO','CORPORATE PORTAL'],
+  ['Comunicados, alertas de sistema e atualizações do Simulador Primal em tempo real.','Announcements, system alerts, and Primal Simulator updates in real time.'],
+  ['Atendimento exclusivo para usuários V-Chronos e parceiros da ChronosCorp.','Exclusive support for V-Chronos users and Chronos Corp partners.'],
+  ['Comunicações classificadas. Produtoras, parceiros e solicitações de material.','Classified communications. Production companies, partners, and material requests.'],
+  ['Acesso ao painel completo da Chronos Corp e ao Simulador Primal.','Access to the full Chronos Corp dashboard and the Primal Simulator.'],
   ['Todos os direitos reservados.','All rights reserved.'],['ANOMALIA ATIVA','ACTIVE ANOMALY']
 );
+
 function runEn(){
   const w=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);
   let n;
