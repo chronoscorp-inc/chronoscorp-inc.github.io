@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="lang="en">
+<html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -288,8 +288,8 @@ footer{border-top:1px solid var(--border);padding:2.5rem 0}
       <li><a href="#arquivo-section">Arquivo</a></li>
       <li><a href="#mapa-section">Rede Global</a></li>
       <li><a href="#contato-section">Contato</a></li>
-    <li><a href="index.html">PT</a></li>
-    <li><a href="en.html" style="color:#00B8B8;font-weight:bold;">EN</a></li>
+          <li><a href="index.html" style="color:#00B8B8;font-weight:bold;">PT</a></li>
+    <li><a href="en.html">EN</a></li>
     <li><a href="es.html">ES</a></li>
 
     </ul>
@@ -995,89 +995,51 @@ function drawMapa(){
 }
 drawMapa();
 
-// Tooltip
-canvas.addEventListener('mousemove',e=>{
-  const rect=canvas.getBoundingClientRect();
-  const mx=e.clientX-rect.left,my=e.clientY-rect.top;
-  let found=null;
-  nos.forEach(n=>{if(Math.hypot(n.px-mx,n.py-my)<12)found=n;});
-  if(found){
-    tooltip.style.opacity='1';
-    tooltip.style.left=(e.clientX-rect.left+16)+'px';
-    tooltip.style.top=(e.clientY-rect.top-10)+'px';
-    const status=found.type==='anom'?'⚠ ANOMALY':found.type==='inactive'?'INACTIVE':'SYNCHRONIZED';
-    tooltip.innerHTML=`<span style="color:${found.type==='anom'?'#FF5500':found.type==='inactive'?'#5A6A6A':'#00B8B8'}">${found.name}</span><br>${status}`;
-  } else {tooltip.style.opacity='0';}
-});
-
-canvas.addEventListener('click',e=>{
-  const rect=canvas.getBoundingClientRect();
-  const mx=e.clientX-rect.left,my=e.clientY-rect.top;
-  nos.forEach(n=>{
-    if(Math.hypot(n.px-mx,n.py-my)<12&&n.type!=='inactive'){
-      addAnomAlert(`Node ${n.name} verified — ${n.type==='anom'?'ACTIVE ANOMALY':'synchronized'}.`,n.type==='anom'?3:1);
+try {
+  const tEn = {
+    "Missão": "Mission", "Produtos": "Products", "Terminal": "Terminal",
+    "Sincronizar": "Sync", "Arquivo": "Archive", "Rede Global": "Global Network",
+    "Contato": "Contact", "SIMULADOR: ONLINE": "SIMULATOR: ONLINE",
+    "A biologia": "Biology", "entrega a realidade": "delivers reality",
+    "com": "with", "minutos": "minutes", "de atraso.": "of delay.",
+    "INICIAR SINCRONIZAÇÃO": "START SYNCHRONIZATION",
+    "EXPLORAR CATÁLOGO": "EXPLORE CATALOG",
+    "Você vive no": "You live in the", "passado.": "past.",
+    "Nós mudamos isso.": "We change that.",
+    "Qual sincronização": "Which synchronization",
+    "você": "do you", "escolhe?": "choose?",
+    "Acesse o": "Access the", "sistema.": "system.",
+    "Descubra seu": "Discover your", "modelo ideal.": "ideal model.",
+    "PERGUNTA 1 DE 4 // SIMULADOR PRIMAL": "QUESTION 1 OF 4 // PRIMAL SIMULATOR",
+    "Como você descreveria sua relação com o tempo?": "How would you describe your relationship with time?",
+    "Nunca tenho o suficiente": "I never have enough",
+    "Preciso de controle total": "I need total control",
+    "Quero entender meus ciclos naturais": "I want to understand my natural cycles",
+    "Prefiro operar sem ser percebido": "I prefer to operate unnoticed",
+    "Acesso": "Access", "classificado.": "classified.",
+    "ARQUIVO KUMANI // NÍVEL 5": "KUMANI ARCHIVE // LEVEL 5",
+    "Conectividade": "Connectivity", "global.": "global.",
+    "Os arquivos": "The files", "que importam.": "that matter."
+  };
+  setInterval(() => {
+    const w = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+    let n;
+    while (n = w.nextNode()) {
+      const s = n.nodeValue.trim().replace(/\s+/g, ' ');
+      if (tEn[s]) n.nodeValue = n.nodeValue.replace(n.nodeValue.trim(), tEn[s]);
     }
-  });
-});
-  const dEn = {
-  const dict = {
-  "Missão": "Mission", "Produtos": "Products", "Terminal": "Terminal", "Sincronizar": "Sync", "Arquivo": "Archive", "Rede Global": "Global Network", "Contato": "Contact",
-  "SIMULADOR: ONLINE": "SIMULATOR: ONLINE",
-  "CHRONOS CORP // SISTEMA ATIVO": "CHRONOS CORP // ACTIVE SYSTEM",
-  "A biologia": "Biology", "entrega a realidade": "delivers reality", "com": "with", "minutos": "minutes", "de atraso.": "of delay.",
-  "Você não está vivendo o presente. Você está assistindo a uma gravação processada pelo seu córtex sensorial.": "You are not living the present. You are watching a recording processed by your sensory cortex.",
-  "INICIAR SINCRONIZAÇÃO": "START SYNCHRONIZATION", "EXPLORAR CATÁLOGO": "EXPLORE CATALOG",
-  "Você vive no": "You live in the", "passado.": "past.", "Nós mudamos isso.": "We change that.",
-  "SINCRONIZAÇÃO NEURAL": "NEURAL SYNCHRONIZATION", "USUÁRIOS ATIVOS": "ACTIVE USERS", "LATÊNCIA BIOLÓGICA": "BIOLOGICAL LATENCY"
-};
-Object.assign(dict, {
-  "Qual sincronização": "Which synchronization", "você": "do you", "escolhe?": "choose?",
-  "Acesse o": "Access the", "sistema.": "system.",
-  "Bem-vindo ao sistema Chronos Corp.": "Welcome to the Chronos Corp system.",
-  "Digite HELP para listar os comandos disponíveis.": "Type HELP to list available commands.",
-  "Descubra seu": "Discover your", "modelo ideal.": "ideal model.",
-  "PERGUNTA 1 DE 4 // SIMULADOR PRIMAL": "QUESTION 1 OF 4 // PRIMAL SIMULATOR",
-  "PERGUNTA 2 DE 4 // SIMULADOR PRIMAL": "QUESTION 2 OF 4 // PRIMAL SIMULATOR",
-  "PERGUNTA 3 DE 4 // SIMULADOR PRIMAL": "QUESTION 3 OF 4 // PRIMAL SIMULATOR",
-  "PERGUNTA 4 DE 4 // SIMULADOR PRIMAL": "QUESTION 4 OF 4 // PRIMAL SIMULATOR",
-  "Como você descreveria sua relação com o tempo?": "How would you describe your relationship with time?",
-  "Nunca tenho o suficiente": "I never have enough", "Preciso de controle total": "I need total control",
-  "Quero entender meus ciclos naturais": "I want to understand my natural cycles", "Prefiro operar sem ser percebido": "I prefer to operate unnoticed",
-  "O que acontece quando você fecha os olhos?": "What happens when you close your eyes?",
-  "Vejo memórias que não são minhas": "I see memories that are not mine", "O tempo parece acelerar": "Time seems to accelerate",
-  "Ouço um ruído de frequência baixa": "I hear a low-frequency noise", "Nada — apenas silêncio absoluto": "Nothing — just absolute silence"
-});
-Object.assign(dict, {
-  "Qual é sua maior prioridade agora?": "What is your highest priority right now?",
-  "Recuperar o que foi perdido": "Recover what was lost", "Antecipar o futuro": "Antecipate the future",
-  "Quebrar o ciclo": "Break the cycle", "Manter o sistema estável": "Keep the system stable",
-  "Se pudesse apagar uma memória, o que faria?": "If you could erase one memory, what would you do?",
-  "Apagaria sem hesitar": "I would erase it without hesitation", "Guardaria em um arquivo oculto": "I would store it in a hidden archive",
-  "A memória é o que nos define": "Memory is what defines us", "Já tentei — ela sempre volta": "I already tried — it always comes back",
-  "Acesso": "Access", "classificado.": "classified.",
-  "ARQUIVO KUMANI // NÍVEL 5": "KUMANI ARCHIVE // LEVEL 5",
-  "Acesso restrito. Insira o código de autorização:": "Restricted access. Enter authorization code:",
-  "Conectividade": "Connectivity", "global.": "global.",
-  "Os arquivos": "The files", "que importam.": "that matter."
-});
-setInterval(() => {
-  const w = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
-  let n;
-  while (n = w.nextNode()) {
-    const raw = n.nodeValue;
-    const clean = raw.trim().replace(/\s+/g, ' ');
-    if (dict[clean]) n.nodeValue = raw.replace(raw.trim(), dict[clean]);
-  }
-}, 300);
+  }, 400);
+} catch (e) {}
 
 </script>
-
-<!-- SELETOR TRILÍNGUE DIRETO (PT | ES | EN) -->
+ <!-- SELETOR TRILÍNGUE DIRETO (PT | ES | EN) -->
 <div style="position:fixed;top:68px;right:24px;z-index:9998;display:flex;gap:6px;background:rgba(2,5,8,0.92);padding:6px 10px;border:1px solid #007878;backdrop-filter:blur(8px)">
-  <a href="index.html" style="text-decoration:none;border:1px solid #007878;color:#F0F4F4;font-family:'Syne Mono',monospace;font-size:11px;padding:3px 8px">PT</a>
+  <a href="index.html" style="text-decoration:none;border:1px solid #00B8B8;color:#00B8B8;font-family:'Syne Mono',monospace;font-size:11px;padding:3px 8px">PT</a>
   <a href="es.html" style="text-decoration:none;border:1px solid #007878;color:#F0F4F4;font-family:'Syne Mono',monospace;font-size:11px;padding:3px 8px">ES</a>
-  <a href="en.html" style="text-decoration:none;border:1px solid #00B8B8;color:#00B8B8;font-family:'Syne Mono',monospace;font-size:11px;padding:3px 8px">EN</a>
+  <a href="en.html" style="text-decoration:none;border:1px solid #007878;color:#F0F4F4;font-family:'Syne Mono',monospace;font-size:11px;padding:3px 8px">EN</a>
 </div>
+
+
 
 </body>
 </html>
