@@ -1005,7 +1005,7 @@ canvas.addEventListener('mousemove',e=>{
     tooltip.style.opacity='1';
     tooltip.style.left=(e.clientX-rect.left+16)+'px';
     tooltip.style.top=(e.clientY-rect.top-10)+'px';
-    const status=found.type==='anom'?'⚠ ANOMALIA':found.type==='inactive'?'INATIVO':'SINCRONIZADO';
+    const status=found.type==='anom'?'⚠ ANOMALY':found.type==='inactive'?'INACTIVE':'SYNCHRONIZED';
     tooltip.innerHTML=`<span style="color:${found.type==='anom'?'#FF5500':found.type==='inactive'?'#5A6A6A':'#00B8B8'}">${found.name}</span><br>${status}`;
   } else {tooltip.style.opacity='0';}
 });
@@ -1015,18 +1015,18 @@ canvas.addEventListener('click',e=>{
   const mx=e.clientX-rect.left,my=e.clientY-rect.top;
   nos.forEach(n=>{
     if(Math.hypot(n.px-mx,n.py-my)<12&&n.type!=='inactive'){
-      addAnomAlert(`Nó ${n.name} verificado — ${n.type==='anom'?'ANOMALIA ATIVA':'sincronizado'}.`,n.type==='anom'?3:1);
+      addAnomAlert(`Node ${n.name} verified — ${n.type==='anom'?'ACTIVE ANOMALY':'synchronized'}.`,n.type==='anom'?3:1);
     }
   });
 });
 </script>
-  <div id="google_translate_element" style="display:none"></div>
-<style>.goog-te-banner-frame,.skiptranslate{display:none!important}body{top:0!important}</style>
-<script>
-document.cookie = "googtrans=/pt/en; path=/";
-function googleTranslateElementInit(){new google.translate.TranslateElement({pageLanguage:'pt',includedLanguages:'ns',autoDisplay:false},'google_translate_element')}
-</script>
-<script src="https://google.com"></script>
+
+<!-- SELETOR TRILÍNGUE DIRETO (PT | ES | EN) -->
+<div style="position:fixed;top:68px;right:24px;z-index:9998;display:flex;gap:6px;background:rgba(2,5,8,0.92);padding:6px 10px;border:1px solid #007878;backdrop-filter:blur(8px)">
+  <a href="index.html" style="text-decoration:none;border:1px solid #007878;color:#F0F4F4;font-family:'Syne Mono',monospace;font-size:11px;padding:3px 8px">PT</a>
+  <a href="es.html" style="text-decoration:none;border:1px solid #007878;color:#F0F4F4;font-family:'Syne Mono',monospace;font-size:11px;padding:3px 8px">ES</a>
+  <a href="en.html" style="text-decoration:none;border:1px solid #00B8B8;color:#00B8B8;font-family:'Syne Mono',monospace;font-size:11px;padding:3px 8px">EN</a>
+</div>
 
 </body>
 </html>
