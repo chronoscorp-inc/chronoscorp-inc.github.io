@@ -1020,19 +1020,13 @@ canvas.addEventListener('click',e=>{
   });
 });
 </script>
-  <!-- SELETOR TRILÍNGUE CHRONOS CORP (PT | ES | EN) -->
-<div id="chronos-lang" style="position:fixed;top:68px;right:24px;z-index:9998;display:flex;gap:6px;background:rgba(2,5,8,0.92);padding:6px 10px;border:1px solid #007878;backdrop-filter:blur(8px)">
-  <button onclick="setChronosLang('pt')" style="background:none;border:1px solid #00B8B8;color:#00B8B8;font-family:'Syne Mono',monospace;font-size:11px;padding:3px 8px;cursor:pointer">PT</button>
-  <button onclick="setChronosLang('es')" style="background:none;border:1px solid #007878;color:#F0F4F4;font-family:'Syne Mono',monospace;font-size:11px;padding:3px 8px;cursor:pointer">ES</button>
-  <button onclick="setChronosLang('en')" style="background:none;border:1px solid #007878;color:#F0F4F4;font-family:'Syne Mono',monospace;font-size:11px;padding:3px 8px;cursor:pointer">EN</button>
+ <!-- SELETOR TRILÍNGUE DIRETO (PT | ES | EN) -->
+<div style="position:fixed;top:68px;right:24px;z-index:9998;display:flex;gap:6px;background:rgba(2,5,8,0.92);padding:6px 10px;border:1px solid #007878;backdrop-filter:blur(8px)">
+  <a href="index.html" style="text-decoration:none;border:1px solid #00B8B8;color:#00B8B8;font-family:'Syne Mono',monospace;font-size:11px;padding:3px 8px">PT</a>
+  <a href="es.html" style="text-decoration:none;border:1px solid #007878;color:#F0F4F4;font-family:'Syne Mono',monospace;font-size:11px;padding:3px 8px">ES</a>
+  <a href="en.html" style="text-decoration:none;border:1px solid #007878;color:#F0F4F4;font-family:'Syne Mono',monospace;font-size:11px;padding:3px 8px">EN</a>
 </div>
-<div id="google_translate_element" style="display:none"></div>
-<style>.goog-te-banner-frame,.skiptranslate{display:none!important}body{top:0!important}</style>
-<script>
-function googleTranslateElementInit(){new google.translate.TranslateElement({pageLanguage:'pt',includedLanguages:'pt,es,en',autoDisplay:false},'google_translate_element')}
-function setChronosLang(l){if(l==='pt'){document.cookie='googtrans=;expires=Thu, 01 Jan 1970 00:00:00 UTC;path=/;';location.reload();return}var s=document.querySelector('.goog-te-combo');if(s){s.value=l;s.dispatchEvent(new Event('change'))}}
-</script>
-<script src="https://google.com"></script>
+
 
 
 </body>
