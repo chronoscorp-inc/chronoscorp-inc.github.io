@@ -1012,12 +1012,60 @@ canvas.addEventListener('click',e=>{
     }
   });
 });
+ 
+  // ── TRADUTOR COMPLETO E MOTOR ARG (EN) ──
+document.documentElement.lang='en';
+document.title='Chronos Corp — Your life, optimized.';
+const mEn=[
+  ['Missão','Mission'],['Produtos','Products'],['Sincronizar','Sync'],['Arquivo','Archive'],['Rede Global','Global Network'],['Contato','Contact'],
+  ['SIMULADOR: ONLINE','SIMULATOR: ONLINE'],['SISTEMA ATIVO','SYSTEM ACTIVE'],['ANOMALIA','ANOMALY'],['DETECTADO','DETECTED'],
+  ['CONECTIVIDADE','CONNECTIVITY'],['ARQUIVO KUMANI','KUMANI ARCHIVE'],['SOB CONTROLE','UNDER CONTROL'],['MODELOS DISPONÍVEIS','MODELS AVAILABLE'],
+  ['TRANSMISSÕES PIRATAS','PIRATE BROADCASTS'],['IGNORE','IGNORE'],['SUA VIDA, OTIMIZADA.','YOUR LIFE, OPTIMIZED.'],
+  ['Sistema Ativo','System Active'],['A biologia','Biology'],['entrega a realidade','delivers reality'],['com','with'],['minutos','minutes'],['de atraso.','late.'],
+  ['Você não está vivendo o presente.','You are not living in the present.'],['Você está vivendo','You are living'],['uma reprise.','a rerun.'],
+  ['Nossa missão: transformar essa falha biológica','Our mission: transform this biological flaw'],['em','into'],['otimização.','optimization.'],
+  ['Testar Sincronização','Test Synchronization'],['Acessar Terminal','Access Terminal'],['Conectividade','Connectivity'],['Modelos','Models'],
+  ['Sincronizados','Synchronized'],['Loop Ativo','Active Loop'],['Nossa Missão','Our Mission'],['Você vive no','You live in the'],
+  ['passado.','past.'],['Nós mudamos isso.','We change that.'],['Qual sincronização','Which synchronization'],['você','do you'],['escolhe?','choose?']
+];
+mEn.push(
+  ['Teste de Sincronização','Synchronization Test'],['Descubra seu','Discover your'],['modelo ideal.','ideal model.'],
+  ['PERGUNTA','QUESTION'],['DE 4 // SIMULADOR PRIMAL','OF 4 // PRIMAL SIMULATOR'],['SEU MODELO V-CHRONOS','YOUR V-CHRONOS MODEL'],
+  ['REFAZER TESTE','RETAKE TEST'],['VER MODELOS NO INSTAGRAM','VIEW MODELS ON INSTAGRAM'],
+  ['Como você descreveria sua relação com o tempo?','How would you describe your relationship with time?'],
+  ['Nunca tenho o suficiente','I never have enough'],['Preciso de controle total','I need total control'],
+  ['Quero entender meus ciclos naturais','I want to understand my natural cycles'],['Prefiro operar sem ser percebido','I prefer to operate unnoticed'],
+  ['Qual é a sua prioridade?','What is your priority?'],['Performance física e foco','Physical performance and focus'],
+  ['Presença global e cognição executiva','Global presence and executive cognition'],['Inteligência emocional e relações','Emotional intelligence and relationships'],
+  ['Resistência em ambientes extremos','Endurance in extreme environments'],['O que você faria com mais tempo percebido?','What would you do with more perceived time?'],
+  ['Otimizar cada segundo do dia','Optimize every second of the day'],['Dominar múltiplos contextos simultâneos','Master multiple simultaneous contexts'],
+  ['Explorar territórios inacessíveis','Explore inaccessible territories'],['Conectar-me com algo maior','Connect with something greater'],
+  ['Qual é a sua maior vulnerabilidade?','What is your greatest vulnerability?'],['Perder o controle da atenção','Losing control of attention'],
+  ['Ser rastreado ou monitorado','Being tracked or monitored'],['Não conseguir ler os outros','Not being able to read others'],
+  ['Ficar para trás no ritmo global','Falling behind the global pace'],
+  ['Perfil Corporativo','Corporate Profile'],['Liderança &','Leadership &'],['Pesquisa.','Research.'],
+  ['AMOSTRA 0 // V-CHRONOS','SAMPLE 0 // V-CHRONOS'],['Neurocientista e Engenheira de Terminal Metacognitivo.','Neuroscientist and Metacognitive Terminal Engineer.'],
+  ['Contato Corporativo','Corporate Contact'],['Sincronize','Synchronize'],['conosco.','with us.'],
+  ['Todos os direitos reservados.','All rights reserved.'],['ANOMALIA ATIVA','ACTIVE ANOMALY']
+);
+function runEn(){
+  const w=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);
+  let n;
+  while(n=w.nextNode()){
+    let v=n.nodeValue;
+    for(const[pt,en]of mEn){if(v.includes(pt))v=v.split(pt).join(en);}
+    if(v!==n.nodeValue)n.nodeValue=v;
+  }
+}
+runEn();setInterval(runEn,300);
+
+
 </script>
  <!-- SELETOR TRILÍNGUE DIRETO (PT | ES | EN) -->
 <div style="position:fixed;top:68px;right:24px;z-index:9998;display:flex;gap:6px;background:rgba(2,5,8,0.92);padding:6px 10px;border:1px solid #007878;backdrop-filter:blur(8px)">
-  <a href="index.html" style="text-decoration:none;border:1px solid #00B8B8;color:#00B8B8;font-family:'Syne Mono',monospace;font-size:11px;padding:3px 8px">PT</a>
+  <a href="index.html" style="text-decoration:none;border:1px solid #007878;color:#F0F4F4;font-family:'Syne Mono',monospace;font-size:11px;padding:3px 8px">PT</a>
   <a href="es.html" style="text-decoration:none;border:1px solid #007878;color:#F0F4F4;font-family:'Syne Mono',monospace;font-size:11px;padding:3px 8px">ES</a>
-  <a href="en.html" style="text-decoration:none;border:1px solid #007878;color:#F0F4F4;font-family:'Syne Mono',monospace;font-size:11px;padding:3px 8px">EN</a>
+  <a href="en.html" style="text-decoration:none;border:1px solid #0078788;color:#F00B8B;font-family:'Syne Mono',monospace;font-size:11px;padding:3px 8px">EN</a>
 </div>
 
 
