@@ -1012,7 +1012,106 @@ canvas.addEventListener('click',e=>{
     }
   });
 });
+  
+try {
+  document.documentElement.lang='es';
+  document.title='Chronos Corp — Tu vida, optimizada.';
+
+  const mEs = {
+    "Missão": "Misión",
+    "Produtos": "Productos",
+    "Sincronizar": "Sincronizar",
+    "Arquivo": "Archivo",
+    "Rede Global": "Red Global",
+    "Contato": "Contacto",
+    "SIMULADOR: ONLINE": "SIMULADOR: EN LÍNEA",
+    "SISTEMA ATIVO": "SISTEMA ACTIVO",
+    "ANOMALIA": "ANOMALÍA",
+    "DETECTADO": "DETECTADO",
+    "CONECTIVIDADE": "CONECTIVIDAD",
+    "ARQUIVO KUMANI": "ARCHIVO KUMANI",
+    "SOB CONTROLE": "BAJO CONTROL",
+    "MODELOS DISPONÍVEIS": "MODELOS DISPONIBLES",
+    "SUA VIDA, OTIMIZADA.": "TU VIDA, OPTIMIZADA."
+  };
+
+  Object.assign(mEs, {
+    "TRANSMISSÕES PIRATAS": "TRANSMISIONES PIRATAS",
+    "Sistema Ativo": "Sistema Activo",
+    "A biologia": "La biología",
+    "entrega a realidade": "entrega la realidad",
+    "com minutos": "con minutos",
+    "de atraso.": "de retraso.",
+    "Você não está vivendo o presente.": "No estás viviendo el presente.",
+    "Você está vivendo": "Estás viviendo",
+    "uma reprise.": "una repetición.",
+    "Nossa missão: transformar essa falha biológica": "Nuestra misión: transformar esta falla biológica",
+    "em otimização.": "en optimización.",
+    "Testar Sincronização": "Probar Sincronización",
+    "Acessar Terminal": "Acceder al Terminal",
+    "Conectividade": "Conectividad",
+    "Modelos": "Modelos",
+    "Sincronizados": "Sincronizados",
+    "Loop Ativo": "Loop Activo"
+  });
+
+  Object.assign(mEs, {
+    "Nossa Missão": "Nuestra Misión",
+    "Você vive no": "Vives en el",
+    "passado.": "pasado.",
+    "Nós mudamos isso.": "Nosotros cambiamos eso.",
+    "Status do Sistema": "Estado del Sistema",
+    "Simulador Primal": "Simulador Primal",
+    "Conectividade Global": "Conectividad Global",
+    "Usuários Sincronizados": "Usuarios Sincronizados",
+    "Anomalia Detectada": "Anomalía Detectada",
+    "Origem da Anomalia": "Origen de la Anomalía",
+    "Em Análise": "En Análisis",
+    "Transmissões Piratas": "Transmisiones Piratas",
+    "Protocolo de Contenção": "Protocolo de Contención",
+    "Qual sincronização": "¿Qué sincronización",
+    "você escolhe?": "eliges?",
+    "LINHA GLOBAL": "LÍNEA GLOBAL",
+    "LINHA EXCLUSIVA": "LÍNEA EXCLUSIVA"
+  });
+
+  Object.assign(mEs, {
+    "Terminal de Acesso": "Terminal de Acceso",
+    "Teste de Sincronização": "Prueba de Sincronización",
+    "Descubra seu": "Descubre tu",
+    "modelo ideal.": "modelo ideal.",
+    "PERGUNTA": "PREGUNTA",
+    "SEU MODELO V-CHRONOS": "TU MODELO V-CHRONOS",
+    "REFAZER TESTE": "REHACER PRUEBA",
+    "VER MODELOS NO INSTAGRAM": "VER MODELOS EN INSTAGRAM",
+    "Perfil Corporativo": "Perfil Corporativo",
+    "Liderança &": "Liderazgo e",
+    "Pesquisa.": "Investigación.",
+    "AMOSTRA 0 // V-CHRONOS": "MUESTRA 0 // V-CHRONOS",
+    "Neurocientista e Engenheira de Terminal Metacognitivo.": "Neurocientífica e Ingeniera de Terminal Metacognitivo.",
+    "FUNDADOR & DIRETOR EXECUTIVO // CEO // CHRONOS CORP": "FUNDADOR Y DIRECTOR EJECUTIVO // CEO // CHRONOS CORP",
+    "Contato Corporativo": "Contacto Corporativo",
+    "Sincronize": "Sincroniza",
+    "conosco.": "con nosotros.",
+    "Todos os direitos reservados.": "Todos los derechos reservados."
+  });
+
+  function runEs(){
+    const w=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);
+    let n;
+    while(n=w.nextNode()){
+      let v=n.nodeValue;
+      for(const [pt, es] of Object.entries(mEs)){
+        if(v.includes(pt)) v=v.split(pt).join(es);
+      }
+      if(v!==n.nodeValue) n.nodeValue=v;
+    }
+  }
+  runEs();setInterval(runEs,300);
+} catch(e){}
+
 </script>
+      
  <!-- SELETOR TRILÍNGUE DIRETO (PT | ES | EN) -->
 <div style="position:fixed;top:68px;right:24px;z-index:9998;display:flex;gap:6px;background:rgba(2,5,8,0.92);padding:6px 10px;border:1px solid #007878;backdrop-filter:blur(8px)">
   <a href="index.html" style="text-decoration:none;border:1px solid #00B8B8;color:#00B8B8;font-family:'Syne Mono',monospace;font-size:11px;padding:3px 8px">PT</a>
