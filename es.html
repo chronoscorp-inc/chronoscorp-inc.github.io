@@ -1019,6 +1019,31 @@ canvas.addEventListener('click',e=>{
     }
   });
 });
+  const dEs = {
+  "Missão": "Misión",
+  "Produtos": "Productos",
+  "Terminal": "Terminal",
+  "Sincronizar": "Sincronizar",
+  "Arquivo": "Archivo",
+  "Rede Global": "Red Global",
+  "Contato": "Contacto",
+  "SIMULADOR: ONLINE": "SIMULADOR: EN LÍNEA",
+  "A biologia entrega a realidade com minutos de atraso.": "La biología entrega la realidad con minutos de retraso.",
+  "Você não está vivendo o presente.": "No estás viviendo el presente.",
+  "Nossa Missão": "Nuestra Misión",
+  "Teste de Sincronização": "Prueba de Sincronización",
+  "Arquivo Kumani": "Archivo Kumani"
+};
+const wEs = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+let nEs;
+while (nEs = wEs.nextNode()) {
+  let v = nEs.nodeValue;
+  for (let k in dEs) {
+    if (v.includes(k)) v = v.replace(k, dEs[k]);
+  }
+  nEs.nodeValue = v;
+}
+
 </script>
 
 <!-- SELETOR TRILÍNGUE DIRETO (PT | ES | EN) -->
