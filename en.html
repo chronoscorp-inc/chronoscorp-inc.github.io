@@ -1,8 +1,12 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chronos Corp — Your life, optimized.</title>
+<meta name="description" content="Human biology delivers reality minutes late. You live in a rerun. Our mission at Chronos Corp is to transform this biological flaw into optimization.">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Chronos Corp — Sua vida, otimizada.</title>
 <meta name="description" content="A biologia humana entrega a realidade com minutos de atraso. Você vive em uma reprise. Nossa missão na Chronos Corp é transformar essa falha biológica em otimização.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,50 +22,63 @@ body::before{content:'';position:fixed;inset:0;background:repeating-linear-gradi
 .container{max-width:1100px;margin:0 auto;padding:0 2rem}
 
 /* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;border-bottom:1px solid var(--border);background:rgba(2,5,8,.94);backdrop-filter:blur(16px)}
-.nav-inner{max-width:1100px;margin:0 auto;padding:0 2rem;height:58px;display:flex;align-items:center;justify-content:space-between}
-.nav-logo{font-family:'Syne Mono',monospace;font-size:13px;color:var(--cyan);letter-spacing:.15em;text-decoration:none;display:flex;align-items:center;gap:10px}
-.logo-ring{width:22px;height:22px;border:1.5px solid var(--cyan);border-radius:50%;position:relative;display:flex;align-items:center;justify-content:center}
-.logo-ring::before{content:'';position:absolute;width:1px;height:8px;background:var(--cyan);top:3px;transform-origin:bottom center;animation:tick 2s steps(1) infinite}
-@keyframes tick{0%,100%{transform:rotate(0deg)}25%{transform:rotate(90deg)}50%{transform:rotate(180deg)}75%{transform:rotate(270deg)}}
-.nav-links{display:flex;gap:2rem;list-style:none}
-.nav-links a{font-family:'Syne Mono',monospace;font-size:11px;color:var(--gray);text-decoration:none;letter-spacing:.12em;text-transform:uppercase;transition:color .2s}
-.nav-links a:hover{color:var(--cyan)}
-.nav-status{font-family:'Syne Mono',monospace;font-size:10px;color:var(--cyan);display:flex;align-items:center;gap:6px}
-.pulse{width:6px;height:6px;border-radius:50%;background:var(--cyan);animation:pd 2s ease infinite}
-@keyframes pd{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.3;transform:scale(.6)}}
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="nav-logo"><div class="logo-ring"></div>CHRONOS CORP</a>
+    <ul class="nav-links">
+      <li><a href="#missao">Mission</a></li>
+      <li><a href="#produtos">Products</a></li>
+      <li><a href="#terminal-section">Terminal</a></li>
+      <li><a href="#quiz-section">Sync</a></li>
+      <li><a href="#arquivo-section">Archive</a></li>
+      <li><a href="#mapa-section">Global Network</a></li>
+      <li><a href="#contato-section">Contact</a></li>
+      <li><a href="index.html">PT</a></li>
+      <li><a href="en.html" style="color:#00B8B8;font-weight:bold;">EN</a></li>
+      <li><a href="es.html">ES</a></li>
+    </ul>
+    <div class="nav-status mono"><div class="pulse"></div>SIMULATOR: ONLINE</div>
+  </div>
+</nav>
 
-/* TICKER */
-.ticker{background:var(--lgray);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:9px 0;overflow:hidden;white-space:nowrap;margin-top:58px}
-.ticker-track{display:inline-block;animation:tkr 30s linear infinite}
-.ticker-track:hover{animation-play-state:paused}
-@keyframes tkr{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-.ti{font-family:'Syne Mono',monospace;font-size:11px;color:var(--gray);margin:0 2.5rem;letter-spacing:.08em}
-.ti .c{color:var(--cyan)}.ti .a{color:var(--orange)}
+<div class="ticker">
+  <div class="ticker-track" id="tkr">
+    <span class="ti">CHRONOS CORP <span class="c">//</span> SYSTEM ACTIVE: <span class="c" id="ts">--:--:--</span></span>
+    <span class="ti"><span class="a">⚠ ANOMALY:</span> LOOP 0.000003s DETECTED</span>
+    <span class="ti">PRIMAL SIMULATOR <span class="c">//</span> CONNECTIVITY 99.7%</span>
+    <span class="ti">KUMANI ARCHIVE <span class="c">//</span> UNDER CONTROL</span>
+    <span class="ti">V-CHRONOS WATCH <span class="c">//</span> 9 MODELS AVAILABLE</span>
+    <span class="ti"><span class="a">PIRATE BROADCASTS:</span> IGNORE</span>
+    <span class="ti">YOUR LIFE, OPTIMIZED. <span class="c">//</span> CHRONOS CORP</span>
+    <span class="ti">CHRONOS CORP <span class="c">//</span> SYSTEM ACTIVE: <span class="c">--:--:--</span></span>
+    <span class="ti"><span class="a">⚠ ANOMALY:</span> LOOP 0.000003s DETECTED</span>
+    <span class="ti">PRIMAL SIMULATOR <span class="c">//</span> CONNECTIVITY 99.7%</span>
+    <span class="ti">KUMANI ARCHIVE <span class="c">//</span> UNDER CONTROL</span>
+    <span class="ti">V-CHRONOS WATCH <span class="c">//</span> 9 MODELS AVAILABLE</span>
+    <span class="ti"><span class="a">PIRATE BROADCASTS:</span> IGNORE</span>
+    <span class="ti">YOUR LIFE, OPTIMIZED. <span class="c">//</span> CHRONOS CORP</span>
+  </div>
+</div>
 
-/* HERO */
-.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:80px 0;position:relative;overflow:hidden}
-.hgrid{position:absolute;inset:0;background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);background-size:60px 60px;opacity:.35}
-.hglow{position:absolute;top:15%;right:-8%;width:600px;height:600px;background:radial-gradient(circle,rgba(0,184,184,.07) 0%,transparent 70%);pointer-events:none}
-.hglow2{position:absolute;bottom:10%;left:-5%;width:400px;height:400px;background:radial-gradient(circle,rgba(255,85,0,.05) 0%,transparent 70%);pointer-events:none}
-.hero-content{position:relative;z-index:2;max-width:1100px;margin:0 auto;padding:0 2rem}
-.hlabel{font-family:'Syne Mono',monospace;font-size:11px;color:var(--cyan);letter-spacing:.25em;text-transform:uppercase;margin-bottom:2rem;display:flex;align-items:center;gap:12px}
-.hlabel::before{content:'';width:40px;height:1px;background:var(--cyan)}
-h1{font-family:'DM Serif Display',serif;font-size:clamp(44px,7vw,96px);line-height:1.0;font-weight:400;margin-bottom:1rem;letter-spacing:-.02em}
-h1 .c{color:var(--cyan);font-style:italic}
-h1 .o{color:var(--orange)}
-.hsub{font-family:'Syne Mono',monospace;font-size:clamp(12px,1.3vw,14px);color:var(--gray);line-height:1.9;max-width:520px;margin-bottom:3rem}
-.hsub strong{color:var(--white);font-weight:400}
-.hctas{display:flex;gap:1rem;flex-wrap:wrap}
-.btn{font-family:'Syne Mono',monospace;font-size:12px;letter-spacing:.15em;text-transform:uppercase;padding:13px 26px;cursor:pointer;text-decoration:none;display:inline-block;transition:all .2s;border:none}
-.btn-p{color:var(--bg);background:var(--cyan);clip-path:polygon(0 0,calc(100% - 10px) 0,100% 10px,100% 100%,10px 100%,0 calc(100% - 10px))}
-.btn-p:hover{background:var(--white)}
-.btn-o{color:var(--cyan);background:transparent;border:1px solid var(--c2)}
-.btn-o:hover{border-color:var(--cyan);background:rgba(0,184,184,.06)}
-.hstats{position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);display:flex;gap:4rem;z-index:2}
-.stat{text-align:center}
-.sv{font-family:'Syne Mono',monospace;font-size:28px;color:var(--cyan);display:block}
-.sl{font-family:'Syne Mono',monospace;font-size:10px;color:var(--gray);letter-spacing:.15em;text-transform:uppercase;margin-top:4px}
+<!-- HERO -->
+<section class="hero">
+  <div class="hgrid"></div><div class="hglow"></div><div class="hglow2"></div>
+  <div class="hero-content">
+    <div class="hlabel fi">Chronos Corp // System Active</div>
+    <h1 class="fi">Biology<br>delivers reality<br><span class="c">minutes</span><br><span class="o">late.</span></h1>
+    <p class="hsub fi">You are not living in the present.<br>You are living <strong>a rerun.</strong><br><br>Our mission: transform this biological flaw<br>into <strong>optimization.</strong></p>
+    <div class="hctas fi">
+      <a href="#quiz-section" class="btn btn-p">Test Synchronization</a>
+      <a href="#terminal-section" class="btn btn-o">Access Terminal</a>
+    </div>
+  </div>
+  <div class="hstats fi">
+    <div class="stat"><span class="sv" id="conn-stat">99.7%</span><span class="sl">Connectivity</span></div>
+    <div class="stat"><span class="sv">9</span><span class="sl">Models</span></div>
+    <div class="stat"><span class="sv" id="users-stat">0</span><span class="sl">Synchronized</span></div>
+    <div class="stat"><span class="sv">∞</span><span class="sl">Active Loop</span></div>
+  </div>
+</section>
 
 /* SECTIONS */
 section{padding:90px 0}
@@ -80,140 +97,249 @@ h2 em{color:var(--cyan);font-style:italic}
 .dv{font-family:'Syne Mono',monospace;font-size:11px;color:var(--cyan)}
 .dv.ok{color:#1DB87A}.dv.al{color:var(--orange)}.dv.red{color:var(--red)}
 
-/* MISSÃO */
-.mg{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
-.mt p{font-family:'Syne Mono',monospace;font-size:13px;color:var(--gray);line-height:1.9;margin-bottom:1.5rem}
-.mt p strong{color:var(--white);font-weight:400}
+<!-- MISSÃO -->
+<section id="missao">
+  <div class="container">
+    <div class="mg">
+      <div class="mt fi">
+        <div class="slabel">Our Mission</div>
+        <h2>You live in the<br><em>past.</em><br>We change that.</h2>
+        <p>The human brain processes the present with milliseconds of delay. <strong>We all inhabit a constant rerun of reality.</strong> Since the dawn of the species, this biological latency was accepted as inevitable.</p>
+        <p>Chronos Corp disagrees. Through the <strong>V-Chronos Watch</strong> and the <strong>Primal Simulator</strong>, we developed the first technology capable of colonizing the gap between perception and consciousness.</p>
+        <p>Or so we believe.</p>
+      </div>
+      <div class="panel fi">
+        <div class="panel-hd">Kumani Archive // System Status</div>
+        <div class="drow"><span class="dl">Primal Simulator</span><span class="dv ok">ONLINE</span></div>
+        <div class="drow"><span class="dl">Global Connectivity</span><span class="dv" id="conn-live">99.7%</span></div>
+        <div class="drow"><span class="dl">Synchronized Users</span><span class="dv" id="users-live">Calculating...</span></div>
+        <div class="drow"><span class="dl">Anomaly Detected</span><span class="dv al">Loop 0.000003s</span></div>
+        <div class="drow"><span class="dl">Anomaly Origin</span><span class="dv al">Under Analysis</span></div>
+        <div class="drow"><span class="dl">Kumani Archive</span><span class="dv">UNDER CONTROL</span></div>
+        <div class="drow"><span class="dl">Pirate Broadcasts</span><span class="dv red">DETECTED</span></div>
+        <div class="drow"><span class="dl">Containment Protocol</span><span class="dv ok">ACTIVE</span></div>
+      </div>
+    </div>
+  </div>
+</section>
 
-/* PRODUTOS */
-.produtos{background:var(--bg2)}
-.pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);margin-top:3rem}
-.pc{background:var(--bg);padding:1.75rem 1.5rem;position:relative;overflow:hidden;transition:background .3s;cursor:default}
-.pc::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--cyan),transparent);opacity:0;transition:opacity .3s}
-.pc:hover{background:var(--bg2)}.pc:hover::after{opacity:1}
-.pn{font-family:'Syne Mono',monospace;font-size:10px;color:var(--c2);letter-spacing:.2em;margin-bottom:.75rem}
-.pname{font-family:'DM Serif Display',serif;font-size:21px;color:var(--white);margin-bottom:.4rem;font-weight:400}
-.ptag{font-family:'Syne Mono',monospace;font-size:10px;color:var(--orange);letter-spacing:.15em;text-transform:uppercase;margin-bottom:.75rem}
-.pdesc{font-family:'Syne Mono',monospace;font-size:11px;color:var(--gray);line-height:1.7}
-.pst{font-family:'Syne Mono',monospace;font-size:10px;color:var(--cyan);margin-top:1.25rem;padding-top:.75rem;border-top:1px solid var(--border);display:flex;align-items:center;gap:6px}
-.pst::before{content:'';width:5px;height:5px;border-radius:50%;background:currentColor}
+<!-- PRODUTOS -->
+<section id="produtos" class="produtos">
+  <div class="container">
+    <div class="slabel fi">V-Chronos Catalogue</div>
+    <h2 class="fi">Which synchronization<br>do you <em>choose?</em></h2>
+    <div class="pgrid">
+      <div class="pc fi"><div class="pn">01 // GLOBAL LINE</div><div class="pname">Cyberband V2</div><div class="ptag">Mass Access</div><div class="pdesc">Flexible OLED, 14k steps. The world's best-selling model. Daily synchronization for 99% of the global population.</div><div class="pst">Available — Global Standard</div></div>
+      <div class="pc fi"><div class="pn">02 // STANDARD LINE</div><div class="pname">Chronos Alpha</div><div class="ptag">Base + Tactical</div><div class="pdesc">Precision GPS, bio-sensors, dark tactical finish. Access to the Primal Simulator with endurance for extreme environments.</div><div class="pst">Available</div></div>
+      <div class="pc fi"><div class="pn">03 // PERFORMANCE LINE</div><div class="pname">Pulse-V</div><div class="ptag">Skills + Focus</div><div class="pdesc">Integrated athlete mode. Activates an attention loop that recalibrates physical exertion perception. Real-time HR.</div><div class="pst">Available</div></div>
+      <div class="pc fi"><div class="pn">04 // ALTITUDE LINE</div><div class="pname">Aero Watch</div><div class="ptag">Navigation + Mobility</div><div class="pdesc">5.8mm slim, aeronautical grade, precision altimeter. Expanded spatial perception for those operating at altitude.</div><div class="pst">Available</div></div>
+      <div class="pc fi"><div class="pn">05 // SOCIAL LINE</div><div class="pname">Spectra G4</div><div class="ptag">Social Cognition</div><div class="pdesc">Color OLED interface. Activates emotional pattern recognition. For those who need an edge in relationships.</div><div class="pst">Special Edition</div></div>
+      <div class="pc fi"><div class="pn">06 // OPERATIONAL LINE</div><div class="pname">Stealth Elite</div><div class="ptag">Tactical // Restricted</div><div class="pdesc">Dark minimalist, active stealth mode. For users operating off the radar. Untraceable protocol.</div><div class="pst" style="color:var(--orange)">Restricted Access</div></div>
+      <div class="pc fi"><div class="pn">07 // EXECUTIVE LINE</div><div class="pname">Nexus Time</div><div class="ptag">Temporal Flow</div><div class="pdesc">Multi-timezone holographic interface. Synchronizes multiple timezones into a single perceptual present.</div><div class="pst">Executive Edition</div></div>
+      <div class="pc fi"><div class="pn">08 // CELESTIAL LINE</div><div class="pname">Orbital-X</div><div class="ptag">Ancestral Memory</div><div class="pdesc">6 satellites, rotating dial. Synchronization with natural cycles and ancestral memory protocol.</div><div class="pst">Limited Edition</div></div>
+      <div class="pc fi"><div class="pn">09 // EXCLUSIVE LINE</div><div class="pname">Chronos Omega</div><div class="ptag">Total Access // Elite</div><div class="pdesc">18k gold, premium ceramic. Total control over temporal flow. <em>The model Luc Vangersson wears.</em></div><div class="pst" style="color:var(--orange)">Upon Request</div></div>
+    </div>
+  </div>
+</section>
 
-/* ── TERMINAL ── */
-#terminal-section{background:var(--bg);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:70px 0}
-.terminal{border:1px solid var(--c2);background:#010305;max-width:700px;margin:2rem auto 0;position:relative}
-.term-bar{background:var(--lgray);padding:.6rem 1rem;display:flex;align-items:center;gap:.5rem;border-bottom:1px solid var(--border)}
-.term-dot{width:10px;height:10px;border-radius:50%}
-.term-title{font-family:'Syne Mono',monospace;font-size:11px;color:var(--gray);margin-left:auto}
-.term-output{padding:1.5rem;min-height:220px;max-height:320px;overflow-y:auto;font-family:'Syne Mono',monospace;font-size:13px;line-height:1.8}
-.term-output::-webkit-scrollbar{width:3px}
-.term-output::-webkit-scrollbar-thumb{background:var(--c2)}
-.term-line{margin-bottom:4px}
-.term-line.cmd{color:var(--cyan)}
-.term-line.out{color:var(--gray)}
-.term-line.ok{color:#1DB87A}
-.term-line.err{color:var(--red)}
-.term-line.warn{color:var(--orange)}
-.term-line.hi{color:var(--white)}
-.term-input-row{display:flex;align-items:center;padding:.75rem 1rem;border-top:1px solid var(--border);gap:.5rem}
-.term-prompt{font-family:'Syne Mono',monospace;font-size:13px;color:var(--cyan)}
-.term-input{flex:1;background:transparent;border:none;outline:none;font-family:'Syne Mono',monospace;font-size:13px;color:var(--white);caret-color:var(--cyan)}
-.term-hint{font-family:'Syne Mono',monospace;font-size:10px;color:var(--c2);text-align:center;margin-top:1rem}
+<!-- TERMINAL -->
+<section id="terminal-section">
+  <div class="container">
+    <div class="slabel fi">Access Terminal</div>
+    <h2 class="fi">Access the<br><em>system.</em></h2>
+    <div class="terminal fi">
+      <div class="term-bar">
+        <div class="term-dot" style="background:#ff5f57"></div>
+        <div class="term-dot" style="background:#febc2e"></div>
+        <div class="term-dot" style="background:#28c840"></div>
+        <span class="term-title">CHRONOS CORP // TERMINAL v4.2</span>
+      </div>
+      <div class="term-output" id="term-out"></div>
+      <div class="term-input-row">
+        <span class="term-prompt">CC:~$</span>
+        <input type="text" class="term-input" id="term-in" placeholder="type a command..." autocomplete="off" spellcheck="false">
+      </div>
+    </div>
+    <p class="term-hint mono fi">// try: help · status · scan · products · kumani · sync</p>
+  </div>
+</section>
 
-/* ── QUIZ ── */
-#quiz-section{padding:80px 0}
-.quiz-box{max-width:680px;margin:2rem auto 0;border:1px solid var(--border);background:var(--bg2);position:relative}
-.quiz-box::before{content:'';display:block;height:2px;background:linear-gradient(90deg,var(--cyan),var(--orange))}
-.quiz-inner{padding:2rem}
-.quiz-progress{font-family:'Syne Mono',monospace;font-size:10px;color:var(--c2);letter-spacing:.2em;margin-bottom:1.5rem}
-.quiz-q{font-family:'DM Serif Display',serif;font-size:22px;color:var(--white);margin-bottom:1.5rem;line-height:1.4;font-weight:400}
-.quiz-opts{display:flex;flex-direction:column;gap:.75rem}
-.quiz-opt{font-family:'Syne Mono',monospace;font-size:12px;color:var(--gray);padding:.85rem 1.25rem;border:1px solid var(--border);background:transparent;cursor:pointer;text-align:left;transition:all .2s;display:flex;align-items:center;gap:10px}
-.quiz-opt::before{content:'○';color:var(--c2);flex-shrink:0}
-.quiz-opt:hover{border-color:var(--cyan);color:var(--cyan);background:rgba(0,184,184,.05)}
-.quiz-opt:hover::before{content:'●';color:var(--cyan)}
-.quiz-result{display:none;padding:2rem;text-align:center}
-.result-model{font-family:'DM Serif Display',serif;font-size:36px;color:var(--cyan);margin-bottom:.5rem;font-weight:400}
-.result-tag{font-family:'Syne Mono',monospace;font-size:11px;color:var(--orange);letter-spacing:.2em;margin-bottom:1rem}
-.result-desc{font-family:'Syne Mono',monospace;font-size:12px;color:var(--gray);line-height:1.8;margin-bottom:1.5rem}
-.quiz-reset{font-family:'Syne Mono',monospace;font-size:11px;color:var(--c2);background:none;border:1px solid var(--border);padding:8px 20px;cursor:pointer;letter-spacing:.15em;text-transform:uppercase;transition:all .2s}
-.quiz-reset:hover{border-color:var(--cyan);color:var(--cyan)}
+<!-- QUIZ -->
+<section id="quiz-section">
+  <div class="container">
+    <div class="slabel fi">Synchronization Test</div>
+    <h2 class="fi">Discover your<br><em>ideal model.</em></h2>
+    <div class="quiz-box fi">
+      <div class="quiz-inner" id="quiz-inner">
+        <div class="quiz-progress mono" id="quiz-prog">QUESTION 1 OF 4 // PRIMAL SIMULATOR</div>
+        <div class="quiz-q" id="quiz-q"></div>
+        <div class="quiz-opts" id="quiz-opts"></div>
+      </div>
+      <div class="quiz-result" id="quiz-result">
+        <div class="result-model" id="res-model"></div>
+        <div class="result-tag" id="res-tag"></div>
+        <p class="result-desc" id="res-desc"></p>
+        <p style="font-family:'Syne Mono',monospace;font-size:11px;color:var(--cyan);margin-bottom:1.5rem">Access our official Instagram to view the models and technical specifications of the V-Chronos line.</p>
+        <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+          <a href="https://instagram.com" target="_blank" class="btn btn-p" style="font-size:11px;padding:11px 22px">VIEW MODELS ON INSTAGRAM // @CHRONOSCORP.INC</a>
+          <button class="quiz-reset" onclick="resetQuiz()">RETAKE TEST</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-/* ── ANOMALIA COUNTER ── */
-.anomalia-bar{background:var(--bg);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:60px 0;text-align:center;position:relative;overflow:hidden}
-.anom-bg{position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(255,85,0,.04) 0%,transparent 70%)}
-.anom-label{font-family:'Syne Mono',monospace;font-size:11px;color:var(--orange);letter-spacing:.25em;text-transform:uppercase;margin-bottom:1rem;animation:blink 1.8s ease infinite}
-@keyframes blink{0%,100%{opacity:1}50%{opacity:.25}}
-.anom-code{font-family:'Syne Mono',monospace;font-size:clamp(32px,5.5vw,72px);color:var(--orange);letter-spacing:.1em;margin-bottom:.5rem;cursor:pointer;transition:color .3s}
-.anom-code:hover{color:var(--red)}
-.anom-counter{font-family:'Syne Mono',monospace;font-size:13px;color:var(--gray);margin-bottom:1.5rem}
-.anom-counter span{color:var(--orange)}
-.anom-alerts{max-width:600px;margin:0 auto;display:flex;flex-direction:column;gap:.5rem;min-height:80px}
-.anom-alert{font-family:'Syne Mono',monospace;font-size:11px;padding:.5rem 1rem;border:1px solid;text-align:left;opacity:0;transform:translateY(8px);transition:all .5s}
-.anom-alert.show{opacity:1;transform:translateY(0)}
-.anom-alert.lvl1{color:var(--gray);border-color:var(--border)}
-.anom-alert.lvl2{color:var(--orange);border-color:rgba(255,85,0,.3)}
-.anom-alert.lvl3{color:var(--red);border-color:rgba(204,34,0,.5);background:rgba(204,34,0,.05)}
 
-/* ── ARQUIVO KUMANI ── */
-#arquivo-section{padding:80px 0;background:var(--bg2)}
-.arquivo-box{max-width:600px;margin:2rem auto 0;border:1px solid var(--border);background:var(--bg);position:relative}
-.arquivo-box::before{content:'';display:block;height:2px;background:linear-gradient(90deg,var(--orange),transparent)}
-.arq-locked{padding:2.5rem;text-align:center}
-.arq-icon{font-size:48px;margin-bottom:1.5rem;filter:grayscale(1);opacity:.5}
-.arq-title{font-family:'Syne Mono',monospace;font-size:12px;color:var(--gray);letter-spacing:.2em;text-transform:uppercase;margin-bottom:.5rem}
-.arq-sub{font-family:'Syne Mono',monospace;font-size:11px;color:var(--c2);margin-bottom:2rem;line-height:1.6}
-.arq-input-row{display:flex;gap:0;margin-bottom:1rem}
-.arq-input{flex:1;background:var(--bg2);border:1px solid var(--border);border-right:none;color:var(--white);font-family:'Syne Mono',monospace;font-size:13px;padding:11px 14px;outline:none;letter-spacing:.1em;text-transform:uppercase}
-.arq-input:focus{border-color:var(--c2)}
-.arq-btn{font-family:'Syne Mono',monospace;font-size:11px;letter-spacing:.15em;background:var(--c2);color:var(--bg);border:none;padding:11px 18px;cursor:pointer;transition:background .2s;white-space:nowrap}
-.arq-btn:hover{background:var(--cyan)}
-.arq-msg{font-family:'Syne Mono',monospace;font-size:11px;height:20px;transition:all .3s}
-.arq-msg.err{color:var(--red)}.arq-msg.ok{color:#1DB87A}
-.arq-hint{font-family:'Syne Mono',monospace;font-size:10px;color:var(--border);margin-top:1.5rem;letter-spacing:.1em}
-.arq-hint:hover{color:var(--c2);cursor:help}
-.arq-content{display:none;padding:2rem}
-.arq-content-title{font-family:'Syne Mono',monospace;font-size:10px;color:var(--cyan);letter-spacing:.2em;text-transform:uppercase;margin-bottom:1.5rem;border-bottom:1px solid var(--border);padding-bottom:.75rem}
-.arq-file{padding:.75rem 0;border-bottom:1px solid var(--border);cursor:pointer}
-.arq-file:last-child{border-bottom:none}
-.arq-file-name{font-family:'Syne Mono',monospace;font-size:12px;color:var(--cyan);margin-bottom:3px}
-.arq-file-desc{font-family:'Syne Mono',monospace;font-size:11px;color:var(--gray)}
-.arq-file-data{font-family:'Syne Mono',monospace;font-size:11px;color:var(--white);margin-top:.5rem;padding:.75rem;background:var(--bg2);border-left:2px solid var(--cyan);display:none;line-height:1.8}
+<!-- ANOMALIA COUNTER -->
+<div class="anomalia-bar">
+  <div class="anom-bg"></div>
+  <div class="container" style="position:relative;z-index:2;text-align:center">
+    <div class="anom-label fi">⚠ System Alert — Real-Time Monitoring</div>
+    <div class="anom-code fi" id="anom-code" title="Click to force anomaly">LOOP 0.000003s</div>
+    <div class="anom-counter fi">Instabilities recorded in this session: <span id="anom-count">0</span></div>
+    <div class="anom-alerts fi" id="anom-alerts"></div>
+  </div>
+</div>
 
-/* ── MAPA ── */
-#mapa-section{padding:80px 0}
-.mapa-container{margin-top:2rem;border:1px solid var(--border);background:var(--bg2);position:relative;overflow:hidden}
-.mapa-hd{padding:1rem 1.5rem;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center}
-.mapa-hd-title{font-family:'Syne Mono',monospace;font-size:11px;color:var(--cyan);letter-spacing:.15em}
-.mapa-hd-stat{font-family:'Syne Mono',monospace;font-size:10px;color:var(--gray)}
-.mapa-canvas{display:block;width:100%;cursor:crosshair}
-.mapa-legend{padding:1rem 1.5rem;border-top:1px solid var(--border);display:flex;gap:2rem;flex-wrap:wrap}
-.mapa-leg-item{display:flex;align-items:center;gap:6px;font-family:'Syne Mono',monospace;font-size:10px;color:var(--gray)}
-.mapa-leg-dot{width:8px;height:8px;border-radius:50%}
-.mapa-tooltip{position:absolute;font-family:'Syne Mono',monospace;font-size:11px;background:rgba(2,5,8,.95);border:1px solid var(--c2);padding:8px 12px;pointer-events:none;opacity:0;transition:opacity .2s;white-space:nowrap;color:var(--white)}
+<!-- ARQUIVO KUMANI -->
+<section id="arquivo-section">
+  <div class="container">
+    <div class="slabel fi">Kumani Archive</div>
+    <h2 class="fi">Classified<br><em>access.</em></h2>
+    <div class="arquivo-box fi">
+      <div class="arq-locked" id="arq-locked">
+        <div class="arq-icon">🔒</div>
+        <div class="arq-title">KUMANI ARCHIVE // LEVEL 5</div>
+        <p class="arq-sub">Restricted access. Enter the authorization code.<br>Hint: the password is hidden on Instagram.</p>
+        <div class="arq-input-row">
+          <input type="text" class="arq-input" id="arq-input" placeholder="ACCESS CODE" maxlength="20">
+          <button class="arq-btn" onclick="checkArquivo()">ACCESS</button>
+        </div>
+        <div class="arq-msg" id="arq-msg"></div>
+        <div class="arq-hint" title="The password is 8 characters long and is in a recent post">// hover for a hint</div>
+      </div>
+      <div class="arq-content" id="arq-content">
+        <div class="arq-content-title">KUMANI ARCHIVE // ACCESS GRANTED // CLASSIFIED FILES</div>
+        <div class="arq-file" onclick="toggleArqFile(this)">
+          <div class="arq-file-name">▸ NIA_KUMANI_DOSSIER.dat</div>
+          <div class="arq-file-desc">Sample 0 — V-Chronos Division Research File</div>
+          <div class="arq-file-data">NAME: Nia Kumani | ROLE: Neuroscientist & Metacognitive Terminal Engineer — V-Chronos Division<br>DIVISION: V-Chronos // Sample 0<br>INTERNAL NOTE: Sample 0 neural calibration logs are generating temporal resonance across the Primal Simulator core. Containment protocols active.</div>
+        </div>
+        <div class="arq-file" onclick="toggleArqFile(this)">
+          <div class="arq-file-name">▸ PRIMAL_SIMULATOR_LOG.dat</div>
+          <div class="arq-file-desc">Anomaly log — Last 72 hours</div>
+          <div class="arq-file-data">2026-06-04 01:26:51 — LOOP ANOMALY 0.000003s DETECTED<br>2026-06-04 03:44:12 — TEMPORAL CORE INSTABILITY — SECTOR 7<br>2026-06-04 09:17:33 — PIRATE BROADCAST INTERCEPTED — ORIGIN: UNKNOWN<br>2026-06-05 14:02:08 — KUMANI ARCHIVE: ESCALATING ANOMALOUS ACTIVITY<br>2026-06-06 — STATUS: CONTAINMENT ACTIVE // KUMANI PROTOCOL INITIATED</div>
+        </div>
+        <div class="arq-file" onclick="toggleArqFile(this)">
+          <div class="arq-file-name">▸ MESSAGE_NIA.dat</div>
+          <div class="arq-file-desc">Unauthorized transmission — Origin: Sample 0</div>
+          <div class="arq-file-data">"If you found this, you already know too much.<br>The Primal Simulator is not what they say it is.<br>V-Chronos was not developed to free your time.<br>It was developed to hijack your present.<br>Close your eyes. And finally... live in the now.<br>— N.K."</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-/* PERSONAGENS */
-.chgrid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:3rem}
-.ch{border:1px solid var(--border);background:var(--bg2);position:relative;overflow:hidden}
-.ch-top{padding:2rem;border-bottom:1px solid var(--border)}
-.ch.nia .ch-top::before{content:'';position:absolute;top:0;left:0;width:3px;height:100%;background:var(--cyan)}
-.ch.luc .ch-top::before{content:'';position:absolute;top:0;right:0;width:3px;height:100%;background:var(--orange)}
-.ch-role{font-family:'Syne Mono',monospace;font-size:10px;color:var(--gray);letter-spacing:.2em;text-transform:uppercase;margin-bottom:.5rem}
-.ch-name{font-family:'DM Serif Display',serif;font-size:34px;font-weight:400;margin-bottom:1rem}
-.ch.nia .ch-name{color:var(--cyan)}.ch.luc .ch-name{color:var(--orange)}
-.ch-desc{font-family:'Syne Mono',monospace;font-size:12px;color:var(--gray);line-height:1.8}
-.ch-specs{padding:1.25rem 2rem}
-.ch-spec{display:flex;justify-content:space-between;font-family:'Syne Mono',monospace;font-size:11px;padding:.45rem 0;border-bottom:1px solid var(--border)}
-.ch-spec:last-child{border-bottom:none}
-.ch-sl{color:var(--gray)}.ch-sv{color:var(--white)}
-.ch-quote{font-family:'DM Serif Display',serif;font-size:15px;font-style:italic;line-height:1.6;padding:1.25rem 2rem;border-top:1px solid var(--border);color:var(--gray)}
-.ch.nia .ch-quote{border-left:2px solid var(--cyan)}.ch.luc .ch-quote{border-left:2px solid var(--orange)}
+<!-- MAPA GLOBAL -->
+<section id="mapa-section">
+  <div class="container">
+    <div class="slabel fi">Global Network</div>
+    <h2 class="fi">Global<br><em>connectivity.</em></h2>
+    <div class="mapa-container fi">
+      <div class="mapa-hd">
+        <span class="mapa-hd-title">PRIMAL SIMULATOR // GLOBAL CONNECTIVITY MAP</span>
+        <span class="mapa-hd-stat mono" id="mapa-stat">Active nodes: <span style="color:var(--cyan)" id="nos-count">0</span></span>
+      </div>
+      <canvas class="mapa-canvas" id="mapa-canvas" height="400"></canvas>
+      <div class="mapa-tooltip" id="mapa-tooltip"></div>
+      <div class="mapa-legend">
+        <div class="mapa-leg-item"><div class="mapa-leg-dot" style="background:var(--cyan)"></div>Synchronized Node</div>
+        <div class="mapa-leg-item"><div class="mapa-leg-dot" style="background:var(--orange)"></div>Anomaly Detected</div>
+        <div class="mapa-leg-item"><div class="mapa-leg-dot" style="background:var(--gray)"></div>Inactive Node</div>
+      </div>
+    </div>
+  </div>
+</section>
 
-/* FOOTER */
-footer{border-top:1px solid var(--border);padding:2.5rem 0}
-.footer-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
-.footer-logo{font-family:'Syne Mono',monospace;font-size:12px;color:var(--c2);letter-spacing:.15em}
-.footer-copy{font-family:'Syne Mono',monospace;font-size:10px;color:var(--gray)}
-.footer-anom{font-family:'Syne Mono',monospace;font-size:10px;color:var(--orange);animation:blink 2s ease infinite}
+<!-- CORPORATE PROFILE -->
+<section id="personagens" style="background:var(--bg2)">
+  <div class="container">
+    <div class="slabel fi">Corporate Profile</div>
+    <h2 class="fi">Leadership &<br><em>Research.</em></h2>
+    <div class="chars-grid-new">
+      <div class="ch-new nia fi">
+        <div class="ch-new-body">
+          <div class="ch-new-role">SAMPLE 0 // V-CHRONOS</div>
+          <div class="ch-new-name">Nia Kumani</div>
+          <p class="ch-new-desc">Neuroscientist and Metacognitive Terminal Engineer.</p>
+          <div class="ch-new-specs">
+            <div class="ch-new-spec"><span class="ch-new-sl">Role</span><span class="ch-new-sv">Neuroscientist // Metacognitive Terminal Engineer</span></div>
+            <div class="ch-new-spec"><span class="ch-new-sl">Division</span><span class="ch-new-sv">V-Chronos</span></div>
+            <div class="ch-new-spec"><span class="ch-new-sl">Record</span><span class="ch-new-sv">Sample 0</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="ch-new luc fi">
+        <div class="ch-new-body">
+          <div class="ch-new-role">FOUNDER & CHIEF EXECUTIVE OFFICER // CEO // CHRONOS CORP</div>
+          <div class="ch-new-name">Luc Vangersson</div>
+          <p class="ch-new-desc">Strategic architect of Chronos Corp. Leads the global expansion of the V-Chronos ecosystem and planetary deployment of the Primal Simulator.</p>
+          <div class="ch-new-specs">
+            <div class="ch-new-spec"><span class="ch-new-sl">Role</span><span class="ch-new-sv">CEO // Chronos Corp</span></div>
+            <div class="ch-new-spec"><span class="ch-new-sl">Connectivity</span><span class="ch-new-sv" style="color:#1DB87A">99.7% // Global</span></div>
+            <div class="ch-new-spec"><span class="ch-new-sl">Status</span><span class="ch-new-sv" style="color:#1DB87A">Operational</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTATO CORPORATIVO -->
+<section id="contato-section">
+  <div class="container">
+    <div class="slabel fi">Corporate Contact</div>
+    <h2 class="fi">Synchronize<br><em>with us.</em></h2>
+    <div class="contato-grid">
+      <a href="https://instagram.com" target="_blank" class="contato-card ig fi">
+        <span class="cc-icon">📸</span>
+        <div class="cc-title">Official Instagram</div>
+        <div class="cc-sub">Announcements, system alerts, and Primal Simulator updates in real time.</div>
+        <div class="cc-val">@chronoscorp.inc</div>
+      </a>
+      <a href="https://wa.me" target="_blank" class="contato-card wa fi">
+        <span class="cc-icon">💬</span>
+        <div class="cc-title">Corporate WhatsApp</div>
+        <div class="cc-sub">Exclusive support for V-Chronos users and Chronos Corp partners.</div>
+        <div class="cc-val">+55 (85) 9 9999-0000</div>
+      </a>
+      <a href="mailto:contato@chronoscorp.corp" class="contato-card em fi">
+        <span class="cc-icon">📡</span>
+        <div class="cc-title">Secure Channel</div>
+        <div class="cc-sub">Classified communications. Production companies, partners, and material requests.</div>
+        <div class="cc-val">contato@chronoscorp.corp</div>
+      </a>
+      <a href="https://github.io" target="_blank" class="contato-card si fi">
+        <span class="cc-icon">🌐</span>
+        <div class="cc-title">Corporate Portal</div>
+        <div class="cc-sub">Access to the full Chronos Corp dashboard and the Primal Simulator.</div>
+        <div class="cc-val">chronoscorp-inc.github.io</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-logo mono">CHRONOS CORP // YOUR LIFE, OPTIMIZED.</div>
+      <div class="footer-copy mono">© 2026 Chronos Corp. All rights reserved.</div>
+      <div class="footer-anom mono">⚠ ACTIVE ANOMALY</div>
+    </div>
+  </div>
+</footer>
+
 
 /* FADE IN */
 .fi{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease}
@@ -1012,13 +1138,449 @@ canvas.addEventListener('click',e=>{
     }
   });
 });
+  document.documentElement.lang = 'en';
+document.title = 'Chronos Corp — Your life, optimized.';
+const mEn = [
+  ['Missão','Mission'],['Produtos','Products'],['Sincronizar','Sync'],['Arquivo','Archive'],['Rede Global','Global Network'],['Contato','Contact'],
+  // ...demais mapeamentos de texto visível
+];
+function trEn(){
+  const w = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+  let n;
+  while(n = w.nextNode()){
+    let v = n.nodeValue;
+    for(const [pt, en] of mEn){ if(v.includes(pt)) v = v.split(pt).join(en); }
+    if(v !== n.nodeValue) n.nodeValue = v;
+  }
+}
+trEn();
+mEn.push(
+  // ...termos adicionais das linhas de produtos e terminais
+);
+trEn();
+setInterval(trEn, 500);
+<script>
+function updateTS(){
+  const n=new Date(),t=n.toTimeString().substring(0,8);
+  document.querySelectorAll('#ts').forEach(e=>e.textContent=t);
+}
+setInterval(updateTS,1000);updateTS();
+
+const obs=new IntersectionObserver(e=>e.forEach(el=>{if(el.isIntersecting)el.target.classList.add('v')}),{threshold:.08});
+document.querySelectorAll('.fi').forEach(e=>obs.observe(e));
+
+let users=4827361293;
+function fmtUsers(n){return n.toLocaleString('en-US')}
+document.getElementById('users-stat').textContent=fmtUsers(users);
+document.getElementById('users-live').textContent=fmtUsers(users);
+setInterval(()=>{
+  users+=Math.floor(Math.random()*47+3);
+  document.getElementById('users-stat').textContent=fmtUsers(users);
+  document.getElementById('users-live').textContent=fmtUsers(users);
+},800);
+
+setInterval(()=>{
+  const v=(99.7+((Math.random()-.5)*.04)).toFixed(1)+'%';
+  document.getElementById('conn-live').textContent=v;
+},3000);
+
+const termOut=document.getElementById('term-out');
+const termIn=document.getElementById('term-in');
+const cmds={
+  help:{lines:[
+    {t:'Available commands:',c:'hi'},
+    {t:'  help      — list of commands',c:'out'},
+    {t:'  status    — system status',c:'out'},
+    {t:'  scan      — scan for anomalies',c:'out'},
+    {t:'  products  — V-Chronos catalog',c:'out'},
+    {t:'  kumani    — Kumani Archive',c:'out'},
+    {t:'  sync      — start synchronization',c:'out'},
+    {t:'  ping      — test connection',c:'out'},
+    {t:'  clear     — clear terminal',c:'out'},
+  ]},
+  status:{lines:[
+    {t:'CHRONOS CORP // SYSTEM v4.2 // STATUS REPORT',c:'hi'},
+    {t:'─────────────────────────────────────────',c:'out'},
+    {t:'Primal Simulator .......... ONLINE',c:'ok'},
+    {t:'Global Connectivity ....... 99.7%',c:'ok'},
+    {t:'Kumani Archive ............ UNDER CONTROL',c:'ok'},
+    {t:'Loop Anomaly 0.000003s .... DETECTED',c:'warn'},
+    {t:'Containment Protocol ...... ACTIVE',c:'ok'},
+    {t:'Pirate Broadcasts ......... 3 DETECTED',c:'err'},
+    {t:'─────────────────────────────────────────',c:'out'},
+    {t:'ALERT: Escalating anomalous activity in Kumani Archive.',c:'warn'},
+  ]},
+  scan:{lines:[
+    {t:'Initiating Primal Simulator scan...',c:'out'},
+    {t:'[████████████████████] 100%',c:'ok'},
+    {t:'',c:'out'},
+    {t:'ANOMALIES DETECTED:',c:'warn'},
+    {t:'  › Loop 0.000003s — TEMPORAL CORE',c:'warn'},
+    {t:'  › Unidentified interference — SECTOR 7',c:'warn'},
+    {t:'  › Origin: Sample 0 — UNDER ANALYSIS',c:'err'},
+    {t:'',c:'out'},
+    {t:'RECOMMENDATION: Maintain active synchronization.',c:'out'},
+  ]},
+  products:{lines:[
+    {t:'V-CHRONOS CATALOGUE // 9 MODELS AVAILABLE',c:'hi'},
+    {t:'01 Cyberband V2    — Mass Access',c:'out'},
+    {t:'02 Chronos Alpha   — Base + Tactical',c:'out'},
+    {t:'03 Pulse-V         — Skills + Focus',c:'out'},
+    {t:'04 Aero Watch      — Navigation + Mobility',c:'out'},
+    {t:'05 Spectra G4      — Social Cognition',c:'out'},
+    {t:'06 Stealth Elite   — Tactical [RESTRICTED]',c:'warn'},
+    {t:'07 Nexus Time      — Temporal Flow',c:'out'},
+    {t:'08 Orbital-X       — Ancestral Memory',c:'out'},
+    {t:'09 Chronos Omega   — Total Access [UPON REQUEST]',c:'warn'},
+  ]},
+  kumani:{lines:[
+    {t:'KUMANI ARCHIVE // LEVEL 5 ACCESS',c:'hi'},
+    {t:'STATUS: Encrypted',c:'warn'},
+    {t:'',c:'out'},
+    {t:'To access the full Kumani Archive,',c:'out'},
+    {t:'use the restricted access module.',c:'out'},
+    {t:'',c:'out'},
+    {t:'HINT: The password is on Instagram @chronoscorp.inc',c:'warn'},
+  ]},
+  sync:{lines:[
+    {t:'Initiating synchronization protocol...',c:'out'},
+    {t:'Connecting to Primal Simulator...',c:'out'},
+    {t:'Verifying bio-signature...',c:'out'},
+    {t:'[████████████████████] 100%',c:'ok'},
+    {t:'',c:'out'},
+    {t:'SYNCHRONIZATION COMPLETE.',c:'ok'},
+    {t:'Welcome to the present. Or what is left of it.',c:'hi'},
+  ]},
+  ping:{lines:[
+    {t:'PING primal-simulator.chronoscorp.net',c:'out'},
+    {t:'64 bytes: seq=1 ttl=64 time=0.003ms',c:'ok'},
+    {t:'64 bytes: seq=2 ttl=64 time=0.003ms',c:'ok'},
+    {t:'64 bytes: seq=3 ttl=64 time=0.003ms',c:'ok'},
+    {t:'',c:'out'},
+    {t:'3 packets transmitted, 3 received, 0% packet loss.',c:'ok'},
+  ]},
+};
+cmds.produtos=cmds.products;
+
+function addLine(text,cls){
+  const d=document.createElement('div');
+  d.className='term-line '+cls;
+  d.textContent=text;
+  termOut.appendChild(d);
+  termOut.scrollTop=termOut.scrollHeight;
+}
+
+function runCmd(raw){
+  const cmd=raw.trim().toLowerCase();
+  addLine('CC:~$ '+raw,'cmd');
+  if(cmd==='clear'){termOut.innerHTML='';return;}
+  const def=cmds[cmd];
+  if(def){def.lines.forEach((l,i)=>setTimeout(()=>addLine(l.t,l.c),i*60));}
+  else if(cmd===''){return;}
+  else{addLine('Command not recognized: '+cmd+'. Type "help" for assistance.','err');}
+}
+
+const boot=[
+  {t:'CHRONOS CORP // TERMINAL v4.2',c:'hi'},
+  {t:'Initializing Primal Simulator modules...',c:'out'},
+  {t:'Connecting to Kumani Archive...',c:'out'},
+  {t:'[████████████████████] Ready.',c:'ok'},
+  {t:'',c:'out'},
+  {t:'Welcome to the Chronos Corp system.',c:'hi'},
+  {t:'Type "help" to list available commands.',c:'out'},
+];
+boot.forEach((l,i)=>setTimeout(()=>addLine(l.t,l.c),i*120+500));
+
+termIn.addEventListener('keydown',e=>{
+  if(e.key==='Enter'){runCmd(termIn.value);termIn.value='';}
+});
+
+const questions=[
+  {q:'How would you describe your relationship with time?',opts:[
+    {t:'I never have enough',r:'Cyberband V2'},
+    {t:'I need total control',r:'Chronos Omega'},
+    {t:'I want to understand my natural cycles',r:'Orbital-X'},
+    {t:'I prefer to operate unnoticed',r:'Stealth Elite'},
+  ]},
+  {q:'What is your priority?',opts:[
+    {t:'Physical performance and focus',r:'Pulse-V'},
+    {t:'Global presence and executive cognition',r:'Nexus Time'},
+    {t:'Emotional intelligence and relationships',r:'Spectra G4'},
+    {t:'Endurance in extreme environments',r:'Chronos Alpha'},
+  ]},
+  {q:'What would you do with more perceived time?',opts:[
+    {t:'Optimize every second of the day',r:'Cyberband V2'},
+    {t:'Master multiple simultaneous contexts',r:'Nexus Time'},
+    {t:'Explore inaccessible territories',r:'Aero Watch'},
+    {t:'Connect with something greater',r:'Orbital-X'},
+  ]},
+  {q:'What is your greatest vulnerability?',opts:[
+    {t:'Losing control of attention',r:'Chronos Omega'},
+    {t:'Being tracked or monitored',r:'Stealth Elite'},
+    {t:'Not being able to read others',r:'Spectra G4'},
+    {t:'Falling behind the global pace',r:'Pulse-V'},
+  ]},
+];
+
+const modelDescs={
+  'Cyberband V2':'The mass model. Your relationship with time is pragmatic — you want continuous, frictionless optimization. The Primal Simulator works for you in the shadows.',
+  'Chronos Omega':'Total access. You do not want to optimize time — you want to control it. The Omega is the only model with full temporal flow protocol. The model Luc Vangersson wears.',
+  'Orbital-X':'Ancestral memory. You seek something technology usually ignores: connection with cycles greater than productivity. Orbital-X synchronizes with what never stops.',
+  'Stealth Elite':'Hidden perception. You operate best when no one knows you are operating. Untraceable protocol. Restricted access — and that is how you prefer it.',
+  'Pulse-V':'Physical skills. Your present is the body in motion. Pulse-V recalibrates the perception of effort so you always have more than you thought.',
+  'Nexus Time':'Executive temporal flow. Your mind processes multiple contexts simultaneously. Nexus Time turns that into an advantage — not a burden.',
+  'Spectra G4':'Social cognition. You read environments before others realize what is happening. Spectra G4 amplifies that protocol.',
+  'Chronos Alpha':'Endurance and precision. You operate in conditions that eliminate others. Alpha is tactical, rugged, and never asks permission.',
+  'Aero Watch':'Spatial perception. You think at altitude — literally or metaphorically. Aero expands the perimeter of what you can perceive.',
+};
+
+let qIndex=0;const scores={};
+function renderQ(){
+  const q=questions[qIndex];
+  document.getElementById('quiz-prog').textContent=`QUESTION ${qIndex+1} OF ${questions.length} // PRIMAL SIMULATOR`;
+  document.getElementById('quiz-q').textContent=q.q;
+  const opts=document.getElementById('quiz-opts');
+  opts.innerHTML='';
+  q.opts.forEach(o=>{
+    const b=document.createElement('button');
+    b.className='quiz-opt';b.textContent=o.t;
+    b.onclick=()=>{
+      scores[o.r]=(scores[o.r]||0)+1;
+      qIndex++;
+      if(qIndex<questions.length)renderQ();
+      else showResult();
+    };
+    opts.appendChild(b);
+  });
+}
+
+function showResult(){
+  const winner=Object.entries(scores).sort((a,b)=>b[1]-a[1])[0][0];
+  document.getElementById('quiz-inner').style.display='none';
+  const r=document.getElementById('quiz-result');
+  r.style.display='block';
+  document.getElementById('res-model').textContent=winner;
+  document.getElementById('res-tag').textContent='YOUR V-CHRONOS MODEL';
+  document.getElementById('res-desc').textContent=modelDescs[winner]||'Model recommended by the Primal Simulator.';
+  addAnomAlert('New user synchronized. Assigned model: '+winner,2);
+}
+
+function resetQuiz(){
+  qIndex=0;Object.keys(scores).forEach(k=>delete scores[k]);
+  document.getElementById('quiz-inner').style.display='block';
+  document.getElementById('quiz-result').style.display='none';
+  renderQ();
+}
+renderQ();
+
+let anomCount=0;
+const alerts=[
+  {t:'Fluctuation detected in the temporal core.',c:'lvl1'},
+  {t:'Interference in sector 7 — monitoring.',c:'lvl1'},
+  {t:'Kumani Archive: escalating activity.',c:'lvl2'},
+  {t:'Unauthorized transmission intercepted.',c:'lvl2'},
+  {t:'Loop 0.000003s — expansion underway.',c:'lvl3'},
+  {t:'WARNING: Primal Simulator containment at risk.',c:'lvl3'},
+  {t:'Anomaly origin: Sample 0.',c:'lvl3'},
+  {t:'Kumani Protocol initiated. Threat level: CRITICAL.',c:'lvl3'},
+];
+
+function addAnomAlert(text,lvl){
+  anomCount++;
+  document.getElementById('anom-count').textContent=anomCount;
+  const box=document.getElementById('anom-alerts');
+  const el=document.createElement('div');
+  el.className='anom-alert lvl'+lvl;
+  el.textContent='['+new Date().toTimeString().substring(0,8)+'] '+text;
+  box.appendChild(el);
+  setTimeout(()=>el.classList.add('show'),50);
+  if(box.children.length>4)box.removeChild(box.firstChild);
+}
+
+let alertIdx=0;
+setInterval(()=>{
+  const a=alerts[alertIdx%alerts.length];
+  addAnomAlert(a.t,parseInt(a.c.replace('lvl','')));
+  alertIdx++;
+},8000);
+setTimeout(()=>addAnomAlert('Monitoring system activated.',1),2000);
+
+document.getElementById('anom-code').addEventListener('click',()=>{
+  addAnomAlert('MANUAL ACCESS TO ANOMALY CODE DETECTED.',3);
+  const el=document.getElementById('anom-code');
+  const orig=el.textContent;
+  let i=0;
+  const g='01█▓▒░';
+  const iv=setInterval(()=>{
+    el.textContent=orig.split('').map((c,j)=>j<i?c:g[Math.floor(Math.random()*g.length)]).join('');
+    i++;if(i>orig.length){clearInterval(iv);el.textContent=orig;}
+  },40);
+});
+
+function checkArquivo(){
+  const v=document.getElementById('arq-input').value.trim().toUpperCase();
+  const msg=document.getElementById('arq-msg');
+  if(v==='KUMANI01'){
+    msg.className='arq-msg ok';msg.textContent='// Access granted. Welcome to the Kumani Archive.';
+    setTimeout(()=>{
+      document.getElementById('arq-locked').style.display='none';
+      document.getElementById('arq-content').style.display='block';
+      addAnomAlert('ACCESS TO KUMANI ARCHIVE DETECTED — ORIGIN: VISITOR.',3);
+    },800);
+  } else if(v.length>0){
+    msg.className='arq-msg err';msg.textContent='// Invalid code. Access denied.';
+    addAnomAlert('Access attempt to Kumani Archive denied.',2);
+    setTimeout(()=>{msg.textContent='';},2500);
+  }
+}
+
+document.getElementById('arq-input').addEventListener('keydown',e=>{
+  if(e.key==='Enter')checkArquivo();
+});
+
+function toggleArqFile(el){
+  const d=el.querySelector('.arq-file-data');
+  const n=el.querySelector('.arq-file-name');
+  if(d.style.display==='block'){
+    d.style.display='none';
+    n.textContent=n.textContent.replace('▾','▸');
+  } else {
+    d.style.display='block';
+    n.textContent=n.textContent.replace('▸','▾');
+  }
+}
+
+const canvas=document.getElementById('mapa-canvas');
+const ctx=canvas.getContext('2d');
+const tooltip=document.getElementById('mapa-tooltip');
+
+function resizeCanvas(){
+  canvas.width=canvas.offsetWidth;
+  canvas.height=400;
+}
+resizeCanvas();
+window.addEventListener('resize',()=>{resizeCanvas();initNos();});
+
+const nosData=[
+  {name:'Fortaleza',x:.42,y:.58,type:'anom'},
+  {name:'São Paulo',x:.37,y:.67,type:'active'},
+  {name:'Rio de Janeiro',x:.39,y:.65,type:'active'},
+  {name:'New York',x:.23,y:.38,type:'active'},
+  {name:'London',x:.47,y:.28,type:'active'},
+  {name:'Paris',x:.48,y:.3,type:'active'},
+  {name:'Berlin',x:.5,y:.27,type:'active'},
+  {name:'Moscow',x:.57,y:.25,type:'active'},
+  {name:'Dubai',x:.59,y:.42,type:'active'},
+  {name:'Mumbai',x:.63,y:.46,type:'active'},
+  {name:'Tokyo',x:.82,y:.37,type:'active'},
+  {name:'Shanghai',x:.79,y:.4,type:'active'},
+  {name:'Lagos',x:.49,y:.55,type:'active'},
+  {name:'Cairo',x:.54,y:.4,type:'active'},
+  {name:'Sydney',x:.83,y:.72,type:'active'},
+  {name:'Los Angeles',x:.12,y:.4,type:'active'},
+  {name:'Chicago',x:.19,y:.35,type:'active'},
+  {name:'Toronto',x:.21,y:.32,type:'active'},
+  {name:'Mexico City',x:.17,y:.46,type:'active'},
+  {name:'Buenos Aires',x:.32,y:.73,type:'active'},
+  {name:'Seoul',x:.81,y:.36,type:'active'},
+  {name:'Jakarta',x:.77,y:.57,type:'active'},
+  {name:'Nairobi',x:.57,y:.58,type:'inactive'},
+  {name:'Bogotá',x:.26,y:.57,type:'active'},
+  {name:'Lima',x:.25,y:.63,type:'active'},
+];
+
+let nos=[];
+function initNos(){
+  nos=nosData.map(n=>({
+    ...n,
+    px:n.x*canvas.width,
+    py:n.y*canvas.height,
+    r:n.type==='anom'?6:n.type==='inactive'?3:4,
+    pulse:Math.random()*Math.PI*2,
+    speed:0.02+Math.random()*.02,
+  }));
+  document.getElementById('nos-count').textContent=nos.filter(n=>n.type==='active'||n.type==='anom').length;
+}
+initNos();
+
+function drawMapa(){
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  ctx.strokeStyle='rgba(13,32,32,0.8)';ctx.lineWidth=1;
+  for(let x=0;x<canvas.width;x+=50){ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x,canvas.height);ctx.stroke();}
+  for(let y=0;y<canvas.height;y+=50){ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(canvas.width,y);ctx.stroke();}
+
+  nos.forEach((a,i)=>{
+    if(a.type==='inactive')return;
+    nos.slice(i+1).forEach(b=>{
+      if(b.type==='inactive')return;
+      const dist=Math.hypot(a.px-b.px,a.py-b.py);
+      if(dist<180){
+        const alpha=(1-dist/180)*.15;
+        ctx.beginPath();
+        ctx.strokeStyle=`rgba(0,184,184,${alpha})`;
+        ctx.lineWidth=.5;
+        ctx.moveTo(a.px,a.py);ctx.lineTo(b.px,b.py);ctx.stroke();
+      }
+    });
+  });
+
+  nos.forEach(n=>{
+    n.pulse+=n.speed;
+    const color=n.type==='anom'?'255,85,0':n.type==='inactive'?'90,106,106':'0,184,184';
+    const pr=(Math.sin(n.pulse)+1)/2;
+
+    if(n.type!=='inactive'){
+      ctx.beginPath();
+      ctx.arc(n.px,n.py,n.r+4+pr*6,0,Math.PI*2);
+      ctx.strokeStyle=`rgba(${color},${.15+pr*.1})`;
+      ctx.lineWidth=1;ctx.stroke();
+    }
+    ctx.beginPath();ctx.arc(n.px,n.py,n.r,0,Math.PI*2);
+    ctx.fillStyle=`rgba(${color},${n.type==='inactive'?.3:.8+pr*.2})`;
+    ctx.fill();
+
+    if(n.name==='Fortaleza'){
+      ctx.beginPath();ctx.arc(n.px,n.py,n.r+8+pr*8,0,Math.PI*2);
+      ctx.strokeStyle=`rgba(255,85,0,${.3+pr*.2})`;
+      ctx.lineWidth=1.5;ctx.stroke();
+    }
+  });
+
+  requestAnimationFrame(drawMapa);
+}
+drawMapa();
+
+canvas.addEventListener('mousemove',e=>{
+  const rect=canvas.getBoundingClientRect();
+  const mx=e.clientX-rect.left,my=e.clientY-rect.top;
+  let found=null;
+  nos.forEach(n=>{if(Math.hypot(n.px-mx,n.py-my)<12)found=n;});
+  if(found){
+    tooltip.style.opacity='1';
+    tooltip.style.left=(e.clientX-rect.left+16)+'px';
+    tooltip.style.top=(e.clientY-rect.top-10)+'px';
+    const status=found.type==='anom'?'⚠ ANOMALY':found.type==='inactive'?'INACTIVE':'SYNCHRONIZED';
+    tooltip.innerHTML=`<span style="color:${found.type==='anom'?'#FF5500':found.type==='inactive'?'#5A6A6A':'#00B8B8'}">${found.name}</span><br>${status}`;
+  } else {tooltip.style.opacity='0';}
+});
+
+canvas.addEventListener('click',e=>{
+  const rect=canvas.getBoundingClientRect();
+  const mx=e.clientX-rect.left,my=e.clientY-rect.top;
+  nos.forEach(n=>{
+    if(Math.hypot(n.px-mx,n.py-my)<12&&n.type!=='inactive'){
+      addAnomAlert(`Node ${n.name} verified — ${n.type==='anom'?'ACTIVE ANOMALY':'synchronized'}.`,n.type==='anom'?3:1);
+    }
+  });
+});
 </script>
- <!-- SELETOR TRILÍNGUE DIRETO (PT | ES | EN) -->
+<!-- SELETOR TRILÍNGUE DIRETO (PT | ES | EN) -->
 <div style="position:fixed;top:68px;right:24px;z-index:9998;display:flex;gap:6px;background:rgba(2,5,8,0.92);padding:6px 10px;border:1px solid #007878;backdrop-filter:blur(8px)">
-  <a href="index.html" style="text-decoration:none;border:1px solid #00B8B8;color:#00B8B8;font-family:'Syne Mono',monospace;font-size:11px;padding:3px 8px">PT</a>
+  <a href="index.html" style="text-decoration:none;border:1px solid #007878;color:#F0F4F4;font-family:'Syne Mono',monospace;font-size:11px;padding:3px 8px">PT</a>
   <a href="es.html" style="text-decoration:none;border:1px solid #007878;color:#F0F4F4;font-family:'Syne Mono',monospace;font-size:11px;padding:3px 8px">ES</a>
-  <a href="en.html" style="text-decoration:none;border:1px solid #007878;color:#F0F4F4;font-family:'Syne Mono',monospace;font-size:11px;padding:3px 8px">EN</a>
+  <a href="en.html" style="text-decoration:none;border:1px solid #00B8B8;color:#00B8B8;font-family:'Syne Mono',monospace;font-size:11px;padding:3px 8px">EN</a>
 </div>
+
 
 
 
