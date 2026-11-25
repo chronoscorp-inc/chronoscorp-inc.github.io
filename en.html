@@ -4,10 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Chronos Corp — Your life, optimized.</title>
-
-<meta name="description" content="A biologia humana entrega a realidade com minutos de atraso. Você vive em uma reprise. Nossa missão na Chronos Corp é transformar essa falha biológica em otimização.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Syne+Mono&family=Syne:wght@400;600;700;800&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<meta name="description" content="Human biology delivers reality minutes late. You live in a rerun. Our mission at Chronos Corp is to turn this biological flaw into optimization.">
+<link rel="preconnect" href="https://googleapis.com">
+<link href="https://googleapis.com/css2?family=Syne+Mono&family=Syne:wght@400;600;700;800&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#020508;--bg2:#050d12;--cyan:#00B8B8;--c2:#007878;--c3:#003838;--orange:#FF5500;--white:#F0F4F4;--gray:#5A6A6A;--lgray:#1A2A2A;--border:#0D2020;--red:#CC2200}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -119,7 +118,6 @@ h2 em{color:var(--cyan);font-style:italic}
 .term-prompt{font-family:'Syne Mono',monospace;font-size:13px;color:var(--cyan)}
 .term-input{flex:1;background:transparent;border:none;outline:none;font-family:'Syne Mono',monospace;font-size:13px;color:var(--white);caret-color:var(--cyan)}
 .term-hint{font-family:'Syne Mono',monospace;font-size:10px;color:var(--c2);text-align:center;margin-top:1rem}
-
 /* ── QUIZ ── */
 #quiz-section{padding:80px 0}
 .quiz-box{max-width:680px;margin:2rem auto 0;border:1px solid var(--border);background:var(--bg2);position:relative}
@@ -138,7 +136,6 @@ h2 em{color:var(--cyan);font-style:italic}
 .result-desc{font-family:'Syne Mono',monospace;font-size:12px;color:var(--gray);line-height:1.8;margin-bottom:1.5rem}
 .quiz-reset{font-family:'Syne Mono',monospace;font-size:11px;color:var(--c2);background:none;border:1px solid var(--border);padding:8px 20px;cursor:pointer;letter-spacing:.15em;text-transform:uppercase;transition:all .2s}
 .quiz-reset:hover{border-color:var(--cyan);color:var(--cyan)}
-
 /* ── ANOMALIA COUNTER ── */
 .anomalia-bar{background:var(--bg);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:60px 0;text-align:center;position:relative;overflow:hidden}
 .anom-bg{position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(255,85,0,.04) 0%,transparent 70%)}
@@ -154,7 +151,6 @@ h2 em{color:var(--cyan);font-style:italic}
 .anom-alert.lvl1{color:var(--gray);border-color:var(--border)}
 .anom-alert.lvl2{color:var(--orange);border-color:rgba(255,85,0,.3)}
 .anom-alert.lvl3{color:var(--red);border-color:rgba(204,34,0,.5);background:rgba(204,34,0,.05)}
-
 /* ── ARQUIVO KUMANI ── */
 #arquivo-section{padding:80px 0;background:var(--bg2)}
 .arquivo-box{max-width:600px;margin:2rem auto 0;border:1px solid var(--border);background:var(--bg);position:relative}
@@ -179,7 +175,6 @@ h2 em{color:var(--cyan);font-style:italic}
 .arq-file-name{font-family:'Syne Mono',monospace;font-size:12px;color:var(--cyan);margin-bottom:3px}
 .arq-file-desc{font-family:'Syne Mono',monospace;font-size:11px;color:var(--gray)}
 .arq-file-data{font-family:'Syne Mono',monospace;font-size:11px;color:var(--white);margin-top:.5rem;padding:.75rem;background:var(--bg2);border-left:2px solid var(--cyan);display:none;line-height:1.8}
-
 /* ── MAPA ── */
 #mapa-section{padding:80px 0}
 .mapa-container{margin-top:2rem;border:1px solid var(--border);background:var(--bg2);position:relative;overflow:hidden}
@@ -191,52 +186,11 @@ h2 em{color:var(--cyan);font-style:italic}
 .mapa-leg-item{display:flex;align-items:center;gap:6px;font-family:'Syne Mono',monospace;font-size:10px;color:var(--gray)}
 .mapa-leg-dot{width:8px;height:8px;border-radius:50%}
 .mapa-tooltip{position:absolute;font-family:'Syne Mono',monospace;font-size:11px;background:rgba(2,5,8,.95);border:1px solid var(--c2);padding:8px 12px;pointer-events:none;opacity:0;transition:opacity .2s;white-space:nowrap;color:var(--white)}
-
-/* PERSONAGENS */
-.chgrid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:3rem}
-.ch{border:1px solid var(--border);background:var(--bg2);position:relative;overflow:hidden}
-.ch-top{padding:2rem;border-bottom:1px solid var(--border)}
-.ch.nia .ch-top::before{content:'';position:absolute;top:0;left:0;width:3px;height:100%;background:var(--cyan)}
-.ch.luc .ch-top::before{content:'';position:absolute;top:0;right:0;width:3px;height:100%;background:var(--orange)}
-.ch-role{font-family:'Syne Mono',monospace;font-size:10px;color:var(--gray);letter-spacing:.2em;text-transform:uppercase;margin-bottom:.5rem}
-.ch-name{font-family:'DM Serif Display',serif;font-size:34px;font-weight:400;margin-bottom:1rem}
-.ch.nia .ch-name{color:var(--cyan)}.ch.luc .ch-name{color:var(--orange)}
-.ch-desc{font-family:'Syne Mono',monospace;font-size:12px;color:var(--gray);line-height:1.8}
-.ch-specs{padding:1.25rem 2rem}
-.ch-spec{display:flex;justify-content:space-between;font-family:'Syne Mono',monospace;font-size:11px;padding:.45rem 0;border-bottom:1px solid var(--border)}
-.ch-spec:last-child{border-bottom:none}
-.ch-sl{color:var(--gray)}.ch-sv{color:var(--white)}
-.ch-quote{font-family:'DM Serif Display',serif;font-size:15px;font-style:italic;line-height:1.6;padding:1.25rem 2rem;border-top:1px solid var(--border);color:var(--gray)}
-.ch.nia .ch-quote{border-left:2px solid var(--cyan)}.ch.luc .ch-quote{border-left:2px solid var(--orange)}
-
-/* FOOTER */
-footer{border-top:1px solid var(--border);padding:2.5rem 0}
-.footer-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
-.footer-logo{font-family:'Syne Mono',monospace;font-size:12px;color:var(--c2);letter-spacing:.15em}
-.footer-copy{font-family:'Syne Mono',monospace;font-size:10px;color:var(--gray)}
-.footer-anom{font-family:'Syne Mono',monospace;font-size:10px;color:var(--orange);animation:blink 2s ease infinite}
-
-/* FADE IN */
-.fi{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease}
-.fi.v{opacity:1;transform:translateY(0)}
-
-@media(max-width:768px){
-  .nav-links{display:none}
-  .mg,.chgrid{grid-template-columns:1fr;gap:2rem}
-  .pgrid{grid-template-columns:1fr}
-  .hstats{gap:2rem;flex-wrap:wrap;justify-content:center}
-  .footer-inner{flex-direction:column;text-align:center}
-}
-
 /* ── PERFIS DE PERSONAGENS ── */
 .chars-grid-new{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:3rem}
 .ch-new{border:1px solid var(--border);background:var(--bg2);overflow:hidden;position:relative}
-.ch-new .ch-img{width:100%;height:360px;object-fit:cover;object-position:center 35%;display:block;filter:brightness(1.15) contrast(1.05)}
-.ch-new.nia .ch-img{border-bottom:3px solid var(--cyan)}
-.ch-new.luc .ch-img{border-bottom:3px solid var(--orange)}
-.ch-new .ch-overlay{position:absolute;top:0;left:0;right:0;height:360px;background:linear-gradient(to bottom,transparent 50%,rgba(2,5,8,.9) 100%);pointer-events:none}
-.ch-new.nia::before{content:'';position:absolute;top:0;left:0;width:3px;height:360px;background:var(--cyan);z-index:2}
-.ch-new.luc::before{content:'';position:absolute;top:0;right:0;width:3px;height:360px;background:var(--orange);z-index:2}
+.ch-new.nia::before{content:'';position:absolute;top:0;left:0;bottom:0;width:3px;background:var(--cyan);z-index:2}
+.ch-new.luc::before{content:'';position:absolute;top:0;right:0;bottom:0;width:3px;background:var(--orange);z-index:2}
 .ch-new-body{padding:1.5rem 2rem}
 .ch-new-role{font-family:'Syne Mono',monospace;font-size:10px;color:var(--gray);letter-spacing:.2em;text-transform:uppercase;margin-bottom:.4rem}
 .ch-new-name{font-family:'DM Serif Display',serif;font-size:32px;font-weight:400;margin-bottom:.75rem}
@@ -246,9 +200,6 @@ footer{border-top:1px solid var(--border);padding:2.5rem 0}
 .ch-new-spec{display:flex;justify-content:space-between;font-family:'Syne Mono',monospace;font-size:11px;padding:.4rem 0;border-bottom:1px solid var(--border)}
 .ch-new-spec:last-child{border-bottom:none}
 .ch-new-sl{color:var(--gray)}.ch-new-sv{color:var(--white)}
-.ch-new-quote{font-family:'DM Serif Display',serif;font-size:14px;font-style:italic;line-height:1.6;padding:1.25rem 2rem;border-top:1px solid var(--border);color:var(--gray)}
-.ch-new.nia .ch-new-quote{border-left:2px solid var(--cyan)}.ch-new.luc .ch-new-quote{border-left:2px solid var(--orange)}
-
 /* ── CONTATO CORPORATIVO ── */
 #contato-section{padding:80px 0;background:var(--bg)}
 .contato-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;margin-top:2rem}
@@ -272,112 +223,87 @@ footer{border-top:1px solid var(--border);padding:2.5rem 0}
 .contato-card.em .cc-title{color:var(--orange)}
 .contato-card.em .cc-val{color:var(--orange)}
 .contato-card.si::before{background:linear-gradient(90deg,var(--c2),transparent)}
-@media(max-width:768px){.chars-grid-new,.contato-grid{grid-template-columns:1fr}}
+@media(max-width:768px){.nav-links{display:none}.mg,.pgrid,.chars-grid-new,.contato-grid{grid-template-columns:1fr}.hstats{gap:1.5rem;bottom:1.5rem}.sv{font-size:20px}}
 
-</style>
-</head>
-<body>
 
-<nav>
-  <div class="nav-inner">
-    <a href="#" class="nav-logo"><div class="logo-ring"></div>CHRONOS CORP</a>
-    <ul class="nav-links">
-      <li><a href="#missao">Missão</a></li>
-      <li><a href="#produtos">Produtos</a></li>
-      <li><a href="#terminal-section">Terminal</a></li>
-      <li><a href="#quiz-section">Sincronizar</a></li>
-      <li><a href="#arquivo-section">Arquivo</a></li>
-      <li><a href="#mapa-section">Rede Global</a></li>
-      <li><a href="#contato-section">Contato</a></li>
-          <li><a href="index.html" style="color:#00B8B8;font-weight:bold;">PT</a></li>
-    <li><a href="en.html">EN</a></li>
-    <li><a href="es.html">ES</a></li>
+CHRONOS CORP
+• Mission
+• Products
+• Terminal
+• Sync
+• Archive
+• Global Network
+• Contact
+• PT
+• EN
+• ES
+SIMULATOR: ONLINE
 
-    </ul>
-    <div class="nav-status mono"><div class="pulse"></div>SIMULADOR: ONLINE</div>
-  </div>
-</nav>
+CHRONOS CORP // SYSTEM ACTIVE: --:--:--
+⚠ ANOMALY: LOOP 0.000003s DETECTED
+PRIMAL SIMULATOR // CONNECTIVITY 99.7%
+KUMANI ARCHIVE // UNDER CONTROL
+V-CHRONOS WATCH // 9 MODELS AVAILABLE
+PIRATE BROADCASTS: IGNORE
+YOUR LIFE, OPTIMIZED. // CHRONOS CORP
+CHRONOS CORP // SYSTEM ACTIVE: --:--:--
+⚠ ANOMALY: LOOP 0.000003s DETECTED
+PRIMAL SIMULATOR // CONNECTIVITY 99.7%
+KUMANI ARCHIVE // UNDER CONTROL
+V-CHRONOS WATCH // 9 MODELS AVAILABLE
+PIRATE BROADCASTS: IGNORE
+YOUR LIFE, OPTIMIZED. // CHRONOS CORP
 
-<div class="ticker">
-  <div class="ticker-track" id="tkr">
-    <span class="ti">CHRONOS CORP <span class="c">//</span> SISTEMA ATIVO: <span class="c" id="ts">--:--:--</span></span>
-    <span class="ti"><span class="a">⚠ ANOMALIA:</span> LOOP 0.000003s DETECTADO</span>
-    <span class="ti">SIMULADOR PRIMAL <span class="c">//</span> CONECTIVIDADE 99,7%</span>
-    <span class="ti">ARQUIVO KUMANI <span class="c">//</span> SOB CONTROLE</span>
-    <span class="ti">V-CHRONOS WATCH <span class="c">//</span> 9 MODELOS DISPONÍVEIS</span>
-    <span class="ti"><span class="a">TRANSMISSÕES PIRATAS:</span> IGNORE</span>
-    <span class="ti">SUA VIDA, OTIMIZADA. <span class="c">//</span> CHRONOS CORP</span>
-    <span class="ti">CHRONOS CORP <span class="c">//</span> SISTEMA ATIVO: <span class="c">--:--:--</span></span>
-    <span class="ti"><span class="a">⚠ ANOMALIA:</span> LOOP 0.000003s DETECTADO</span>
-    <span class="ti">SIMULADOR PRIMAL <span class="c">//</span> CONECTIVIDADE 99,7%</span>
-    <span class="ti">ARQUIVO KUMANI <span class="c">//</span> SOB CONTROLE</span>
-    <span class="ti">V-CHRONOS WATCH <span class="c">//</span> 9 MODELOS DISPONÍVEIS</span>
-    <span class="ti"><span class="a">TRANSMISSÕES PIRATAS:</span> IGNORE</span>
-    <span class="ti">SUA VIDA, OTIMIZADA. <span class="c">//</span> CHRONOS CORP</span>
-  </div>
-</div>
+Chronos Corp // System Active
+Biology
+delivers reality
+minutes
+late.
+You are not living in the present.
+You are living a rerun.
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hgrid"></div><div class="hglow"></div><div class="hglow2"></div>
-  <div class="hero-content">
-    <div class="hlabel fi">Chronos Corp // Sistema Ativo</div>
-    <h1 class="fi">A biologia<br>entrega a realidade<br>com <span class="c">minutos</span><br>de <span class="o">atraso.</span></h1>
-    <p class="hsub fi">Você não está vivendo o presente.<br>Você está vivendo <strong>uma reprise.</strong><br><br>Nossa missão: transformar essa falha biológica<br>em <strong>otimização.</strong></p>
-    <div class="hctas fi">
-      <a href="#quiz-section" class="btn btn-p">Testar Sincronização</a>
-      <a href="#terminal-section" class="btn btn-o">Acessar Terminal</a>
-    </div>
-  </div>
-  <div class="hstats fi">
-    <div class="stat"><span class="sv" id="conn-stat">99,7%</span><span class="sl">Conectividade</span></div>
-    <div class="stat"><span class="sv">9</span><span class="sl">Modelos</span></div>
-    <div class="stat"><span class="sv" id="users-stat">0</span><span class="sl">Sincronizados</span></div>
-    <div class="stat"><span class="sv">∞</span><span class="sl">Loop Ativo</span></div>
-  </div>
-</section>
+Our mission: turn this biological flaw
+into optimization.
+Test Synchronization
+Access Terminal
 
-<!-- MISSÃO -->
-<section id="missao">
-  <div class="container">
-    <div class="mg">
-      <div class="mt fi">
-        <div class="slabel">Nossa Missão</div>
-        <h2>Você vive no<br><em>passado.</em><br>Nós mudamos isso.</h2>
-        <p>O cérebro humano processa o presente com milissegundos de atraso. <strong>Todos nós habitamos uma reprise constante da realidade.</strong> Desde o surgimento da espécie, essa latência biológica foi aceita como inevitável.</p>
-        <p>A Chronos Corp discorda. Através do <strong>V-Chronos Watch</strong> e do <strong>Simulador Primal</strong>, desenvolvemos a primeira tecnologia capaz de colonizar o gap entre percepção e consciência.</p>
-        <p>Ou é o que acreditamos.</p>
-      </div>
-      <div class="panel fi">
-        <div class="panel-hd">Arquivo Kumani // Status do Sistema</div>
-        <div class="drow"><span class="dl">Simulador Primal</span><span class="dv ok">ONLINE</span></div>
-        <div class="drow"><span class="dl">Conectividade Global</span><span class="dv" id="conn-live">99,7%</span></div>
-        <div class="drow"><span class="dl">Usuários Sincronizados</span><span class="dv" id="users-live">Calculando...</span></div>
-        <div class="drow"><span class="dl">Anomalia Detectada</span><span class="dv al">Loop 0.000003s</span></div>
-        <div class="drow"><span class="dl">Origem da Anomalia</span><span class="dv al">Em Análise</span></div>
-        <div class="drow"><span class="dl">Arquivo Kumani</span><span class="dv">SOB CONTROLE</span></div>
-        <div class="drow"><span class="dl">Transmissões Piratas</span><span class="dv red">DETECTADAS</span></div>
-        <div class="drow"><span class="dl">Protocolo de Contenção</span><span class="dv ok">ATIVO</span></div>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- PRODUTOS -->
+
+99.7%Connectivity
+9Models
+0Synchronized
+∞Active Loop
+Our Mission
+You live in the
+past.
+We change that.
+The human brain processes the present milliseconds late. We all inhabit a constant rerun of reality. Since the emergence of our species, this biological latency has been accepted as inevitable.
+Chronos Corp disagrees. Through the V-Chronos Watch and the Primal Simulator, we have developed the first technology capable of colonizing the gap between perception and consciousness.
+Or so we believe.
+Kumani Archive // System Status
+Primal SimulatorONLINE
+Global Connectivity99.7%
+Synchronized UsersCalculating...
+Anomaly DetectedLoop 0.000003s
+Anomaly OriginUnder Analysis
+Kumani ArchiveUNDER CONTROL
+Pirate BroadcastsDETECTED
+Containment ProtocolACTIVE
+<!-- PRODUCTS -->
 <section id="produtos" class="produtos">
   <div class="container">
     <div class="slabel fi">V-Chronos Catalogue</div>
-    <h2 class="fi">Qual sincronização<br>você <em>escolhe?</em></h2>
+    <h2 class="fi">Which synchronization<br>do you <em>choose?</em></h2>
     <div class="pgrid">
-      <div class="pc fi"><div class="pn">01 // LINHA GLOBAL</div><div class="pname">Cyberband V2</div><div class="ptag">Acesso em Massa</div><div class="pdesc">OLED flexível, 14k passos. O modelo mais vendido do mundo. Sincronização diária para 99% da população global.</div><div class="pst">Disponível — Padrão Global</div></div>
-      <div class="pc fi"><div class="pn">02 // LINHA STANDARD</div><div class="pname">Chronos Alpha</div><div class="ptag">Base + Tático</div><div class="pdesc">GPS de precisão, bio-sensores, acabamento tático dark. Acesso ao Simulador Primal com resistência para ambientes extremos.</div><div class="pst">Disponível</div></div>
-      <div class="pc fi"><div class="pn">03 // LINHA PERFORMANCE</div><div class="pname">Pulse-V</div><div class="ptag">Habilidades + Foco</div><div class="pdesc">Modo atleta integrado. Ativa loop de atenção que recalibra a percepção de esforço físico. FC em tempo real.</div><div class="pst">Disponível</div></div>
-      <div class="pc fi"><div class="pn">04 // LINHA ALTITUDE</div><div class="pname">Aero Watch</div><div class="ptag">Navegação + Mobilidade</div><div class="pdesc">Slim 5,8mm, aeronáutico, altímetro de precisão. Percepção espacial expandida para quem opera em altitude.</div><div class="pst">Disponível</div></div>
-      <div class="pc fi"><div class="pn">05 // LINHA SOCIAL</div><div class="pname">Spectra G4</div><div class="ptag">Cognição Social</div><div class="pdesc">Interface OLED colorida. Ativa reconhecimento de padrões emocionais. Para quem precisa de vantagem nas relações.</div><div class="pst">Edição Especial</div></div>
-      <div class="pc fi"><div class="pn">06 // LINHA OPERACIONAL</div><div class="pname">Stealth Elite</div><div class="ptag">Tático // Restrito</div><div class="pdesc">Minimalista dark, stealth mode ativo. Para usuários que operam fora do radar. Protocolo não rastreável.</div><div class="pst" style="color:var(--orange)">Acesso Restrito</div></div>
-      <div class="pc fi"><div class="pn">07 // LINHA EXECUTIVA</div><div class="pname">Nexus Time</div><div class="ptag">Fluxo Temporal</div><div class="pdesc">Interface holográfica multi-fuso. Sincroniza múltiplos fusos como um único presente perceptual.</div><div class="pst">Edição Executiva</div></div>
-      <div class="pc fi"><div class="pn">08 // LINHA CELESTIAL</div><div class="pname">Orbital-X</div><div class="ptag">Memória Ancestral</div><div class="pdesc">6 satélites, mostrador rotativo. Sincronização com ciclos naturais e protocolo de memória ancestral.</div><div class="pst">Edição Limitada</div></div>
-      <div class="pc fi"><div class="pn">09 // LINHA EXCLUSIVA</div><div class="pname">Chronos Omega</div><div class="ptag">Acesso Total // Elite</div><div class="pdesc">Ouro 18k, cerâmica premium. Controle total do fluxo temporal. <em>O modelo que Luc Vangersson usa.</em></div><div class="pst" style="color:var(--orange)">Sob Solicitação</div></div>
+      <div class="pc fi"><div class="pn">01 // GLOBAL LINE</div><div class="pname">Cyberband V2</div><div class="ptag">Mass Access</div><div class="pdesc">Flexible OLED, 14k steps. The best-selling model in the world. Daily synchronization for 99% of the global population.</div><div class="pst">Available — Global Standard</div></div>
+      <div class="pc fi"><div class="pn">02 // STANDARD LINE</div><div class="pname">Chronos Alpha</div><div class="ptag">Base + Tactical</div><div class="pdesc">Precision GPS, biosensors, dark tactical finish. Access to the Primal Simulator with endurance for extreme environments.</div><div class="pst">Available</div></div>
+      <div class="pc fi"><div class="pn">03 // PERFORMANCE LINE</div><div class="pname">Pulse-V</div><div class="ptag">Capabilities + Focus</div><div class="pdesc">Integrated athlete mode. Activates an attention loop that recalibrates physical effort perception. Real-time HR.</div><div class="pst">Available</div></div>
+      <div class="pc fi"><div class="pn">04 // ALTITUDE LINE</div><div class="pname">Aero Watch</div><div class="ptag">Navigation + Mobility</div><div class="pdesc">5.8mm slim, aeronautical grade, precision altimeter. Expanded spatial perception for those operating at altitude.</div><div class="pst">Available</div></div>
+      <div class="pc fi"><div class="pn">05 // SOCIAL LINE</div><div class="pname">Spectra G4</div><div class="ptag">Social Cognition</div><div class="pdesc">Color OLED interface. Activates emotional pattern recognition. For those who need an edge in human relations.</div><div class="pst">Special Edition</div></div>
+      <div class="pc fi"><div class="pn">06 // OPERATIONAL LINE</div><div class="pname">Stealth Elite</div><div class="ptag">Tactical // Restricted</div><div class="pdesc">Dark minimalist, active stealth mode. For users operating off the radar. Untraceable protocol.</div><div class="pst" style="color:var(--orange)">Restricted Access</div></div>
+      <div class="pc fi"><div class="pn">07 // EXECUTIVE LINE</div><div class="pname">Nexus Time</div><div class="ptag">Temporal Flow</div><div class="pdesc">Multi-timezone holographic interface. Synchronizes multiple time zones into a single perceptual present.</div><div class="pst">Executive Edition</div></div>
+      <div class="pc fi"><div class="pn">08 // CELESTIAL LINE</div><div class="pname">Orbital-X</div><div class="ptag">Ancestral Memory</div><div class="pdesc">6 satellites, rotating dial. Synchronization with natural cycles and ancestral memory protocol.</div><div class="pst">Limited Edition</div></div>
+      <div class="pc fi"><div class="pn">09 // EXCLUSIVE LINE</div><div class="pname">Chronos Omega</div><div class="ptag">Total Access // Elite</div><div class="pdesc">18k gold, premium ceramic. Total control of temporal flow. <em>The model Luc Vangersson wears.</em></div><div class="pst" style="color:var(--orange)">Upon Request</div></div>
     </div>
   </div>
 </section>
@@ -385,8 +311,8 @@ footer{border-top:1px solid var(--border);padding:2.5rem 0}
 <!-- TERMINAL -->
 <section id="terminal-section">
   <div class="container">
-    <div class="slabel fi">Terminal de Acesso</div>
-    <h2 class="fi">Acesse o<br><em>sistema.</em></h2>
+    <div class="slabel fi">Access Terminal</div>
+    <h2 class="fi">Access the<br><em>system.</em></h2>
     <div class="terminal fi">
       <div class="term-bar">
         <div class="term-dot" style="background:#ff5f57"></div>
@@ -397,136 +323,135 @@ footer{border-top:1px solid var(--border);padding:2.5rem 0}
       <div class="term-output" id="term-out"></div>
       <div class="term-input-row">
         <span class="term-prompt">CC:~$</span>
-        <input type="text" class="term-input" id="term-in" placeholder="digite um comando..." autocomplete="off" spellcheck="false">
+        <input type="text" class="term-input" id="term-in" placeholder="enter a command..." autocomplete="off" spellcheck="false">
       </div>
     </div>
-    <p class="term-hint mono fi">// tente: help · status · scan · produtos · kumani · sync</p>
+    <p class="term-hint mono fi">// try: help · status · scan · products · kumani · sync</p>
   </div>
 </section>
 
 <!-- QUIZ -->
 <section id="quiz-section">
   <div class="container">
-    <div class="slabel fi">Teste de Sincronização</div>
-    <h2 class="fi">Descubra seu<br><em>modelo ideal.</em></h2>
+    <div class="slabel fi">Synchronization Test</div>
+    <h2 class="fi">Discover your<br><em>ideal model.</em></h2>
     <div class="quiz-box fi">
       <div class="quiz-inner" id="quiz-inner">
-        <div class="quiz-progress mono" id="quiz-prog">PERGUNTA 1 DE 4 // SIMULADOR PRIMAL</div>
+        <div class="quiz-progress mono" id="quiz-prog">QUESTION 1 OF 4 // PRIMAL SIMULATOR</div>
         <div class="quiz-q" id="quiz-q"></div>
         <div class="quiz-opts" id="quiz-opts"></div>
       </div>
-                <div class="quiz-result" id="quiz-result">
+      <div class="quiz-result" id="quiz-result">
         <div class="result-model" id="res-model"></div>
         <div class="result-tag" id="res-tag"></div>
         <p class="result-desc" id="res-desc"></p>
-        <p style="font-family:'Syne Mono',monospace;font-size:11px;color:var(--cyan);margin-bottom:1.5rem">Acesse o Instagram oficial para visualizar os modelos e especificações técnicas da linha V-Chronos.</p>
+        <p style="font-family:'Syne Mono',monospace;font-size:11px;color:var(--cyan);margin-bottom:1.5rem">Visit our official Instagram to view the models and technical specifications of the V-Chronos line.</p>
         <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
-          <a href="https://www.instagram.com/chronoscorp.inc" target="_blank" class="btn btn-p" style="font-size:11px;padding:11px 22px">VER MODELOS NO INSTAGRAM // @CHRONOSCORP.INC</a>
-          <button class="quiz-reset" onclick="resetQuiz()">REFAZER TESTE</button>
-        </div>
-      </div>
-
-
-</section>
-
-<!-- ANOMALIA COUNTER -->
-<div class="anomalia-bar">
-  <div class="anom-bg"></div>
-  <div class="container" style="position:relative;z-index:2;text-align:center">
-    <div class="anom-label fi">⚠ Alerta de Sistema — Monitoramento em Tempo Real</div>
-    <div class="anom-code fi" id="anom-code" title="Clique para forçar anomalia">LOOP 0.000003s</div>
-    <div class="anom-counter fi">Instabilidades registradas nesta sessão: <span id="anom-count">0</span></div>
-    <div class="anom-alerts fi" id="anom-alerts"></div>
-  </div>
-</div>
-
-<!-- ARQUIVO KUMANI -->
-<section id="arquivo-section">
-  <div class="container">
-    <div class="slabel fi">Arquivo Kumani</div>
-    <h2 class="fi">Acesso<br><em>classificado.</em></h2>
-    <div class="arquivo-box fi">
-      <div class="arq-locked" id="arq-locked">
-        <div class="arq-icon">🔒</div>
-        <div class="arq-title">ARQUIVO KUMANI // NÍVEL 5</div>
-        <p class="arq-sub">Acesso restrito. Insira o código de autorização.<br>Dica: a senha está escondida no Instagram.</p>
-        <div class="arq-input-row">
-          <input type="text" class="arq-input" id="arq-input" placeholder="CÓDIGO DE ACESSO" maxlength="20">
-          <button class="arq-btn" onclick="checkArquivo()">ACESSAR</button>
-        </div>
-        <div class="arq-msg" id="arq-msg"></div>
-        <div class="arq-hint" title="A senha tem 8 caracteres e está em um post recente">// passe o mouse para uma dica</div>
-      </div>
-      <div class="arq-content" id="arq-content">
-        <div class="arq-content-title">ARQUIVO KUMANI // ACESSO CONCEDIDO // ARQUIVOS CLASSIFICADOS</div>
-        <div class="arq-file" onclick="toggleArqFile(this)">
-          <div class="arq-file-name">▸ NIA_KUMANI_DOSSIÊ.dat</div>
-          <div class="arq-file-desc">Amostra Zero — Dados clínicos e histórico de pesquisa</div>
-          <div class="arq-file-data">NOME: Nia Kumani | CARGO: Pesquisadora Sênior — V-Chronos Division<br>DIAGNÓSTICO: Alzheimer Precoce — Estágio 2 → Estágio 4 (progressão acelerada)<br>STATUS: Coma induzido — Atividade cerebral anômala<br>NOTA INTERNA: A deterioração neurológica da Amostra Zero está criando instabilidades no núcleo do Simulador Primal. Contenção em andamento.<br>AMEAÇA: CRÍTICA</div>
-        </div>
-        <div class="arq-file" onclick="toggleArqFile(this)">
-          <div class="arq-file-name">▸ SIMULADOR_PRIMAL_LOG.dat</div>
-          <div class="arq-file-desc">Registro de anomalias — Últimas 72 horas</div>
-          <div class="arq-file-data">2026-06-04 01:26:51 — ANOMALIA LOOP 0.000003s DETECTADA<br>2026-06-04 03:44:12 — INSTABILIDADE NO NÚCLEO TEMPORAL — SETOR 7<br>2026-06-04 09:17:33 — TRANSMISSÃO PIRATA INTERCEPTADA — ORIGEM: DESCONHECIDA<br>2026-06-05 14:02:08 — ARQUIVO KUMANI: ATIVIDADE ANÔMALA CRESCENTE<br>2026-06-06 — STATUS: CONTENÇÃO ATIVA // PROTOCOLO KUMANI INICIADO</div>
-        </div>
-        <div class="arq-file" onclick="toggleArqFile(this)">
-          <div class="arq-file-name">▸ MENSAGEM_NIA.dat</div>
-          <div class="arq-file-desc">Transmissão não autorizada — Origem: Amostra Zero</div>
-          <div class="arq-file-data">"Se você encontrou isso, você já sabe demais.<br>O Simulador Primal não é o que eles dizem que é.<br>O V-Chronos não foi desenvolvido para libertar o seu tempo.<br>Foi desenvolvido para sequestrar o seu presente.<br>Feche os olhos. E, finalmente... viva o agora.<br>— N.K."</div>
+          <a href="https://instagram.com" target="_blank" class="btn btn-p" style="font-size:11px;padding:11px 22px">VIEW MODELS ON INSTAGRAM // @CHRONOSCORP.INC</a>
+          <button class="quiz-reset" onclick="resetQuiz()">RETAKE TEST</button>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- MAPA GLOBAL -->
+<!-- ANOMALY COUNTER -->
+<div class="anomalia-bar">
+  <div class="anom-bg"></div>
+  <div class="container" style="position:relative;z-index:2;text-align:center">
+    <div class="anom-label fi">⚠ System Alert — Real-Time Monitoring</div>
+    <div class="anom-code fi" id="anom-code" title="Click to force anomaly">LOOP 0.000003s</div>
+    <div class="anom-counter fi">Instabilities logged in this session: <span id="anom-count">0</span></div>
+    <div class="anom-alerts fi" id="anom-alerts"></div>
+  </div>
+</div>
+<!-- KUMANI ARCHIVE -->
+<section id="arquivo-section">
+  <div class="container">
+    <div class="slabel fi">Kumani Archive</div>
+    <h2 class="fi">Classified<br><em>access.</em></h2>
+    <div class="arquivo-box fi">
+      <div class="arq-locked" id="arq-locked">
+        <div class="arq-icon">🔒</div>
+        <div class="arq-title">KUMANI ARCHIVE // LEVEL 5</div>
+        <p class="arq-sub">Restricted access. Enter your authorization code.<br>Hint: the password is hidden on Instagram.</p>
+        <div class="arq-input-row">
+          <input type="text" class="arq-input" id="arq-input" placeholder="ACCESS CODE" maxlength="20">
+          <button class="arq-btn" onclick="checkArquivo()">ACCESS</button>
+        </div>
+        <div class="arq-msg" id="arq-msg"></div>
+        <div class="arq-hint" title="The password has 8 characters and is in a recent post">// hover for a hint</div>
+      </div>
+      <div class="arq-content" id="arq-content">
+        <div class="arq-content-title">KUMANI ARCHIVE // ACCESS GRANTED // CLASSIFIED FILES</div>
+        <div class="arq-file" onclick="toggleArqFile(this)">
+          <div class="arq-file-name">▸ NIA_KUMANI_DOSSIER.dat</div>
+          <div class="arq-file-desc">Sample Zero — Clinical data and research history</div>
+          <div class="arq-file-data">NAME: Nia Kumani | ROLE: Senior Researcher — V-Chronos Division<br>DIAGNOSIS: Early-Onset Alzheimer's — Stage 2 → Stage 4 (accelerated progression)<br>STATUS: Induced coma — Anomalous brain activity<br>INTERNAL NOTE: Sample Zero's neurological deterioration is creating instabilities at the core of the Primal Simulator. Containment underway.<br>THREAT: CRITICAL</div>
+        </div>
+        <div class="arq-file" onclick="toggleArqFile(this)">
+          <div class="arq-file-name">▸ PRIMAL_SIMULATOR_LOG.dat</div>
+          <div class="arq-file-desc">Anomaly log — Last 72 hours</div>
+          <div class="arq-file-data">2026-06-04 01:26:51 — ANOMALY LOOP 0.000003s DETECTED<br>2026-06-04 03:44:12 — INSTABILITY IN TEMPORAL CORE — SECTOR 7<br>2026-06-04 09:17:33 — PIRATE BROADCAST INTERCEPTED — ORIGIN: UNKNOWN<br>2026-06-05 14:02:08 — KUMANI ARCHIVE: RISING ANOMALOUS ACTIVITY<br>2026-06-06 — STATUS: CONTAINMENT ACTIVE // KUMANI PROTOCOL INITIATED</div>
+        </div>
+        <div class="arq-file" onclick="toggleArqFile(this)">
+          <div class="arq-file-name">▸ NIA_MESSAGE.dat</div>
+          <div class="arq-file-desc">Unauthorized transmission — Origin: Sample Zero</div>
+          <div class="arq-file-data">"If you found this, you already know too much.<br>The Primal Simulator is not what they say it is.<br>V-Chronos was not designed to free your time.<br>It was designed to hijack your present.<br>Close your eyes. And, finally... live the now.<br>— N.K."</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GLOBAL MAP -->
 <section id="mapa-section">
   <div class="container">
-    <div class="slabel fi">Rede Global</div>
-    <h2 class="fi">Conectividade<br><em>global.</em></h2>
+    <div class="slabel fi">Global Network</div>
+    <h2 class="fi">Global<br><em>connectivity.</em></h2>
     <div class="mapa-container fi">
       <div class="mapa-hd">
-        <span class="mapa-hd-title">SIMULADOR PRIMAL // MAPA DE CONECTIVIDADE GLOBAL</span>
-        <span class="mapa-hd-stat mono" id="mapa-stat">Nós ativos: <span style="color:var(--cyan)" id="nos-count">0</span></span>
+        <span class="mapa-hd-title">PRIMAL SIMULATOR // GLOBAL CONNECTIVITY MAP</span>
+        <span class="mapa-hd-stat mono" id="mapa-stat">Active nodes: <span style="color:var(--cyan)" id="nos-count">0</span></span>
       </div>
       <canvas class="mapa-canvas" id="mapa-canvas" height="400"></canvas>
       <div class="mapa-tooltip" id="mapa-tooltip"></div>
       <div class="mapa-legend">
-        <div class="mapa-leg-item"><div class="mapa-leg-dot" style="background:var(--cyan)"></div>Nó Sincronizado</div>
-        <div class="mapa-leg-item"><div class="mapa-leg-dot" style="background:var(--orange)"></div>Anomalia Detectada</div>
-        <div class="mapa-leg-item"><div class="mapa-leg-dot" style="background:var(--gray)"></div>Nó Inativo</div>
+        <div class="mapa-leg-item"><div class="mapa-leg-dot" style="background:var(--cyan)"></div>Synchronized Node</div>
+        <div class="mapa-leg-item"><div class="mapa-leg-dot" style="background:var(--orange)"></div>Anomaly Detected</div>
+        <div class="mapa-leg-item"><div class="mapa-leg-dot" style="background:var(--gray)"></div>Inactive Node</div>
       </div>
     </div>
   </div>
 </section>
 
-      <!-- PERFIL CORPORATIVO -->
+<!-- CORPORATE PROFILE -->
 <section id="personagens" style="background:var(--bg2)">
   <div class="container">
-    <div class="slabel fi">Perfil Corporativo</div>
-    <h2 class="fi">Liderança &<br><em>Pesquisa.</em></h2>
+    <div class="slabel fi">Corporate Profile</div>
+    <h2 class="fi">Leadership &amp;<br><em>Research.</em></h2>
     <div class="chars-grid-new">
       <div class="ch-new nia fi">
         <div class="ch-new-body">
-          <div class="ch-new-role">AMOSTRA 0 // V-CHRONOS</div>
+          <div class="ch-new-role">SAMPLE 0 // V-CHRONOS</div>
           <div class="ch-new-name">Nia Kumani</div>
-          <p class="ch-new-desc">Neurocientista e Engenheira de Terminal Metacognitivo.</p>
+          <p class="ch-new-desc">Neuroscientist and Metacognitive Terminal Engineer.</p>
           <div class="ch-new-specs">
-            <div class="ch-new-spec"><span class="ch-new-sl">Função</span><span class="ch-new-sv">Neurocientista // Engenheira de Terminal Metacognitivo</span></div>
-            <div class="ch-new-spec"><span class="ch-new-sl">Divisão</span><span class="ch-new-sv">V-Chronos</span></div>
-            <div class="ch-new-spec"><span class="ch-new-sl">Registro</span><span class="ch-new-sv">Amostra 0</span></div>
+            <div class="ch-new-spec"><span class="ch-new-sl">Role</span><span class="ch-new-sv">Neuroscientist // Metacognitive Terminal Engineer</span></div>
+            <div class="ch-new-spec"><span class="ch-new-sl">Division</span><span class="ch-new-sv">V-Chronos</span></div>
+            <div class="ch-new-spec"><span class="ch-new-sl">Record</span><span class="ch-new-sv">Sample 0</span></div>
           </div>
         </div>
       </div>
       <div class="ch-new luc fi">
         <div class="ch-new-body">
-          <div class="ch-new-role">FUNDADOR & DIRETOR EXECUTIVO // CEO // CHRONOS CORP</div>
+          <div class="ch-new-role">FOUNDER &amp; CHIEF EXECUTIVE OFFICER // CEO // CHRONOS CORP</div>
           <div class="ch-new-name">Luc Vangersson</div>
-          <p class="ch-new-desc">Arquiteto estratégico da Chronos Corp. Lidera a expansão global do ecossistema V-Chronos e a implantação do Simulador Primal em escala planetária.</p>
+          <p class="ch-new-desc">Strategic architect of Chronos Corp. Leads the global expansion of the V-Chronos ecosystem and planetary-scale deployment of the Primal Simulator.</p>
           <div class="ch-new-specs">
-            <div class="ch-new-spec"><span class="ch-new-sl">Cargo</span><span class="ch-new-sv">CEO // Chronos Corp</span></div>
-            <div class="ch-new-spec"><span class="ch-new-sl">Conectividade</span><span class="ch-new-sv" style="color:#1DB87A">99,7% // Global</span></div>
-            <div class="ch-new-spec"><span class="ch-new-sl">Status</span><span class="ch-new-sv" style="color:#1DB87A">Operacional</span></div>
+            <div class="ch-new-spec"><span class="ch-new-sl">Title</span><span class="ch-new-sv">CEO // Chronos Corp</span></div>
+            <div class="ch-new-spec"><span class="ch-new-sl">Connectivity</span><span class="ch-new-sv" style="color:#1DB87A">99.7% // Global</span></div>
+            <div class="ch-new-spec"><span class="ch-new-sl">Status</span><span class="ch-new-sv" style="color:#1DB87A">Operational</span></div>
           </div>
         </div>
       </div>
@@ -534,35 +459,34 @@ footer{border-top:1px solid var(--border);padding:2.5rem 0}
   </div>
 </section>
 
-
-<!-- CONTATO CORPORATIVO -->
+<!-- CORPORATE CONTACT -->
 <section id="contato-section">
   <div class="container">
-    <div class="slabel fi">Contato Corporativo</div>
-    <h2 class="fi">Sincronize<br><em>conosco.</em></h2>
+    <div class="slabel fi">Corporate Contact</div>
+    <h2 class="fi">Synchronize<br><em>with us.</em></h2>
     <div class="contato-grid">
-      <a href="https://www.instagram.com/chronoscorp.inc/" target="_blank" class="contato-card ig fi">
+      <a href="https://instagram.com" target="_blank" class="contato-card ig fi">
         <span class="cc-icon">📸</span>
-        <div class="cc-title">Instagram Oficial</div>
-        <div class="cc-sub">Comunicados, alertas de sistema e atualizações do Simulador Primal em tempo real.</div>
+        <div class="cc-title">Official Instagram</div>
+        <div class="cc-sub">Announcements, system alerts, and real-time updates from the Primal Simulator.</div>
         <div class="cc-val">@chronoscorp.inc</div>
       </a>
-      <a href="https://wa.me/5585999990000?text=Chronos+Corp+%2F%2F+Solicitar+informa%C3%A7%C3%B5es" target="_blank" class="contato-card wa fi">
+      <a href="https://wa.me" target="_blank" class="contato-card wa fi">
         <span class="cc-icon">💬</span>
-        <div class="cc-title">WhatsApp Corporativo</div>
-        <div class="cc-sub">Atendimento exclusivo para usuários V-Chronos e parceiros da Chronos Corp.</div>
+        <div class="cc-title">Corporate WhatsApp</div>
+        <div class="cc-sub">Exclusive support for V-Chronos users and Chronos Corp partners.</div>
         <div class="cc-val">+55 (85) 9 9999-0000</div>
       </a>
       <a href="mailto:contato@chronoscorp.corp" class="contato-card em fi">
         <span class="cc-icon">📡</span>
-        <div class="cc-title">Canal Seguro</div>
-        <div class="cc-sub">Comunicações classificadas. Produtoras, parceiros e solicitações de material.</div>
+        <div class="cc-title">Secure Channel</div>
+        <div class="cc-sub">Classified communications. Production houses, partners, and material requests.</div>
         <div class="cc-val">contato@chronoscorp.corp</div>
       </a>
-      <a href="https://chronoscorp-inc.github.io" target="_blank" class="contato-card si fi">
+      <a href="https://github.io" target="_blank" class="contato-card si fi">
         <span class="cc-icon">🌐</span>
-        <div class="cc-title">Portal Corporativo</div>
-        <div class="cc-sub">Acesso ao painel completo da Chronos Corp e ao Simulador Primal.</div>
+        <div class="cc-title">Corporate Portal</div>
+        <div class="cc-sub">Access to the full Chronos Corp dashboard and the Primal Simulator.</div>
         <div class="cc-val">chronoscorp-inc.github.io</div>
       </a>
     </div>
@@ -573,13 +497,12 @@ footer{border-top:1px solid var(--border);padding:2.5rem 0}
 <footer>
   <div class="container">
     <div class="footer-inner">
-      <div class="footer-logo mono">CHRONOS CORP // SUA VIDA, OTIMIZADA.</div>
-      <div class="footer-copy mono">© 2026 Chronos Corp. Todos os direitos reservados.</div>
-      <div class="footer-anom mono">⚠ ANOMALIA ATIVA</div>
+      <div class="footer-logo mono">CHRONOS CORP // YOUR LIFE, OPTIMIZED.</div>
+      <div class="footer-copy mono">© 2026 Chronos Corp. All rights reserved.</div>
+      <div class="footer-anom mono">⚠ ACTIVE ANOMALY</div>
     </div>
   </div>
 </footer>
-
 <script>
 // ── TIMESTAMP ──
 function updateTS(){
@@ -594,7 +517,7 @@ document.querySelectorAll('.fi').forEach(e=>obs.observe(e));
 
 // ── USERS COUNTER ──
 let users=4827361293;
-function fmtUsers(n){return n.toLocaleString('pt-BR')}
+function fmtUsers(n){return n.toLocaleString('en-US')}
 document.getElementById('users-stat').textContent=fmtUsers(users);
 document.getElementById('users-live').textContent=fmtUsers(users);
 setInterval(()=>{
@@ -614,76 +537,88 @@ const termOut=document.getElementById('term-out');
 const termIn=document.getElementById('term-in');
 const cmds={
   help:{lines:[
-    {t:'Comandos disponíveis:',c:'hi'},
-    {t:'  help      — lista de comandos',c:'out'},
-    {t:'  status    — status do sistema',c:'out'},
-    {t:'  scan      — verificar anomalias',c:'out'},
-    {t:'  produtos  — catálogo V-Chronos',c:'out'},
-    {t:'  kumani    — Arquivo Kumani',c:'out'},
-    {t:'  sync      — iniciar sincronização',c:'out'},
-    {t:'  ping      — testar conexão',c:'out'},
-    {t:'  clear     — limpar terminal',c:'out'},
+    {t:'Available commands:',c:'hi'},
+    {t:'  help      — list of commands',c:'out'},
+    {t:'  status    — system status',c:'out'},
+    {t:'  scan      — scan for anomalies',c:'out'},
+    {t:'  products  — V-Chronos catalogue',c:'out'},
+    {t:'  kumani    — Kumani Archive',c:'out'},
+    {t:'  sync      — initiate synchronization',c:'out'},
+    {t:'  ping      — test connection',c:'out'},
+    {t:'  clear     — clear terminal',c:'out'},
   ]},
   status:{lines:[
-    {t:'CHRONOS CORP // SISTEMA v4.2 // STATUS REPORT',c:'hi'},
+    {t:'CHRONOS CORP // SYSTEM v4.2 // STATUS REPORT',c:'hi'},
     {t:'─────────────────────────────────────────',c:'out'},
-    {t:'Simulador Primal .......... ONLINE',c:'ok'},
-    {t:'Conectividade Global ...... 99.7%',c:'ok'},
-    {t:'Arquivo Kumani ............ SOB CONTROLE',c:'ok'},
-    {t:'Anomalia Loop 0.000003s ... DETECTADA',c:'warn'},
-    {t:'Protocolo de Contenção .... ATIVO',c:'ok'},
-    {t:'Transmissões Piratas ...... 3 DETECTADAS',c:'err'},
+    {t:'Primal Simulator .......... ONLINE',c:'ok'},
+    {t:'Global Connectivity ....... 99.7%',c:'ok'},
+    {t:'Kumani Archive ............ UNDER CONTROL',c:'ok'},
+    {t:'Anomaly Loop 0.000003s .... DETECTED',c:'warn'},
+    {t:'Containment Protocol ...... ACTIVE',c:'ok'},
+    {t:'Pirate Broadcasts ......... 3 DETECTED',c:'err'},
     {t:'─────────────────────────────────────────',c:'out'},
-    {t:'ALERTA: Atividade anômala crescente no Arquivo Kumani.',c:'warn'},
+    {t:'ALERT: Rising anomalous activity in Kumani Archive.',c:'warn'},
   ]},
   scan:{lines:[
-    {t:'Iniciando varredura do Simulador Primal...',c:'out'},
+    {t:'Initiating Primal Simulator scan...',c:'out'},
     {t:'[████████████████████] 100%',c:'ok'},
     {t:'',c:'out'},
-    {t:'ANOMALIAS DETECTADAS:',c:'warn'},
-    {t:'  › Loop 0.000003s — NÚCLEO TEMPORAL',c:'warn'},
-    {t:'  › Interferência não identificada — SETOR 7',c:'warn'},
-    {t:'  › Origem: Amostra Zero — EM ANÁLISE',c:'err'},
+    {t:'ANOMALIES DETECTED:',c:'warn'},
+    {t:'  › Loop 0.000003s — TEMPORAL CORE',c:'warn'},
+    {t:'  › Unidentified interference — SECTOR 7',c:'warn'},
+    {t:'  › Origin: Sample Zero — UNDER ANALYSIS',c:'err'},
     {t:'',c:'out'},
-    {t:'RECOMENDAÇÃO: Manter sincronização ativa.',c:'out'},
+    {t:'RECOMMENDATION: Keep synchronization active.',c:'out'},
+  ]},
+  products:{lines:[
+    {t:'V-CHRONOS CATALOGUE // 9 MODELS AVAILABLE',c:'hi'},
+    {t:'01 Cyberband V2    — Mass Access',c:'out'},
+    {t:'02 Chronos Alpha   — Base + Tactical',c:'out'},
+    {t:'03 Pulse-V         — Capabilities + Focus',c:'out'},
+    {t:'04 Aero Watch      — Navigation + Mobility',c:'out'},
+    {t:'05 Spectra G4      — Social Cognition',c:'out'},
+    {t:'06 Stealth Elite   — Tactical [RESTRICTED]',c:'warn'},
+    {t:'07 Nexus Time      — Temporal Flow',c:'out'},
+    {t:'08 Orbital-X       — Ancestral Memory',c:'out'},
+    {t:'09 Chronos Omega   — Total Access [UPON REQUEST]',c:'warn'},
   ]},
   produtos:{lines:[
-    {t:'V-CHRONOS CATALOGUE // 9 MODELOS DISPONÍVEIS',c:'hi'},
-    {t:'01 Cyberband V2    — Acesso em Massa',c:'out'},
-    {t:'02 Chronos Alpha   — Base + Tático',c:'out'},
-    {t:'03 Pulse-V         — Habilidades + Foco',c:'out'},
-    {t:'04 Aero Watch      — Navegação + Mobilidade',c:'out'},
-    {t:'05 Spectra G4      — Cognição Social',c:'out'},
-    {t:'06 Stealth Elite   — Tático [RESTRITO]',c:'warn'},
-    {t:'07 Nexus Time      — Fluxo Temporal',c:'out'},
-    {t:'08 Orbital-X       — Memória Ancestral',c:'out'},
-    {t:'09 Chronos Omega   — Acesso Total [SOB SOLICITAÇÃO]',c:'warn'},
+    {t:'V-CHRONOS CATALOGUE // 9 MODELS AVAILABLE',c:'hi'},
+    {t:'01 Cyberband V2    — Mass Access',c:'out'},
+    {t:'02 Chronos Alpha   — Base + Tactical',c:'out'},
+    {t:'03 Pulse-V         — Capabilities + Focus',c:'out'},
+    {t:'04 Aero Watch      — Navigation + Mobility',c:'out'},
+    {t:'05 Spectra G4      — Social Cognition',c:'out'},
+    {t:'06 Stealth Elite   — Tactical [RESTRICTED]',c:'warn'},
+    {t:'07 Nexus Time      — Temporal Flow',c:'out'},
+    {t:'08 Orbital-X       — Ancestral Memory',c:'out'},
+    {t:'09 Chronos Omega   — Total Access [UPON REQUEST]',c:'warn'},
   ]},
   kumani:{lines:[
-    {t:'ARQUIVO KUMANI // ACESSO NÍVEL 5',c:'hi'},
-    {t:'STATUS: Criptografado',c:'warn'},
+    {t:'KUMANI ARCHIVE // LEVEL 5 ACCESS',c:'hi'},
+    {t:'STATUS: Encrypted',c:'warn'},
     {t:'',c:'out'},
-    {t:'Para acessar o Arquivo Kumani completo,',c:'out'},
-    {t:'utilize o módulo de acesso restrito.',c:'out'},
+    {t:'To access the complete Kumani Archive,',c:'out'},
+    {t:'use the restricted access module.',c:'out'},
     {t:'',c:'out'},
-    {t:'DICA: A senha está no Instagram @chronoscorp.inc',c:'warn'},
+    {t:'HINT: The password is on Instagram @chronoscorp.inc',c:'warn'},
   ]},
   sync:{lines:[
-    {t:'Iniciando protocolo de sincronização...',c:'out'},
-    {t:'Conectando ao Simulador Primal...',c:'out'},
-    {t:'Verificando bio-assinatura...',c:'out'},
+    {t:'Initiating synchronization protocol...',c:'out'},
+    {t:'Connecting to Primal Simulator...',c:'out'},
+    {t:'Verifying bio-signature...',c:'out'},
     {t:'[████████████████████] 100%',c:'ok'},
     {t:'',c:'out'},
-    {t:'SINCRONIZAÇÃO CONCLUÍDA.',c:'ok'},
-    {t:'Bem-vindo ao presente. Ou ao que resta dele.',c:'hi'},
+    {t:'SYNCHRONIZATION COMPLETE.',c:'ok'},
+    {t:'Welcome to the present. Or what is left of it.',c:'hi'},
   ]},
   ping:{lines:[
-    {t:'PING simulador-primal.chronoscorp.net',c:'out'},
+    {t:'PING primal-simulator.chronoscorp.net',c:'out'},
     {t:'64 bytes: seq=1 ttl=64 time=0.003ms',c:'ok'},
     {t:'64 bytes: seq=2 ttl=64 time=0.003ms',c:'ok'},
     {t:'64 bytes: seq=3 ttl=64 time=0.003ms',c:'ok'},
     {t:'',c:'out'},
-    {t:'3 pacotes transmitidos, 3 recebidos, 0% perda.',c:'ok'},
+    {t:'3 packets transmitted, 3 received, 0% packet loss.',c:'ok'},
   ]},
 };
 
@@ -702,18 +637,18 @@ function runCmd(raw){
   const def=cmds[cmd];
   if(def){def.lines.forEach((l,i)=>setTimeout(()=>addLine(l.t,l.c),i*60));}
   else if(cmd===''){return;}
-  else{addLine('Comando não reconhecido: '+cmd+'. Digite "help" para ajuda.','err');}
+  else{addLine('Unrecognized command: '+cmd+'. Type "help" for assistance.','err');}
 }
 
 // Boot sequence
 const boot=[
   {t:'CHRONOS CORP // TERMINAL v4.2',c:'hi'},
-  {t:'Inicializando módulos do Simulador Primal...',c:'out'},
-  {t:'Conectando ao Arquivo Kumani...',c:'out'},
-  {t:'[████████████████████] Pronto.',c:'ok'},
+  {t:'Initializing Primal Simulator modules...',c:'out'},
+  {t:'Connecting to Kumani Archive...',c:'out'},
+  {t:'[████████████████████] Ready.',c:'ok'},
   {t:'',c:'out'},
-  {t:'Bem-vindo ao sistema Chronos Corp.',c:'hi'},
-  {t:'Digite "help" para listar os comandos disponíveis.',c:'out'},
+  {t:'Welcome to the Chronos Corp system.',c:'hi'},
+  {t:'Type "help" to list available commands.',c:'out'},
 ];
 boot.forEach((l,i)=>setTimeout(()=>addLine(l.t,l.c),i*120+500));
 
@@ -723,48 +658,48 @@ termIn.addEventListener('keydown',e=>{
 
 // ── QUIZ ──
 const questions=[
-  {q:'Como você descreveria sua relação com o tempo?',opts:[
-    {t:'Nunca tenho o suficiente',r:'Cyberband V2'},
-    {t:'Preciso de controle total',r:'Chronos Omega'},
-    {t:'Quero entender meus ciclos naturais',r:'Orbital-X'},
-    {t:'Prefiro operar sem ser percebido',r:'Stealth Elite'},
+  {q:'How would you describe your relationship with time?',opts:[
+    {t:'I never have enough',r:'Cyberband V2'},
+    {t:'I need total control',r:'Chronos Omega'},
+    {t:'I want to understand my natural cycles',r:'Orbital-X'},
+    {t:'I prefer to operate unnoticed',r:'Stealth Elite'},
   ]},
-  {q:'Qual é a sua prioridade?',opts:[
-    {t:'Performance física e foco',r:'Pulse-V'},
-    {t:'Presença global e cognição executiva',r:'Nexus Time'},
-    {t:'Inteligência emocional e relações',r:'Spectra G4'},
-    {t:'Resistência em ambientes extremos',r:'Chronos Alpha'},
+  {q:'What is your priority?',opts:[
+    {t:'Physical performance and focus',r:'Pulse-V'},
+    {t:'Global presence and executive cognition',r:'Nexus Time'},
+    {t:'Emotional intelligence and relationships',r:'Spectra G4'},
+    {t:'Endurance in extreme environments',r:'Chronos Alpha'},
   ]},
-  {q:'O que você faria com mais tempo percebido?',opts:[
-    {t:'Otimizar cada segundo do dia',r:'Cyberband V2'},
-    {t:'Dominar múltiplos contextos simultâneos',r:'Nexus Time'},
-    {t:'Explorar territórios inacessíveis',r:'Aero Watch'},
-    {t:'Conectar-me com algo maior',r:'Orbital-X'},
+  {q:'What would you do with more perceived time?',opts:[
+    {t:'Optimize every second of the day',r:'Cyberband V2'},
+    {t:'Master multiple simultaneous contexts',r:'Nexus Time'},
+    {t:'Explore inaccessible territories',r:'Aero Watch'},
+    {t:'Connect with something greater',r:'Orbital-X'},
   ]},
-  {q:'Qual é a sua maior vulnerabilidade?',opts:[
-    {t:'Perder o controle da atenção',r:'Chronos Omega'},
-    {t:'Ser rastreado ou monitorado',r:'Stealth Elite'},
-    {t:'Não conseguir ler os outros',r:'Spectra G4'},
-    {t:'Ficar para trás no ritmo global',r:'Pulse-V'},
+  {q:'What is your greatest vulnerability?',opts:[
+    {t:'Losing control of my attention',r:'Chronos Omega'},
+    {t:'Being tracked or monitored',r:'Stealth Elite'},
+    {t:'Not being able to read others',r:'Spectra G4'},
+    {t:'Falling behind the global pace',r:'Pulse-V'},
   ]},
 ];
 
 const modelDescs={
-  'Cyberband V2':'O modelo de massa. Sua relação com o tempo é pragmática — você quer otimização contínua, sem fricção. O Simulador Primal trabalha por você nas sombras.',
-  'Chronos Omega':'Acesso total. Você não quer otimizar o tempo — quer controlá-lo. O Omega é o único modelo com protocolo completo de fluxo temporal. O modelo que Luc Vangersson usa.',
-  'Orbital-X':'Memória ancestral. Você busca algo que a tecnologia normalmente ignora: conexão com ciclos maiores do que a produtividade. O Orbital-X sincroniza com o que nunca para.',
-  'Stealth Elite':'Percepção oculta. Você opera melhor quando ninguém sabe que você está operando. Protocolo não rastreável. Acesso restrito — e é assim que prefere.',
-  'Pulse-V':'Habilidades físicas. Seu presente é o corpo em movimento. O Pulse-V recalibra a percepção de esforço para que você sempre tenha mais do que pensava.',
-  'Nexus Time':'Fluxo temporal executivo. Sua mente processa múltiplos contextos simultaneamente. O Nexus Time torna isso uma vantagem — não um peso.',
-  'Spectra G4':'Cognição social. Você lê ambientes antes que os outros percebam o que está acontecendo. O Spectra G4 amplifica esse protocolo.',
-  'Chronos Alpha':'Resistência e precisão. Você opera em condições que eliminam os outros. O Alpha é tático, robusto, e nunca pede permissão.',
-  'Aero Watch':'Percepção espacial. Você pensa em altitude — literal ou metaforicamente. O Aero expande o perímetro do que você consegue perceber.',
+  'Cyberband V2':'The mass-market model. Your relationship with time is pragmatic — you want continuous, frictionless optimization. The Primal Simulator works for you in the shadows.',
+  'Chronos Omega':'Total access. You don’t want to optimize time — you want to control it. Omega is the only model with a full temporal flow protocol. The model Luc Vangersson wears.',
+  'Orbital-X':'Ancestral memory. You seek what technology usually ignores: connection to cycles greater than productivity. Orbital-X syncs with what never stops.',
+  'Stealth Elite':'Hidden perception. You operate best when no one knows you are operating. Untraceable protocol. Restricted access — and that’s how you prefer it.',
+  'Pulse-V':'Physical capabilities. Your present is the body in motion. Pulse-V recalibrates effort perception so you always have more left than you thought.',
+  'Nexus Time':'Executive temporal flow. Your mind processes multiple contexts simultaneously. Nexus Time turns that into an advantage — not a burden.',
+  'Spectra G4':'Social cognition. You read rooms before others realize what is happening. Spectra G4 amplifies this protocol.',
+  'Chronos Alpha':'Endurance and precision. You operate in conditions that eliminate others. Alpha is tactical, rugged, and never asks permission.',
+  'Aero Watch':'Spatial perception. You think at altitude — literally or metaphorically. Aero expands the perimeter of what you can perceive.',
 };
 
 let qIndex=0;const scores={};
 function renderQ(){
   const q=questions[qIndex];
-  document.getElementById('quiz-prog').textContent=`PERGUNTA ${qIndex+1} DE ${questions.length} // SIMULADOR PRIMAL`;
+  document.getElementById('quiz-prog').textContent=`QUESTION ${qIndex+1} OF ${questions.length} // PRIMAL SIMULATOR`;
   document.getElementById('quiz-q').textContent=q.q;
   const opts=document.getElementById('quiz-opts');
   opts.innerHTML='';
@@ -787,30 +722,29 @@ function showResult(){
   const r=document.getElementById('quiz-result');
   r.style.display='block';
   document.getElementById('res-model').textContent=winner;
-  document.getElementById('res-tag').textContent='SEU MODELO V-CHRONOS';
-  document.getElementById('res-desc').textContent=modelDescs[winner]||'Modelo recomendado pelo Simulador Primal.';
-  addAnomAlert('Novo usuário sincronizado. Modelo atribuído: '+winner,2);
+  document.getElementById('res-tag').textContent='YOUR V-CHRONOS MODEL';
+  document.getElementById('res-desc').textContent=modelDescs[winner]||'Model recommended by the Primal Simulator.';
+  addAnomAlert('New user synchronized. Assigned model: '+winner,2);
 }
 
 function resetQuiz(){
   qIndex=0;Object.keys(scores).forEach(k=>delete scores[k]);
   document.getElementById('quiz-inner').style.display='block';
-  document.getElementById('quiz-result').style.display='none';
-  renderQ();
+document.getElementById('quiz-result').style.display='none';
+renderQ();
 }
 renderQ();
-
-// ── ANOMALIA COUNTER ──
+  // ── ANOMALIA COUNTER ──
 let anomCount=0;
 const alerts=[
-  {t:'Flutuação detectada no núcleo temporal.',c:'lvl1'},
-  {t:'Interferência no setor 7 — monitorando.',c:'lvl1'},
-  {t:'Arquivo Kumani: atividade crescente.',c:'lvl2'},
-  {t:'Transmissão não autorizada interceptada.',c:'lvl2'},
-  {t:'Loop 0.000003s — ampliação em andamento.',c:'lvl3'},
-  {t:'ATENÇÃO: Contenção do Simulador Primal em risco.',c:'lvl3'},
-  {t:'Origem da anomalia: Amostra Zero.',c:'lvl3'},
-  {t:'Protocolo Kumani iniciado. Nível de ameaça: CRÍTICO.',c:'lvl3'},
+  {t:'Fluctuation detected in temporal core.',c:'lvl1'},
+  {t:'Interference in sector 7 — monitoring.',c:'lvl1'},
+  {t:'Kumani Archive: escalating activity.',c:'lvl2'},
+  {t:'Unauthorized transmission intercepted.',c:'lvl2'},
+  {t:'Loop 0.000003s — expansion underway.',c:'lvl3'},
+  {t:'WARNING: Primal Simulator containment at risk.',c:'lvl3'},
+  {t:'Anomaly origin: Sample Zero.',c:'lvl3'},
+  {t:'Kumani Protocol initiated. Threat level: CRITICAL.',c:'lvl3'},
 ];
 
 function addAnomAlert(text,lvl){
@@ -831,10 +765,10 @@ setInterval(()=>{
   addAnomAlert(a.t,parseInt(a.c.replace('lvl','')));
   alertIdx++;
 },8000);
-setTimeout(()=>addAnomAlert('Sistema de monitoramento ativado.',1),2000);
+setTimeout(()=>addAnomAlert('Monitoring system activated.',1),2000);
 
 document.getElementById('anom-code').addEventListener('click',()=>{
-  addAnomAlert('ACESSO MANUAL AO CÓDIGO DE ANOMALIA DETECTADO.',3);
+  addAnomAlert('MANUAL ACCESS TO ANOMALY CODE DETECTED.',3);
   const el=document.getElementById('anom-code');
   const orig=el.textContent;
   let i=0;
@@ -846,20 +780,19 @@ document.getElementById('anom-code').addEventListener('click',()=>{
 });
 
 // ── ARQUIVO KUMANI ──
-// Senha: KUMANI01 (escondida no Instagram como easter egg)
 function checkArquivo(){
   const v=document.getElementById('arq-input').value.trim().toUpperCase();
   const msg=document.getElementById('arq-msg');
   if(v==='KUMANI01'){
-    msg.className='arq-msg ok';msg.textContent='// Acesso concedido. Bem-vindo ao Arquivo Kumani.';
+    msg.className='arq-msg ok';msg.textContent='// Access granted. Welcome to the Kumani Archive.';
     setTimeout(()=>{
       document.getElementById('arq-locked').style.display='none';
       document.getElementById('arq-content').style.display='block';
-      addAnomAlert('ACESSO AO ARQUIVO KUMANI DETECTADO — ORIGEM: VISITANTE.',3);
+      addAnomAlert('KUMANI ARCHIVE ACCESS DETECTED — ORIGIN: VISITOR.',3);
     },800);
   } else if(v.length>0){
-    msg.className='arq-msg err';msg.textContent='// Código inválido. Acesso negado.';
-    addAnomAlert('Tentativa de acesso ao Arquivo Kumani negada.',2);
+    msg.className='arq-msg err';msg.textContent='// Invalid code. Access denied.';
+    addAnomAlert('Unauthorized Kumani Archive access attempt denied.',2);
     setTimeout(()=>{msg.textContent='';},2500);
   }
 }
@@ -892,30 +825,29 @@ function resizeCanvas(){
 resizeCanvas();
 window.addEventListener('resize',()=>{resizeCanvas();initNos();});
 
-// Nós de conectividade — cidades reais aproximadas em % do canvas
 const nosData=[
   {name:'Fortaleza',x:.42,y:.58,type:'anom'},
   {name:'São Paulo',x:.37,y:.67,type:'active'},
   {name:'Rio de Janeiro',x:.39,y:.65,type:'active'},
-  {name:'Nova York',x:.23,y:.38,type:'active'},
-  {name:'Londres',x:.47,y:.28,type:'active'},
+  {name:'New York',x:.23,y:.38,type:'active'},
+  {name:'London',x:.47,y:.28,type:'active'},
   {name:'Paris',x:.48,y:.3,type:'active'},
-  {name:'Berlim',x:.5,y:.27,type:'active'},
-  {name:'Moscou',x:.57,y:.25,type:'active'},
+  {name:'Berlin',x:.5,y:.27,type:'active'},
+  {name:'Moscow',x:.57,y:.25,type:'active'},
   {name:'Dubai',x:.59,y:.42,type:'active'},
   {name:'Mumbai',x:.63,y:.46,type:'active'},
-  {name:'Tóquio',x:.82,y:.37,type:'active'},
-  {name:'Xangai',x:.79,y:.4,type:'active'},
+  {name:'Tokyo',x:.82,y:.37,type:'active'},
+  {name:'Shanghai',x:.79,y:.4,type:'active'},
   {name:'Lagos',x:.49,y:.55,type:'active'},
   {name:'Cairo',x:.54,y:.4,type:'active'},
   {name:'Sydney',x:.83,y:.72,type:'active'},
   {name:'Los Angeles',x:.12,y:.4,type:'active'},
   {name:'Chicago',x:.19,y:.35,type:'active'},
   {name:'Toronto',x:.21,y:.32,type:'active'},
-  {name:'Cidade do México',x:.17,y:.46,type:'active'},
+  {name:'Mexico City',x:.17,y:.46,type:'active'},
   {name:'Buenos Aires',x:.32,y:.73,type:'active'},
-  {name:'Seul',x:.81,y:.36,type:'active'},
-  {name:'Jacarta',x:.77,y:.57,type:'active'},
+  {name:'Seoul',x:.81,y:.36,type:'active'},
+  {name:'Jakarta',x:.77,y:.57,type:'active'},
   {name:'Nairobi',x:.57,y:.58,type:'inactive'},
   {name:'Bogotá',x:.26,y:.57,type:'active'},
   {name:'Lima',x:.25,y:.63,type:'active'},
@@ -938,12 +870,10 @@ initNos();
 function drawMapa(){
   ctx.clearRect(0,0,canvas.width,canvas.height);
 
-  // Background grid
   ctx.strokeStyle='rgba(13,32,32,0.8)';ctx.lineWidth=1;
   for(let x=0;x<canvas.width;x+=50){ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x,canvas.height);ctx.stroke();}
   for(let y=0;y<canvas.height;y+=50){ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(canvas.width,y);ctx.stroke();}
 
-  // Connections
   nos.forEach((a,i)=>{
     if(a.type==='inactive')return;
     nos.slice(i+1).forEach(b=>{
@@ -959,25 +889,21 @@ function drawMapa(){
     });
   });
 
-  // Nodes
   nos.forEach(n=>{
     n.pulse+=n.speed;
     const color=n.type==='anom'?'255,85,0':n.type==='inactive'?'90,106,106':'0,184,184';
     const pr=(Math.sin(n.pulse)+1)/2;
 
     if(n.type!=='inactive'){
-      // Pulse ring
       ctx.beginPath();
       ctx.arc(n.px,n.py,n.r+4+pr*6,0,Math.PI*2);
       ctx.strokeStyle=`rgba(${color},${.15+pr*.1})`;
       ctx.lineWidth=1;ctx.stroke();
     }
-    // Core
     ctx.beginPath();ctx.arc(n.px,n.py,n.r,0,Math.PI*2);
     ctx.fillStyle=`rgba(${color},${n.type==='inactive'?.3:.8+pr*.2})`;
     ctx.fill();
 
-    // Fortaleza special
     if(n.name==='Fortaleza'){
       ctx.beginPath();ctx.arc(n.px,n.py,n.r+8+pr*8,0,Math.PI*2);
       ctx.strokeStyle=`rgba(255,85,0,${.3+pr*.2})`;
@@ -999,7 +925,7 @@ canvas.addEventListener('mousemove',e=>{
     tooltip.style.opacity='1';
     tooltip.style.left=(e.clientX-rect.left+16)+'px';
     tooltip.style.top=(e.clientY-rect.top-10)+'px';
-    const status=found.type==='anom'?'⚠ ANOMALIA':found.type==='inactive'?'INATIVO':'SINCRONIZADO';
+    const status=found.type==='anom'?'⚠ ANOMALY':found.type==='inactive'?'INACTIVE':'SYNCHRONIZED';
     tooltip.innerHTML=`<span style="color:${found.type==='anom'?'#FF5500':found.type==='inactive'?'#5A6A6A':'#00B8B8'}">${found.name}</span><br>${status}`;
   } else {tooltip.style.opacity='0';}
 });
@@ -1009,336 +935,10 @@ canvas.addEventListener('click',e=>{
   const mx=e.clientX-rect.left,my=e.clientY-rect.top;
   nos.forEach(n=>{
     if(Math.hypot(n.px-mx,n.py-my)<12&&n.type!=='inactive'){
-      addAnomAlert(`Nó ${n.name} verificado — ${n.type==='anom'?'ANOMALIA ATIVA':'sincronizado'}.`,n.type==='anom'?3:1);
-    }
-  });
-<script>
-(function() {
-  document.documentElement.lang = 'en';
-  document.title = 'Chronos Corp — Your life, optimized.';
-
-  // 1. Correção direta nos blocos do Hero (elimina qualquer quebra de tag/linha)
-  function fixHeroEn() {
-    const h1 = document.querySelector('h1');
-    if (h1 && (h1.textContent.includes('atraso') || h1.textContent.includes('biologia'))) {
-      h1.innerHTML = 'Biology<br>delivers reality<br><em>minutes late.</em>';
-    }
-    document.querySelectorAll('p, div, span, em, strong').forEach(el => {
-      if (el.children.length === 0 || el.tagName === 'P') {
-        const txt = el.textContent.replace(/\s+/g, ' ').trim();
-        if (txt.includes('Nossa missão:') || txt.includes('em otimização')) {
-          el.innerHTML = 'Our mission: turn this biological flaw <em>into optimization.</em>';
-        }
-      }
-    });
-  }
-
-  // 2. Dicionário completo de tradução
-  const mEn = {
-    "Missão": "Mission",
-    "Produtos": "Products",
-    "Sincronizar": "Sync",
-    "Arquivo": "Archive",
-    "Rede Global": "Global Network",
-    "Contato": "Contact",
-    "SIMULADOR: ONLINE": "SIMULATOR: ONLINE",
-    "SIMULADOR PRIMAL": "PRIMAL SIMULATOR",
-    "SISTEMA ATIVO": "SYSTEM ACTIVE",
-    "ANOMALIA": "ANOMALY",
-    "DETECTADO": "DETECTED",
-    "CONECTIVIDADE": "CONNECTIVITY",
-    "ARQUIVO KUMANI": "KUMANI ARCHIVE",
-    "SOB CONTROLE": "UNDER CONTROL",
-    "MODELOS DISPONÍVEIS": "AVAILABLE MODELS",
-    "SUA VIDA, OTIMIZADA.": "YOUR LIFE, OPTIMIZED.",
-    "TRANSMISSÕES PIRATAS": "PIRATE BROADCASTS",
-    "Sistema Ativo": "System Active",
-    "A biologia": "Biology",
-    "entrega a realidade": "delivers reality",
-    "com minutos": "minutes",
-    "de atraso.": "late.",
-    "de atraso": "late",
-    "com atraso": "late",
-    "atraso.": "late.",
-    "atraso": "late",
-    "minutos": "minutes",
-    "Você não está vivendo o presente.": "You are not living in the present.",
-    "Você está vivendo": "You are living",
-    "uma reprise.": "a rerun.",
-    "Nossa missão: transformar essa falha biológica": "Our mission: turn this biological flaw",
-    "em otimização.": "into optimization.",
-    "em otimização": "into optimization",
-    "otimização.": "optimization.",
-    "otimização": "optimization",
-    "Testar Sincronização": "Test Sync",
-    "Acessar Terminal": "Access Terminal",
-    "Conectividade": "Connectivity",
-    "Modelos": "Models",
-    "Sincronizados": "Synchronized",
-    "Loop Ativo": "Active Loop",
-    "Nossa Missão": "Our Mission",
-    "Você vive no": "You live in the",
-    "passado.": "past.",
-    "Nós mudamos isso.": "We change that.",
-    "Status do Sistema": "System Status",
-    "Simulador Primal": "Primal Simulator",
-    "Conectividade Global": "Global Connectivity",
-    "Usuários Sincronizados": "Synchronized Users",
-    "Anomalia Detectada": "Anomaly Detected",
-    "Origem da Anomalia": "Anomaly Origin",
-    "Em Análise": "Under Analysis",
-    "Transmissões Piratas": "Pirate Broadcasts",
-    "Protocolo de Contenção": "Containment Protocol",
-    "Qual sincronização": "Which synchronization",
-    "você escolhe?": "do you choose?",
-    "LINHA GLOBAL": "GLOBAL LINE",
-    "LINHA EXCLUSIVA": "EXCLUSIVE LINE",
-    "Terminal de Acesso": "Access Terminal",
-    "Teste de Sincronização": "Synchronization Test",
-    "Descubra seu": "Discover your",
-    "modelo ideal.": "ideal model.",
-    "PERGUNTA": "QUESTION",
-    " DE ": " OF ",
-    "SEU MODELO V-CHRONOS": "YOUR V-CHRONOS MODEL",
-    "REFAZER TESTE": "RETAKE TEST",
-    "VER MODELOS NO INSTAGRAM": "VIEW MODELS ON INSTAGRAM",
-    "Perfil Corporativo": "Corporate Profile",
-    "Liderança &": "Leadership &",
-    "Pesquisa.": "Research.",
-    "AMOSTRA 0 // V-CHRONOS": "SAMPLE 0 // V-CHRONOS",
-    "Neurocientista e Engenheira de Terminal Metacognitivo.": "Neuroscientist and Metacognitive Terminal Engineer.",
-    "FUNDADOR & DIRETOR EXECUTIVO // CEO // CHRONOS CORP": "FOUNDER & CHIEF EXECUTIVE OFFICER // CEO // CHRONOS CORP",
-    "Contato Corporativo": "Corporate Contact",
-    "Sincronize": "Synchronize",
-    "conosco.": "with us.",
-    "Todos os direitos reservados.": "All rights reserved.",
-    "ALERTA DE SISTEMA": "SYSTEM ALERT",
-    "MONITORAMENTO EM TEMPO REAL": "REAL-TIME MONITORING",
-
-    // Quiz
-    "Como você descreveria sua relação com o tempo?": "How would you describe your relationship with time?",
-    "Nunca tenho o suficiente": "I never have enough",
-    "Preciso de controle total": "I need total control",
-    "Quero entender meus ciclos naturais": "I want to understand my natural cycles",
-    "Prefiro operar sem ser percebido": "I prefer to operate unnoticed",
-    "Qual é a sua prioridade?": "What is your priority?",
-    "Performance física e foco": "Physical performance and focus",
-    "Presença global e cognição executiva": "Global presence and executive cognition",
-    "Inteligência emocional e relações": "Emotional intelligence and relationships",
-    "Resistência em ambientes extremos": "Endurance in extreme environments",
-    "O que você faria com mais tempo percebido?": "What would you do with more perceived time?",
-    "Otimizar cada segundo do dia": "Optimize every second of the day",
-    "Dominar múltiplos contextos simultâneos": "Master multiple simultaneous contexts",
-    "Explorar territórios inacessíveis": "Explore inaccessible territories",
-    "Conectar-me com algo maior": "Connect with something greater",
-    "Qual é a sua maior vulnerabilidade?": "What is your greatest vulnerability?",
-    "Perder o controle da atenção": "Losing control of my attention",
-    "Ser rastreado ou monitorado": "Being tracked or monitored",
-    "Não conseguir ler os outros": "Not being able to read others",
-    "Ficar para trás no ritmo global": "Falling behind the global pace",
-
-    // Model Descriptions
-    "O modelo de massa. Sua relação com o tempo é pragmática — você quer otimização contínua, sem fricção. O Simulador Primal trabalha por você nas sombras.": "The mass-market model. Your relationship with time is pragmatic — you want continuous, frictionless optimization. The Primal Simulator works for you in the shadows.",
-    "Acesso total. Você não quer otimizar o tempo — quer controlá-lo. O Omega é o único modelo com protocolo completo de fluxo temporal. O modelo que Luc Vangersson usa.": "Total access. You don't want to optimize time — you want to control it. Omega is the only model with a full temporal flow protocol. The model Luc Vangersson wears.",
-    "Memória ancestral. Você busca algo que a tecnologia normalmente ignora: conexão com ciclos maiores do que a produtividade. O Orbital-X sincroniza com o que nunca para.": "Ancestral memory. You seek what technology usually ignores: connection to cycles greater than productivity. Orbital-X syncs with what never stops.",
-    "Percepção oculta. Você opera melhor quando ninguém sabe que você está operando. Protocolo não rastreável. Acesso restrito — e é assim que prefere.": "Hidden perception. You operate best when no one knows you are operating. Untraceable protocol. Restricted access — and that's how you prefer it.",
-    "Habilidades físicas. Seu presente é o corpo em movimento. O Pulse-V recalibra a percepção de esforço para que você sempre tenha mais do que pensava.": "Physical capabilities. Your present is the body in motion. Pulse-V recalibrates effort perception so you always have more left than you thought.",
-    "Fluxo temporal executivo. Sua mente processa múltiplos contextos simultaneamente. O Nexus Time torna isso uma vantagem — não um peso.": "Executive temporal flow. Your mind processes multiple contexts simultaneously. Nexus Time turns that into an advantage — not a burden.",
-    "Cognição social. Você lê ambientes antes que os outros percebam o que está acontecendo. O Spectra G4 amplifica esse protocolo.": "Social cognition. You read rooms before others realize what is happening. Spectra G4 amplifies this protocol.",
-    "Resistência e precisão. Você opera em condições que eliminam os outros. O Alpha é tático, robusto, e nunca pede permissão.": "Endurance and precision. You operate in conditions that eliminate others. Alpha is tactical, rugged, and never asks permission.",
-    "Percepção espacial. Você pensa em altitude — literal ou metaforicamente. O Aero expande o perímetro do que você consegue perceber.": "Spatial perception. You think at altitude — literally or metaphorically. Aero expands the perimeter of what you can perceive."
-  };
-
-  const sortedEntries = Object.entries(mEn).sort((a, b) => b[0].length - a[0].length);
-
-  function runEn() {
-    fixHeroEn();
-    const w = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
-    let n;
-    while ((n = w.nextNode())) {
-      if (!n.nodeValue || !n.nodeValue.trim()) continue;
-      let v = n.nodeValue.replace(/\s+/g, ' ');
-      for (const [pt, en] of sortedEntries) {
-        if (v.includes(pt)) v = v.split(pt).join(en);
-      }
-      if (v !== n.nodeValue) n.nodeValue = v;
-    }
-  }
-
-  runEn();
-  setInterval(runEn, 300);
-})();
-  runEn();
-  setInterval(runEn, 300);
-})();
-  
-</script>
-
-<!-- SELETOR TRILÍNGUE DIRETO (PT | ES | EN) -->
-<div style="position:fixed;top:68px;right:24px;z-index:9998;display:flex;gap:6px;background:rgba(2,5,8,0.92);padding:6px 10px;border:1px solid #007878;backdrop-filter:blur(8px)">
-  <a href="index.html" style="text-decoration:none;border:1px solid #007878;color:#F0F4F4;font-family:'Syne Mono',monospace;font-size:11px;padding:3px 8px">PT</a>
-  <a href="es.html" style="text-decoration:none;border:1px solid #007878;color:#F0F4F4;font-family:'Syne Mono',monospace;font-size:11px;padding:3px 8px">ES</a>
-  <a href="en.html" style="text-decoration:none;border:1px solid #00B8B8;color:#00B8B8;font-family:'Syne Mono',monospace;font-size:11px;padding:3px 8px">EN</a>
-</div>
-
-</body>
-</html>
-      addAnomAlert(`Nó ${n.name} verificado — ${n.type==='anom'?'ANOMALIA ATIVA':'sincronizado'}.`,n.type==='anom'?3:1);
+      addAnomAlert(`Node ${n.name} verified — ${n.type==='anom'?'ACTIVE ANOMALY':'synchronized'}.`,n.type==='anom'?3:1);
     }
   });
 });
-</script>
-
-<script>
-(function() {
-  document.documentElement.lang = 'en';
-  document.title = 'Chronos Corp — Your life, optimized.';
-
-  function fixHeroEn() {
-    const h1 = document.querySelector('h1');
-    if (h1 && (h1.textContent.includes('atraso') || h1.textContent.includes('biologia') || h1.textContent.includes('Biology'))) {
-      h1.innerHTML = 'Biology<br>delivers reality<br><em>minutes late.</em>';
-    }
-    document.querySelectorAll('p, div, span, em, strong').forEach(el => {
-      if (el.children.length === 0 || el.tagName === 'P') {
-        const txt = el.textContent.replace(/\s+/g, ' ').trim();
-        if (txt.includes('Nossa missão:') || txt.includes('em otimização')) {
-          el.innerHTML = 'Our mission: turn this biological flaw <em>into optimization.</em>';
-        }
-      }
-    });
-  }
-
-  const mEn = {
-    "Missão": "Mission",
-    "Produtos": "Products",
-    "Sincronizar": "Sync",
-    "Arquivo": "Archive",
-    "Rede Global": "Global Network",
-    "Contato": "Contact",
-    "SIMULADOR: ONLINE": "SIMULATOR: ONLINE",
-    "SIMULADOR PRIMAL": "PRIMAL SIMULATOR",
-    "SISTEMA ATIVO": "SYSTEM ACTIVE",
-    "ANOMALIA": "ANOMALY",
-    "DETECTADO": "DETECTED",
-    "CONECTIVIDADE": "CONNECTIVITY",
-    "ARQUIVO KUMANI": "KUMANI ARCHIVE",
-    "SOB CONTROLE": "UNDER CONTROL",
-    "MODELOS DISPONÍVEIS": "AVAILABLE MODELS",
-    "SUA VIDA, OTIMIZADA.": "YOUR LIFE, OPTIMIZED.",
-    "TRANSMISSÕES PIRATAS": "PIRATE BROADCASTS",
-    "Sistema Ativo": "System Active",
-    "A biologia": "Biology",
-    "entrega a realidade": "delivers reality",
-    "com minutos": "minutes",
-    "de atraso.": "late.",
-    "de atraso": "late",
-    "com atraso": "late",
-    "atraso.": "late.",
-    "atraso": "late",
-    "minutos": "minutes",
-    "Você não está vivendo o presente.": "You are not living in the present.",
-    "Você está vivendo": "You are living",
-    "uma reprise.": "a rerun.",
-    "Nossa missão: transformar essa falha biológica": "Our mission: turn this biological flaw",
-    "em otimização.": "into optimization.",
-    "em otimização": "into optimization",
-    "otimização.": "optimization.",
-    "otimização": "optimization",
-    "Testar Sincronização": "Test Sync",
-    "Acessar Terminal": "Access Terminal",
-    "Conectividade": "Connectivity",
-    "Modelos": "Models",
-    "Sincronizados": "Synchronized",
-    "Loop Ativo": "Active Loop",
-    "Nossa Missão": "Our Mission",
-    "Você vive no": "You live in the",
-    "passado.": "past.",
-    "Nós mudamos isso.": "We change that.",
-    "Status do Sistema": "System Status",
-    "Simulador Primal": "Primal Simulator",
-    "Conectividade Global": "Global Connectivity",
-    "Usuários Sincronizados": "Synchronized Users",
-    "Anomalia Detectada": "Anomaly Detected",
-    "Origem da Anomalia": "Anomaly Origin",
-    "Em Análise": "Under Analysis",
-    "Transmissões Piratas": "Pirate Broadcasts",
-    "Protocolo de Contenção": "Containment Protocol",
-    "Qual sincronização": "Which synchronization",
-    "você escolhe?": "do you choose?",
-    "LINHA GLOBAL": "GLOBAL LINE",
-    "LINHA EXCLUSIVA": "EXCLUSIVE LINE",
-    "Terminal de Acesso": "Access Terminal",
-    "Teste de Sincronização": "Synchronization Test",
-    "Descubra seu": "Discover your",
-    "modelo ideal.": "ideal model.",
-    "PERGUNTA": "QUESTION",
-    " DE ": " OF ",
-    "SEU MODELO V-CHRONOS": "YOUR V-CHRONOS MODEL",
-    "REFAZER TESTE": "RETAKE TEST",
-    "VER MODELOS NO INSTAGRAM": "VIEW MODELS ON INSTAGRAM",
-    "Perfil Corporativo": "Corporate Profile",
-    "Liderança &": "Leadership &",
-    "Pesquisa.": "Research.",
-    "AMOSTRA 0 // V-CHRONOS": "SAMPLE 0 // V-CHRONOS",
-    "Neurocientista e Engenheira de Terminal Metacognitivo.": "Neuroscientist and Metacognitive Terminal Engineer.",
-    "FUNDADOR & DIRETOR EXECUTIVO // CEO // CHRONOS CORP": "FOUNDER & CHIEF EXECUTIVE OFFICER // CEO // CHRONOS CORP",
-    "Contato Corporativo": "Corporate Contact",
-    "Sincronize": "Synchronize",
-    "conosco.": "with us.",
-    "Todos os direitos reservados.": "All rights reserved.",
-    "ALERTA DE SISTEMA": "SYSTEM ALERT",
-    "MONITORAMENTO EM TEMPO REAL": "REAL-TIME MONITORING",
-    "Como você descreveria sua relação com o tempo?": "How would you describe your relationship with time?",
-    "Nunca tenho o suficiente": "I never have enough",
-    "Preciso de controle total": "I need total control",
-    "Quero entender meus ciclos naturais": "I want to understand my natural cycles",
-    "Prefiro operar sem ser percebido": "I prefer to operate unnoticed",
-    "Qual é a sua prioridade?": "What is your priority?",
-    "Performance física e foco": "Physical performance and focus",
-    "Presença global e cognição executiva": "Global presence and executive cognition",
-    "Inteligência emocional e relações": "Emotional intelligence and relationships",
-    "Resistência em ambientes extremos": "Endurance in extreme environments",
-    "O que você faria com mais tempo percebido?": "What would you do with more perceived time?",
-    "Otimizar cada segundo do dia": "Optimize every second of the day",
-    "Dominar múltiplos contextos simultâneos": "Master multiple simultaneous contexts",
-    "Explorar territórios inacessíveis": "Explore inaccessible territories",
-    "Conectar-me com algo maior": "Connect with something greater",
-    "Qual é a sua maior vulnerabilidade?": "What is your greatest vulnerability?",
-    "Perder o controle da atenção": "Losing control of my attention",
-    "Ser rastreado ou monitorado": "Being tracked or monitored",
-    "Não conseguir ler os outros": "Not being able to read others",
-    "Ficar para trás no ritmo global": "Falling behind the global pace",
-    "O modelo de massa. Sua relação com o tempo é pragmática — você quer otimização contínua, sem fricção. O Simulador Primal trabalha por você nas sombras.": "The mass-market model. Your relationship with time is pragmatic — you want continuous, frictionless optimization. The Primal Simulator works for you in the shadows.",
-    "Acesso total. Você não quer otimizar o tempo — quer controlá-lo. O Omega é o único modelo com protocolo completo de fluxo temporal. O modelo que Luc Vangersson usa.": "Total access. You don't want to optimize time — you want to control it. Omega is the only model with a full temporal flow protocol. The model Luc Vangersson wears.",
-    "Memória ancestral. Você busca algo que a tecnologia normalmente ignora: conexão com ciclos maiores do que a produtividade. O Orbital-X sincroniza com o que nunca para.": "Ancestral memory. You seek what technology usually ignores: connection to cycles greater than productivity. Orbital-X syncs with what never stops.",
-    "Percepção oculta. Você opera melhor quando ninguém sabe que você está operando. Protocolo não rastreável. Acesso restrito — e é assim que prefere.": "Hidden perception. You operate best when no one knows you are operating. Untraceable protocol. Restricted access — and that's how you prefer it.",
-    "Habilidades físicas. Seu presente é o corpo em movimento. O Pulse-V recalibra a percepção de esforço para que você sempre tenha mais do que pensava.": "Physical capabilities. Your present is the body in motion. Pulse-V recalibrates effort perception so you always have more left than you thought.",
-    "Fluxo temporal executivo. Sua mente processa múltiplos contextos simultaneamente. O Nexus Time torna isso uma vantagem — não um peso.": "Executive temporal flow. Your mind processes multiple contexts simultaneously. Nexus Time turns that into an advantage — not a burden.",
-    "Cognição social. Você lê ambientes antes que os outros percebam o que está acontecendo. O Spectra G4 amplifica esse protocolo.": "Social cognition. You read rooms before others realize what is happening. Spectra G4 amplifies this protocol.",
-    "Resistência e precisão. Você opera em condições que eliminam os outros. O Alpha é tático, robusto, e nunca pede permissão.": "Endurance and precision. You operate in conditions that eliminate others. Alpha is tactical, rugged, and never asks permission.",
-    "Percepção espacial. Você pensa em altitude — literal ou metaforicamente. O Aero expande o perímetro do que você consegue perceber.": "Spatial perception. You think at altitude — literally or metaphorically. Aero expands the perimeter of what you can perceive."
-  };
-
-  const sortedEntries = Object.entries(mEn).sort((a, b) => b.length - a.length);
-
-  function runEn() {
-    fixHeroEn();
-    const w = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
-    let n;
-    while ((n = w.nextNode())) {
-      if (!n.nodeValue || !n.nodeValue.trim()) continue;
-      let v = n.nodeValue.replace(/\s+/g, ' ');
-      for (const [pt, en] of sortedEntries) {
-        if (v.includes(pt)) v = v.split(pt).join(en);
-      }
-      if (v !== n.nodeValue) n.nodeValue = v;
-    }
-  }
-
-  runEn();
-  setInterval(runEn, 300);
-})();
 </script>
 
 <!-- SELETOR TRILÍNGUE DIRETO (PT | ES | EN) -->
